@@ -8,7 +8,7 @@ Lorsque vous naviguez sur Internet, votre navigateur interprète du code HTML / 
 
 A l'aide de ces trois langages et armés d'un simple éditeur de texte, vous pouvez créer des sites Internet au contenu sémantique, des mises en pages et layout complexes et une interactivité poussée. Rien de plus n'est nécessaire, vous pouvez publier pour le monde entier.
 
-*Exemple: mise en ligne d'une page web simple avec mise en page CSS et petit script JS*
+*Exemple: site webstoemp*
 
 Chacun de ces langages possède un rôle bien particulier: 
 
@@ -17,8 +17,6 @@ Chacun de ces langages possède un rôle bien particulier:
 - **Javascript** sert à ajouter de l'interactivité (des comportements) à vos pages web (depuis de simples animations et effets jusqu'à de la géo-localisation).
 
 Le W3C est la structure qui créé et maintient ces langages ou standards. Tous les fabricants de navigateurs participent aux discussions et groupes de travail, avec d'autres experts venus d'autres horizons.
-
-*Exemples: René Robert*
 
 ## HTML
 
