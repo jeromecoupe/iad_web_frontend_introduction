@@ -16,7 +16,7 @@ Chacun de ces langages possède un rôle bien particulier:
 - **CSS** sert à créer des mises en pages et à appliquer des styles graphiques à vos éléments HTML
 - **Javascript** sert à ajouter de l'interactivité (des comportements) à vos pages web (depuis de simples animations et effets jusqu'à de la géo-localisation).
 
-Le W3C est la structure qui créé et maintient ces langages ou standards. Tous les fabricants de navigateurs participent aux discussions et groupes de travail, avec d'autres experts venus d'autres horizons.
+Le [World Wide Web Consortium](http://www.w3.org) W3C est la structure qui créé et maintient ces langages ou standards. Tous les fabricants de navigateurs participent aux discussions et groupes de travail, avec d'autres experts venus d'autres horizons.
 
 ## HTML
 
@@ -83,7 +83,7 @@ Les tags définissent le rôle des éléments qui composent la page. Par exemple
 <h1>Voici un magnifique titre de niveau 1</h1>
 ```
 
-Nous verrons quelques-uns des tags principaux lors de cette introduction. [Pour une liste exhaustive, je vous recommande Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference).
+Nous verrons quelques-uns des tags principaux lors de cette introduction. [Pour une liste exhaustive, je vous recommande Mozilla Developer Network](https://developer.mozilla.org/fr/docs/Web/HTML/Element).
 
 ##### Tags pairs et self closing tags
 
