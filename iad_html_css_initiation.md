@@ -136,17 +136,17 @@ Vos tags doivent être bien imbriqués. Les ouvertures et les fermetures de tags
 **Incorrect**
 
 ```html
-<p>Lorem ipsum dolor sit amet, consectetur <a href="">adipisicing elit</a>.
+<p>Lorem ipsum dolor sit amet, consectetur <a href="fake.html">adipisicing elit</a>.
 ```
 
 ```html
-<p>Lorem ipsum dolor sit amet, consectetur <a href="">adipisicing elit</p></a>.
+<p>Lorem ipsum dolor sit amet, consectetur <a href="fake.html">adipisicing elit</p></a>.
 ```
 
 **Correct**
 
 ```html
-<p>Lorem ipsum dolor sit amet, consectetur <a href="">adipisicing elit</a>.</p>
+<p>Lorem ipsum dolor sit amet, consectetur <a href="fake.html">adipisicing elit</a>.</p>
 ```
 
 ##### Utiliser des minuscules partout
