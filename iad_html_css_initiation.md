@@ -393,7 +393,7 @@ Une bonne question à se poser pour l’utilisation d’article est: pourriez vo
 
 Section générique d'un document ou d'une application. Section sert à marquer un groupement thématique de contenus, typiquement il comporte un `<header>` et parfois un `<footer>`. Exemples: les chapitres d'un livre, les sections d'une thèse, les différentes sections d'une page d'accueil: introduction, news, portfolio, information de contact, etc.
 
-Attention à ne pas utiliser section en lieu et place de <div> ou <article>, par exemple pour séparer le contenu principal d'une page de son contenu secondaire. A part de rares exceptions, n'utilisez pas <section> si cet élément ne possède pas naturellement un titre. Un article détaillé sur le sujet est [disponible sur HTML5 Doctor](http://html5doctor.com/the-section-element/).
+Attention à ne pas utiliser section en lieu et place de `<div>` ou `<article>`, par exemple pour séparer le contenu principal d'une page de son contenu secondaire. A part de rares exceptions, n'utilisez pas <section> si cet élément ne possède pas naturellement un titre. Un article détaillé sur le sujet est [disponible sur HTML5 Doctor](http://html5doctor.com/the-section-element/).
 
 **`<aside>`**
 
@@ -458,7 +458,7 @@ Notons ici que les éléments `<acticle>`, `<section>`, `<nav>` et `<aside>` son
 </html>
 ```
 
-Exercice: identifier les éléments HTML dans un layout existant
+*Exercice: identifier les éléments HTML dans un layout existant*
 
 ### Media
 
@@ -863,7 +863,9 @@ Les propriétés `width`et `height` ne prennent qu'une seule valeur spécifiées
 }
 ```
 
-La propriété `border`peut soit être spécifiée en une seule propriété courte, soit décomposées en différentes propriétés distinctes: `border-top`, `border-bottom`, `border-left`, `border-right`, `border-width`, `border-style`, `border-color`. (@TODO check)
+La propriété `border`peut soit être spécifiée en une seule propriété courte, soit décomposées en différentes propriétés distinctes: `border-width`, `border-style`, `border-color`.
+
+Il est également possible de spécifier les caractéristiques de chaque border individuellement en utilisant les propriétés: `border-top`, `border-bottom`, `border-left`, `border-right`,
 
 ```css
 body
@@ -1035,7 +1037,7 @@ Depuis que les principaux navigateurs supportent la propriété `@font-face`, il
 
 Etant donné les complexités techniques de la typographie sur écran, de nombreux services ont vu le jour pour vous proposer des polices optimisées et en permettre une utilisation simple dans vos designs: Typekit, Fontdeck, Google fonts.
 
-Nous nous concentrerons ici sur l'utilisation de Google Fonts, un service gratuit offrant qualues fontes de qualité. (@TODO link with nice font pairings)
+Nous nous concentrerons ici sur l'utilisation de Google Fonts, un service gratuit offrant des fontes de qualité. Voici [quelques](http://femmebot.github.io/google-type/) [exemples](http://hellohappy.org/beautiful-web-type/) de ce qu'il est possible de réaliser en se concentrant uniquement sur la typographie.
 
 *Exercice: utiliser des fontes standard avec un font-stack*
 
