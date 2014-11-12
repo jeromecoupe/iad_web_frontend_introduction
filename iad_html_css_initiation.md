@@ -924,7 +924,7 @@ body
 }
 ```
 
-Des marges latérales automatique combinées à une largeur (width) spécifiée sont également utilisées comme moyen simple de centrer un bloc dans une page.
+Des marges latérales automatiques combinées à une largeur (`width`) spécifiée sont également utilisées comme moyen simple de centrer un bloc dans une page.
 
 ```css
 .mypage
@@ -938,7 +938,7 @@ Des marges latérales automatique combinées à une largeur (width) spécifiée 
 
 #### propriétés color et background
 
-Les propriétés `color` et `background` vous permettent de changer les couleurs de vos textes ou des boites.
+Les propriétés `color` et `background` vous permettent de changer les couleurs de vos textes ou les fonds appliqués à vos boites.
 
 ```css
 body
@@ -979,7 +979,15 @@ Il existe [différentes façons de spécifier les couleurs en CSS](https://devel
 
 La plupart des programmes de design vous permettent de facilement trouver et convertir les valeurs correspondant aux couleurs que vous souhaitez utiliser.
 
-*Exercice: expérimenter avec les couleurs dans votre fichier de travail*
+#### utilisation d'images de background
+
+Il est également possible d'utiliser des images comme fonds pour vos boites. Vous devez pour cela utiliser les propriétés suivantes:
+
+- `background-image:url(../img/monimage.png)` pour spécifier l'image à utiliser comme image de fond.
+- `background-position:50% 50%` pour spécifier la position de l'image dans la boite visée. Vous pouvez soit utiliser des unités (pourcentages, pixels, em, rem, etc.) soit des mots-clefs comme `top`, `bottom`, `left` et `right`.  
+- `background-repeat:no-repeat` pour spécifier si l'image va se répéter et comment. Les valeurs possibles sont `no-repeat`, `repeat`, `repeat-x` et `repeat-y`.
+
+*Exercice: expérimenter avec les couleurs et les images de fond dans votre fichier de travail*
 
 ### Propriétés CSS liées au texte
 
@@ -1060,19 +1068,4 @@ CSS peut également être utilisée pour positionner vos images relativement à 
 }
 ```
 
-
-### Column count, column gap et column-rule
-
-
-
-*Exercice: Mettre en page votre CV HTML avec CSS*
-
-## Javascript
-
-### fonctions, variables et structures de contrôle
-
-Explications générales et lecture d'un script simple
-
-### manipulations du DOM
-
-Exemples avec animations CSS
+*Exercice: Mettre en page votre CV avec HTML et CSS*
