@@ -187,7 +187,7 @@ La meilleure solution consiste à placer tout votre code CSS ou de JavaScript da
 
 ##### Encodage des esperluettes "&" dans les URls
 
-Le validateur HTML genèrera une erreur lorsque un caractère "&" n'est pas encodé dans une URL. Veillez donc à y remédier en encodant cette dernière.
+Le validateur HTML générera une erreur lorsque un caractère "&" n'est pas encodé dans une URL. Veillez donc à y remédier en encodant cette dernière.
 
 Invalide:
 
@@ -293,7 +293,7 @@ Les listes ordonnées ou numérotées avec `<ol>`
 </table>
 ```
 
-*Exercice: ajouter quelque paragraphes, listes et titres à votre document de travail*
+*Exercice: ajouter quelques paragraphes, listes et titres à votre document de travail*
 
 #### Tags de type "inline"
 
@@ -343,6 +343,8 @@ Pour transformer du texte ou une image en un lien, il suffit d'utiliser le tag `
 <p><a href="http://en.wikipedia.org/wiki/Brussels">Bruxelles</a> est la capitale de la Belgique et de l'Europe.</p>
 ```
 
+#### Liens relatifs et absolus
+
 Ce lien est "absolu" dans la mesure où son attribut `href` référence une URL complète, qui peut être résolue indépendamment de son contexte.
 
 ```html
@@ -355,7 +357,11 @@ Ce lien est "relatif" dans la mesure où son attribut `href` référence une URL
 <a href="mailto:jercoupe@gmail.com">Contacter Jérôme Coupé</a>
 ```
 
+#### Liens vers adresses email
+
 Les liens peuvent également renvoyer vers une adresse email, il suffit que cette dernière soit précédée de `mailto:`.
+
+#### Ancres
 
 Il est également possible d'établir des liens vers d'autres parties d'un même document, par exemple pour renvoyer les utilisateurs en haut de page ou vers une section bien définie dans un document très long.
 
@@ -377,88 +383,11 @@ Avant l'avènement de HTML5 et des nouveaux tags sémantiques que nous allons vo
 
 Le tag `<span>` peut être vu comme l'équivalent "inline" du `<div>`, permettant de créer des groupes plus petits auxquels des styles peuvent être appliqués. `<span>`est également neutre, avec une valeur sémantique proche de zéro.
 
-### Un peu plus de sémantique qu'un div: `<header>`, `<section>`, `<article>`, `<aside>`, `<footer>`, `<nav>`
+### Un peu plus de sémantique avec des nouveaux éléments HTML
 
-**`<nav>`**
+La dernière version de HTML (HTML5) introduit une série de nouveaux éléments sémantiques visant à permettre une meilleure définition des contenus des pages Internet: `<header>`, `<section>`, `<article>`, `<aside>`, `<footer>`, `<nav>`.
 
-Cet élément est utilisé pour marquer les interfaces de navigation du site ou de la page. Il s’agit d’une section de la page contenant les liens utilisés pour la navigation. Tous les groupes de liens ne sont pas forcément des interfaces de navigation, seuls ces derniers peuvent être marqués à l’aide de l’élément `<nav>`.
-
-**`<article>`**
-
-Est utilisé pour marquer une partie d'un document, d'une page, d'un site qui fait sens prise indépendamment: un post sur un forum, un article de magazine ou de journal, un billet sur un blog, un commentaire soumis par un utilisateur ou n'importe quel autre élément de contenu indépendant.
-
-Une bonne question à se poser pour l’utilisation d’article est: pourriez vous inclure ce contenu dans un flux RSS et ce contenu ferait-il sens? Si oui, il s’agit probablement d’un bon candidat.
-
-**`<section>`**
-
-Section générique d'un document ou d'une application. Section sert à marquer un groupement thématique de contenus, typiquement il comporte un `<header>` et parfois un `<footer>`. Exemples: les chapitres d'un livre, les sections d'une thèse, les différentes sections d'une page d'accueil: introduction, news, portfolio, information de contact, etc.
-
-Attention à ne pas utiliser section en lieu et place de `<div>` ou `<article>`, par exemple pour séparer le contenu principal d'une page de son contenu secondaire. A part de rares exceptions, n'utilisez pas <section> si cet élément ne possède pas naturellement un titre. Un article détaillé sur le sujet est [disponible sur HTML5 Doctor](http://html5doctor.com/the-section-element/).
-
-**`<aside>`**
-
-Est utilisé pour marquer du contenu qui est lié de façon tangentielle au parent de l'élément et qui pourrait être comme faisant sens indépendamment du contenu de ce parent.
-
-Le contexte est ici très important. Vous pouvez utiliser `<aside>` pour marquer une sidebar sur un site Internet. Les éléments de contenu ainsi marqués sont tangentiellement liés à la page ou au site. Lorsque `<aside>` est utilisé au sein d'un élément `<article>`, le contenu ainsi marqué est tangentiellement lié au contenu de cet article.
-
-**`<main>`**
-
-L’élement `<main>` représente le contenu principal d’un document. Il ne peut être utilisé qu’une seule fois au sein d’un document HTML et ne peut jamais être le descendant de `<article>`, `<aside>`, `<footer>`, `<header>` ou `<nav>`.	
-
-**`<header>`**
-
-Typiquement utilisé pour contenir les métas informations (titre, logo, date de publication, etc) d’un document ou d’une partie d’un document. L'élément `<header>` peut être utilisé plusieurs fois dans le cadre d'un même document. Suivant le contexte dans lequel il est placé (`<body>`, `<article>`, `<section>`, etc.) il aura un statut différent.
-
-**`<footer>`**
-
-Typiquement utilisé pour contenir les métas informations (auteur, lien vers des documents liés) d’un document ou d’une partie de document. L'élément `<footer>` peut être utilisé plusieurs fois dans le cadre d'un même document. Suivant le contexte dans lequel il est placé (`<body>`, `<article>`, `<section>`, etc.) il aura un statut différent.
-
-##### Methode de travail
-
-Personnellement, je trouver que commencer par coder un document avec des `<div>` uniquement et en replacer certains lorsque vous n'avez pas de doute est une bonne méthode.Le choix de vos éléments HTML n'est pas une science exacte et est soumis à l'interprétation.
-
-##### Document outline et sectioning elements
-
-Notons ici que les éléments `<acticle>`, `<section>`, `<nav>` et `<aside>` sont des éléments de sectioning, c’est à dire qu’ils créent une nouvelle section au sein du document et que la hiérarchie des titres recommence à zéro au sein de chacun des éléments de ce type. Voyons par exemple la structure de ce document à l’aide de l’outil [HTML5 outliner](http://gsnedders.html5.org/outliner/) pour y voir plus clair.
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title>Document outline and sectioning elements</title>
-        <!--[if lt IE 9]>
-            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-    </head>
-    <body>
-        <h1>My great site</h1>
-        <nav>
-            <ul>
-                <li><a href="/">Nav item</a></li>
-            </ul>
-        </nav>
-        <article>
-            <h1>Article title</h1>
-            <p>Article content.</p>
-            <h2>Article sub-heading</h2>
-            <p>More content.</p>
-            <h3>Article sub-sub-heading</h3>
-            <p>More content.</p>
-        </article>
-        <aside>
-            <h1>Sidebar heading</h1>
-            <p>content</p>
-        </aside>
-        <footer>
-            <h1>Footer heading</h1>
-            <p>Footer content.</p>
-        </footer>
-    </body>
-</html>
-```
-
-*Exercice: identifier les éléments HTML dans un layout existant*
+Ces nouveaux éléments sont directement liés au concept de document outline. Nous les aborderons en détail l'année prochaine. Si le sujet vous intéresse, je vous recommande les articles de HTML5 Doctor sur le sujet. 
 
 ### Media
 
@@ -530,7 +459,7 @@ En utilisant différents formats et l'élément `<source>`:
 <audio>
   <source src="audios/audiofile.mp3" type="audio/mpeg">
   <source src="audios/audiofile.ogg" type="audio/ogg">
-  <p>Votre navigateur ne supporte pas les fichiers audio intégrées. Vous pouvez néanmoins télécharger le fichier audio en format <a href="audios/audiofile.mp3">MP3</a> ou <a href="audios/audiofile.ogg">OGG</a> et utiliser votre lecteur préféré.</p>
+  <p>Votre navigateur ne supporte pas les fichiers audio intégrés. Vous pouvez néanmoins télécharger le fichier audio en format <a href="audios/audiofile.mp3">MP3</a> ou <a href="audios/audiofile.ogg">OGG</a> et utiliser votre lecteur préféré.</p>
 </audio>
 ```
 
