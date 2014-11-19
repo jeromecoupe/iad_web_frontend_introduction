@@ -387,7 +387,7 @@ Le tag `<span>` peut être vu comme l'équivalent "inline" du `<div>`, permettan
 
 La dernière version de HTML (HTML5) introduit une série de nouveaux éléments sémantiques visant à permettre une meilleure définition des contenus des pages Internet: `<header>`, `<section>`, `<article>`, `<aside>`, `<footer>`, `<nav>`.
 
-Ces nouveaux éléments sont directement liés au concept de document outline. Nous les aborderons en détail l'année prochaine. Si le sujet vous intéresse, je vous recommande les articles de HTML5 Doctor sur le sujet. 
+Ces nouveaux éléments sont directement liés au concept de document outline. Nous les aborderons en détail l'année prochaine. Si le sujet vous intéresse, je vous recommande [les articles de HTML5 Doctor sur le sujet](http://html5doctor.com/element-index/) ou votre fidèle [Mozilla Developer Network](https://developer.mozilla.org/en/docs/Web/Guide/HTML/HTML5/HTML5_element_list). 
 
 ### Media
 
