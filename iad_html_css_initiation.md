@@ -353,11 +353,11 @@ Ce lien est "absolu" dans la mesure où son attribut `href` référence une URL 
 
 Ce lien est "relatif" dans la mesure où son attribut `href` référence une URL relative au contexte du document établissant le lien. Par exemple, si le domaine est *www.webstoemp.com*, le navigateur interprètera ce lien comme *http://www.webstoemp.com/index.html*.
 
+#### Liens vers adresses email
+
 ```html
 <a href="mailto:jercoupe@gmail.com">Contacter Jérôme Coupé</a>
 ```
-
-#### Liens vers adresses email
 
 Les liens peuvent également renvoyer vers une adresse email, il suffit que cette dernière soit précédée de `mailto:`.
 
@@ -385,7 +385,7 @@ Le tag `<span>` peut être vu comme l'équivalent "inline" du `<div>`, permettan
 
 ### Un peu plus de sémantique avec des nouveaux éléments HTML
 
-La dernière version de HTML (HTML5) introduit une série de nouveaux éléments sémantiques visant à permettre une meilleure définition des contenus des pages Internet: `<header>`, `<section>`, `<article>`, `<aside>`, `<footer>`, `<nav>`.
+La dernière version de HTML (HTML5) introduit une série de nouveaux éléments sémantiques visant à permettre une meilleure définition des contenus des pages Internet: `<header>`, `<section>`, `<article>`, `<aside>`, `<footer>`, `<nav>` et `<main>`.
 
 Ces nouveaux éléments sont directement liés au concept de document outline. Nous les aborderons en détail l'année prochaine. Si le sujet vous intéresse, je vous recommande [les articles de HTML5 Doctor sur le sujet](http://html5doctor.com/element-index/) ou votre fidèle [Mozilla Developer Network](https://developer.mozilla.org/en/docs/Web/Guide/HTML/HTML5/HTML5_element_list). 
 
@@ -425,7 +425,7 @@ HTML permet également d'intégrer facilement des fichiers audio ou vidéo à vo
 Voici le tag `<video>` dans son utilisation la plus simple:
 
 ```html
-<video src="videos/videofile.ogv" poster="posterimage.jpg">
+<video src="videos/videofile.ogv" poster="posterimage.jpg" controls>
   <p>Votre navigateur ne supporte pas les vidéos intégrées. Vous pouvez néanmoins <a href="videos/videofile.ogv">télécharger la vidéo</a> et utiliser votre lecteur préféré.</p>
 </video>
 ```
@@ -435,7 +435,7 @@ L'attribut `poster` sert à spécifier une image d'attente pour la vidéo. [Mozi
 Le problème est que les différents navigateurs ne supportent pas tous les mêmes formats vidéo. Il vous faudra donc spécifier différents fichiers pour les différents navigateurs et utiliser l'élément `<source>`. Aujourd'hui encore, il vous faudra encoder votre vidéo dans 3 formats différents ([Miro Video Converter](http://www.mirovideoconverter.com/) est un outil gratuit qui vous y aidera).
 
 ```html
-<video poster="posterimage.jpg">
+<video poster="posterimage.jpg" controls>
   <source src="videos/videofile.mp4" type="video/mp4">
   <source src="videos/videofile.webm" type="video/webm">
   <source src="videos/videofile.ogv" type="video/ogg">
@@ -448,7 +448,7 @@ Le problème est que les différents navigateurs ne supportent pas tous les mêm
 Voici le tag `<audio>` dans son utilisation la plus simple:
 
 ```html
-<audio src="audios/audiofile.mp3">
+<audio src="audios/audiofile.mp3" controls>
   <p>Votre navigateur ne supporte pas les fichiers audio intégrées. Vous pouvez néanmoins <a href="audios/audiofile.mp3">télécharger le fichier audio</a> et utiliser votre lecteur préféré.</p>
 </audio>
 ```
@@ -456,7 +456,7 @@ Voici le tag `<audio>` dans son utilisation la plus simple:
 En utilisant différents formats et l'élément `<source>`:
 
 ```html
-<audio>
+<audio controls>
   <source src="audios/audiofile.mp3" type="audio/mpeg">
   <source src="audios/audiofile.ogg" type="audio/ogg">
   <p>Votre navigateur ne supporte pas les fichiers audio intégrés. Vous pouvez néanmoins télécharger le fichier audio en format <a href="audios/audiofile.mp3">MP3</a> ou <a href="audios/audiofile.ogg">OGG</a> et utiliser votre lecteur préféré.</p>
@@ -496,9 +496,9 @@ Cette simple ligne de code va lier un fichier CSS (screen.css) à votre document
 
 Les règles CSS sont composées de sélecteurs, de propriétés et de valeurs. 
 
-- sélecteur: permet, comme son nom l'indique, de sélectionner les éléments auxquels les styles vont s'appliquer. Comme nous le verrons plus loin, il existe différents types de sélecteurs.
-- propriété: permet de spécifier les propriétés dont il faut modifier les valeurs pour les éléments visés par le sélecteur
-- valeurs: permet de spécifier les valeurs à appliquer aux propriétés des éléments visés par le sélecteur
+- **sélecteur**: permet, comme son nom l'indique, de sélectionner les éléments auxquels les styles vont s'appliquer. Comme nous le verrons plus loin, il existe différents types de sélecteurs.
+- **propriété**: permet de spécifier les propriétés dont il faut modifier les valeurs pour les éléments visés par le sélecteur
+- **valeurs**: permet de spécifier les valeurs à appliquer aux propriétés des éléments visés par le sélecteur
 
 *Exercice: changer la couleur de fond de votre page*
 
