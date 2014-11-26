@@ -600,7 +600,7 @@ Ces sélecteurs permettent de sélectionner des éléments en fonction de leurs 
 }
 ```
 
-Différence entre classes et id
+##### Différence entre classes et id
 
 - une `id` ne peut être utilisée qu'une et une seule fois par document HTML. Les `id` ne sont donc pas idéales pour créer des systèmes de composants réutilisables.
 - nous verrons plus loin qu'une `id` possède une spécificité très élevée. Elles ne sont donc pas idéales pour créer un système d'éléments combinables.
@@ -632,6 +632,30 @@ Les sélecteurs descendants permettent de rendre vos sélecteurs plus spécifiqu
 ```
 
 Les sélecteurs se lisent de droite à gauche. Celui-ci peut donc se traduire en français par: sélectionner tous les liens qui sont des descendants de `.mainnav`, à n'importe quel niveau dans l'arbre du document.
+
+#### Sélecteurs d'enfants
+
+Les sélecteurs d'enfants permettent de rendre vos sélecteurs encore plus spécifiques. Ces sélecteurs s'écrivent en combinant plusieurs sélecteurs avec un `>`.
+
+```html
+<nav>
+  <ul class="mainnav">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="work.html">Work</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+</nav>
+```
+
+```css
+.mainnav > li
+{
+  color:red;
+}
+```
+
+Les sélecteurs se lisent de droite à gauche. Celui-ci peut donc se traduire en français par: sélectionner tous les`li` qui sont des enfants directs de `.mainnav`.
 
 #### Liens et pseudo-classes
 
