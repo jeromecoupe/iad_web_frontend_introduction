@@ -600,7 +600,12 @@ Ces sélecteurs permettent de sélectionner des éléments en fonction de leurs 
 }
 ```
 
-Nous verrons plus loin que les sélecteurs d'ID ont une spécificité très élevée. Lorsque vous travaillez sur des sites et des CSS de grande taille, la bonne pratique est d'utiliser des sélecteurs dont la spécificité est aussi basse que possible. Certains développeurs recommandent de suivre une règle simple: ne jamais utiliser d'ID comme hooks pour vos styles CSS.
+Différence entre classes et id
+
+- une `id` ne peut être utilisée qu'une et une seule fois par document HTML. Les `id` ne sont donc pas idéales pour créer des systèmes de composants réutilisables.
+- nous verrons plus loin qu'une `id` possède une spécificité très élevée. Elles ne sont donc pas idéales pour créer un système d'éléments combinables.
+
+La bonne pratique est d'utiliser des sélecteurs dont la spécificité est aussi basse que possible. Certains développeurs recommandent de suivre une règle simple: ne jamais utiliser d'ID comme hooks pour vos styles CSS.
 
 Les sélecteurs d'ID existent, mais ma recommandation est de ne pas les utiliser en CSS dans la mesure du possible.
 
