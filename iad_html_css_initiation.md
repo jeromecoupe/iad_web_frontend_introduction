@@ -841,7 +841,6 @@ body
 {
   margin-left:1em;
   margin-bottom:1em;
-  /* same as margin: 0 0 1em 1em */
 }
 
 .myclass
@@ -849,7 +848,6 @@ body
   padding-right:20px;
   padding-left:1em;
   padding-bottom:2em;
-  /* same as padding:0 20px 1em 2em; */
 }
 ```
 
