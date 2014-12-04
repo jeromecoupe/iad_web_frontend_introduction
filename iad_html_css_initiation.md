@@ -10,7 +10,7 @@ A l'aide de ces trois langages et armés d'un simple éditeur de texte, vous pou
 
 *Exemple: site webstoemp*
 
-Chacun de ces langages possède un rôle bien particulier: 
+Chacun de ces langages possède un rôle bien particulier:
 
 - **HTML** sert à structurer vos contenu de façon sémantique (afin qu'il ait un sens pour les machines comme pour les humains)
 - **CSS** sert à créer des mises en pages et à appliquer des styles graphiques à vos éléments HTML
@@ -387,7 +387,7 @@ Le tag `<span>` peut être vu comme l'équivalent "inline" du `<div>`, permettan
 
 La dernière version de HTML (HTML5) introduit une série de nouveaux éléments sémantiques visant à permettre une meilleure définition des contenus des pages Internet: `<header>`, `<section>`, `<article>`, `<aside>`, `<footer>`, `<nav>` et `<main>`.
 
-Ces nouveaux éléments sont directement liés au concept de document outline. Nous les aborderons en détail l'année prochaine. Si le sujet vous intéresse, je vous recommande [les articles de HTML5 Doctor sur le sujet](http://html5doctor.com/element-index/) ou votre fidèle [Mozilla Developer Network](https://developer.mozilla.org/en/docs/Web/Guide/HTML/HTML5/HTML5_element_list). 
+Ces nouveaux éléments sont directement liés au concept de document outline. Nous les aborderons en détail l'année prochaine. Si le sujet vous intéresse, je vous recommande [les articles de HTML5 Doctor sur le sujet](http://html5doctor.com/element-index/) ou votre fidèle [Mozilla Developer Network](https://developer.mozilla.org/en/docs/Web/Guide/HTML/HTML5/HTML5_element_list).
 
 ### Media
 
@@ -397,7 +397,7 @@ Les media tels que les images, les vidéos ou les fichiers audio ne sont pas inc
 
 Nous avons déjà parlé des images en HTML. Celles-ci sont référencées dans les documents HTML via le tag `<img>`qui est un tag "self closing" et pas une paire.
 
-L'image a intégrer est renseignée via l'attribut `src` qui est obligatoire et renseigne l'URL de l'image (celle-ci peut être renseignée de façon relative ou absolue). HTML supporte différents formats d'images. Voici le plus utilisés: JPEG, GIF, PNG et SVG. 
+L'image a intégrer est renseignée via l'attribut `src` qui est obligatoire et renseigne l'URL de l'image (celle-ci peut être renseignée de façon relative ou absolue). HTML supporte différents formats d'images. Voici le plus utilisés: JPEG, GIF, PNG et SVG.
 
 La taille de l'image peut être spécifiée à l'aide des attributs `width` et `height`. Si ceux-ci ne sont pas spécifiés, l'image sera affichée à sa taille effective. L'attribut `alt` est utilisé pour donner une représentation textuelle de l'image aux navigateurs qui ne les supportent pas.
 
@@ -494,7 +494,7 @@ Cette simple ligne de code va lier un fichier CSS (screen.css) à votre document
 
 ### Sélecteurs, propriétés, valeurs
 
-Les règles CSS sont composées de sélecteurs, de propriétés et de valeurs. 
+Les règles CSS sont composées de sélecteurs, de propriétés et de valeurs.
 
 - **sélecteur**: permet, comme son nom l'indique, de sélectionner les éléments auxquels les styles vont s'appliquer. Comme nous le verrons plus loin, il existe différents types de sélecteurs.
 - **propriété**: permet de spécifier les propriétés dont il faut modifier les valeurs pour les éléments visés par le sélecteur
@@ -659,7 +659,7 @@ Les sélecteurs se lisent de droite à gauche. Celui-ci peut donc se traduire en
 
 #### Liens et pseudo-classes
 
-Certains [sélecteurs de la famille des pseudo-classes](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes) permettent de cibler les différents états de vos liens. 
+Certains [sélecteurs de la famille des pseudo-classes](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes) permettent de cibler les différents états de vos liens.
 
 ```css
 a:link
@@ -685,7 +685,7 @@ a:focus
 a:active
 {
   color:red;
-} 
+}
 ```
 
 *Exercice: expérimenter avec les pseudo-classes liées aux liens dans votre document de travail*
@@ -732,7 +732,7 @@ p
   background:red;
 }
 
-p 
+p
 {
   background:green;
 }
@@ -791,7 +791,7 @@ p
 
 ### Boites avec width, height, border, padding et margin
 
-Chaque élément en HTML génère une boite, boite de type block ou boite de type online suivant le type d'élément utilisé.
+Chaque élément en HTML génère une boite, boite de type block ou boite de type inline (ou autre) suivant le type d'élément utilisé.
 
 Sans entrer dans le détail, les dimensions de ces boites peuvent être spécifiées à l'aide des propriétés `width`, `height`, `border`, `padding` et `margin`.
 
@@ -846,7 +846,7 @@ Si des valeurs sont manquantes, le navigateur les complètes automatiquement en 
 ```css
 body
 {
-  margin:0; 
+  margin:0;
 }
 
 .myclass
@@ -903,7 +903,7 @@ body
   padding:2em;
   background:#F0F0F0;
   color:#171717;
-  border:1em solid #D35400; 
+  border:1em solid #D35400;
 }
 ```
 
@@ -986,14 +986,34 @@ body
 }
 ```
 
+`font-style`: permet de gérer l'aspect d'une police. Les valeur les plus utilisées sont `italic` et `normal`
+
+```css
+body
+{
+	font-style:italic;
+}
+```
+
 Toutes ces propriétés peuvent être utilisées dans le cadre d'une seule propriét courte: `font`.
 
 ```css
 body
 {
-  normal 100%/1.5 Helvetica, Arial, sans-serif;
+  font:normal italic 100%/1.5 Helvetica, Arial, sans-serif;
 }
 ```
+
+`text-transform`: permet de gérer les transformations à appliquer sur une police. Les valeurs les plus utiisées sont: `capitalize`, `uppercase`, `lowercase` et `none`.
+
+```css
+body
+{
+	text-transform:uppercase;
+}
+```
+
+`text-align`: permet d'aligner votre texte
 
 #### Utilisation de polices non-standard
 
@@ -1005,11 +1025,37 @@ Nous nous concentrerons ici sur l'utilisation de Google Fonts, un service gratui
 
 *Exercice: utiliser des fontes standard avec un font-stack*
 
-*Exercice: utiliser des fontes non-standard avec Google Fonts* 
+*Exercice: utiliser des fontes non-standard avec Google Fonts*
 
-### Images et floats
+### Images
 
-CSS peut également être utilisée pour positionner vos images relativement à votre texte. Les propriétés `float:left;` et `float:right;` permettent que le texte contourne une image.
+Voyons maintenant deux façons simples de positionner le simages dans votre document.
+
+#### Images et text-align
+
+Par défaut les images sont des élements de type `inline`. La propriété `text-align` va doncc avoir le même effet sur elles que sur du texte.
+
+Pour aligner des images à gauche ou à droite ou pour les centrer dans un bloc conteneur, il suffit d'utiliser cette propriété sur ce dernier.
+
+```html
+<p class="img-container"><img src="../img/myimage.png" alt="alt text"></p>
+```
+
+
+```css
+.img-container
+{
+	text-align:center;
+	/*text-align:right;*/
+	/*text-align:left;*/
+}
+```
+
+#### Images et Floats
+
+CSS peut également être utilisée pour positionner vos images relativement à votre texte.
+
+Les propriétés `float:left;` et `float:right;` permettent au texte de contourner une image.
 
 ```html
 <p><img src="img/monimage.png" class="imgleft" width="200" height="112" alt="représentation alternative">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit cum corporis fugiat labore explicabo mollitia est saepe in minima porro neque ipsam voluptates, natus voluptatum! Animi commodi corporis ducimus natus!</p>
