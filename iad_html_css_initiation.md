@@ -769,7 +769,7 @@ La spécificité n'est pas spécifiée en base 10. Un sélecteur avec une spéci
 body > a:hover
 ```
 
-La spécificité de ce sélecteur est de 0-2-1.
+La spécificité de ce sélecteur est de 0-1-2.
 
 *Exercice: déterminer la spécificité de divers sélecteurs*
 
