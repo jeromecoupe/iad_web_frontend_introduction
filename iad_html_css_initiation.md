@@ -13,7 +13,7 @@ A l'aide de ces trois langages et armés d'un simple éditeur de texte, vous pou
 Chacun de ces langages possède un rôle bien particulier:
 
 - **HTML** sert à structurer vos contenu de façon sémantique (afin qu'il ait un sens pour les machines comme pour les humains)
-- **CSS** sert à créer des mises en pages et à appliquer des styles graphiques à vos éléments HTML
+- **CSS** sert à créer des mises en pages (macro) et à appliquer des styles graphiques à vos éléments HTML (micro)
 - **Javascript** sert à ajouter de l'interactivité (des comportements) à vos pages web (depuis de simples animations et effets jusqu'à de la géo-localisation).
 
 Le [World Wide Web Consortium](http://www.w3.org) W3C est la structure qui créé et maintient ces langages ou standards. Tous les fabricants de navigateurs participent aux discussions et groupes de travail, avec d'autres experts venus d'autres horizons.
@@ -22,9 +22,9 @@ Le [World Wide Web Consortium](http://www.w3.org) W3C est la structure qui cré�
 
 HTML (pour Hypertext Markup Language) est, comme son nom l'indique, un langage de markup (servant à marquer des éléments de contenu pour leur donner une valeur sémantique) et capable de lier entre-eux divers documents par le biais de liens hypertextes.
 
-Créé en 1989 par Tim Berners-Lee, le HTML était à la base destiné à permettre aux scientifiques et chercheurs du CERN de partager leurs documents et découvertes et faire des liens entre les documents qu'ils partageaient.
+Proposé en 1989 par [Tim Berners-Lee](https://en.wikipedia.org/wiki/Tim_Berners-Lee) et [Robert Calliau](https://en.wikipedia.org/wiki/Robert_Cailliau), le HTML était à la base destiné à permettre aux scientifiques et chercheurs du [CERN](http://home.cern/) de partager leurs documents et découvertes et faire des liens entre les documents qu'ils partageaient.
 
-Le World Wide Web à connu une croissance fulgurante et est aujourd'hui bien plus large que le seul monde de la recherche scientifique. De simples "documents" nous sommes passés à des oeuvres d'art interactives ou à des applications en ligne mais le HTML à évolué avec le web et reste la base de tous les sites que vous utilisez.
+Le World Wide Web à connu une croissance fulgurante et est aujourd'hui bien plus large que le seul monde de la recherche scientifique. De simples "documents" nous sommes passés à des oeuvres d'art interactives ou à des applications en ligne. Le HTML à évolué avec le web et reste la base de tous les sites que vous utilisez.
 
 Dans le cadre de ce cours, nous utiliserons la dernière version d'HTML (parfois appelée HTML5).
 
@@ -58,7 +58,7 @@ L'attribut `lang`du tag `<html>` permet de spécifier la langue dans laquelle le
 
 Vient ensuite le `charset` qui indique au navigateur quel est l'encodage de caractères utilisé par le document. De façon générale, le charset recommandé est "UTF-8" qui permet de gérer la plupart des charactères, y compris des charactères un peu plus exotiques pour nos yeux occidentaux (chinois, cyrillique, etc).
 
-### Document sructure: head and body
+### Document sructure: `<head>` and `<body>`
 
 Tout document HTML est séparé en deux parties distinctes: `<head>` et `<body>`
 
@@ -201,7 +201,7 @@ Valide:
 <a href="index.php?a=1&amp;b=2">Latest News</a>
 ```
 
-*Exercice: créer une version pur texte d'un CV minimaliste: nom, prénom, adresse, quelques paragraphes*
+*Exercice: créer une version texte d'un CV minimaliste: nom, prénom, adresse, quelques paragraphes*
 
 ### Différents types de tags
 
