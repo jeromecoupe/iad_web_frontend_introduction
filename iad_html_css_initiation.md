@@ -266,33 +266,6 @@ Les listes ordonnées ou numérotées avec `<ol>`
 </blockquote>
 ```
 
-`<table>`: utilisé pour marquer les tableaux (en conjonction avec `<th>`, `<tr>`, `<td>`,)
-
-```html
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Rank</th>
-    <th>Mood</th>
-  </tr>
-  <tr>
-    <td>Yoda</td>
-    <td>Jedi master</td>
-    <td>Worried</td>
-  </tr>
-  <tr>
-    <td>Darth Vador</td>
-    <td>Sith Lord</td>
-    <td>Implacable</td>
-  </tr>
-  <tr>
-    <td>Luke Skywalker</td>
-    <td>Jedi Knight</td>
-    <td>Impatient</td>
-  </tr>
-</table>
-```
-
 *Exercice: ajouter quelques paragraphes, listes et titres à votre document de travail*
 
 #### Tags de type "inline"
@@ -332,6 +305,35 @@ Les éléments de type "inline":
 Nous ne les aborderons pas cette année, mais pas mal d'éléments servant à construire des formulaires en HTML sont également de type "inline". C'est le cas des éléments `<button>`, `<input>`, `<label>`, `<select>` et `<textarea>` par exemple.
 
 *Exercice: ajouter quelques tags `<strong>` et `<em>` à votre document de travail avant de le visualiser dans un navigateur.*
+
+### Element de type table
+
+`<table>`: utilisé pour marquer les tableaux (en conjonction avec `<th>`, `<tr>`, `<td>`,)
+
+```html
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Rank</th>
+    <th>Mood</th>
+  </tr>
+  <tr>
+    <td>Yoda</td>
+    <td>Jedi master</td>
+    <td>Worried</td>
+  </tr>
+  <tr>
+    <td>Darth Vador</td>
+    <td>Sith Lord</td>
+    <td>Implacable</td>
+  </tr>
+  <tr>
+    <td>Luke Skywalker</td>
+    <td>Jedi Knight</td>
+    <td>Impatient</td>
+  </tr>
+</table>
+```
 
 ### Les liens `<a>`
 
@@ -517,7 +519,7 @@ body
 }
 ```
 
-Il existe différents types de sélecteurs CSS, nous en verrons quelques exemple simples lors de cette introduction. Pour ce qui est des propriétés et des valeurs, nous en aborderons quelques unes lors de cette introduction également, mais seulement un petit nombre. Pour une [référence complète des propriétés CSS](http://best-mac-tips.com/2011/06/23/send-from-any-email-address-in-apple-mail/), vous pouvez vous référer à Mozilla Developer Network.
+Il existe différents types de sélecteurs CSS, nous en verrons quelques exemple simples lors de cette introduction. Pour ce qui est des propriétés et des valeurs, nous en aborderons quelques unes lors de cette introduction également, mais seulement un petit nombre. Pour une [référence complète des propriétés CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference), vous pouvez vous référer à Mozilla Developer Network ou encore à [Codrops](http://tympanus.net/codrops/css_reference/).
 
 #### Sélecteurs de type
 
