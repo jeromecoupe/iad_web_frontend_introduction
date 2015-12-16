@@ -1051,6 +1051,19 @@ ou
 }
 ```
 
+Ces propriétés utilsent encore des [vendor-prefixes](http://alistapart.com/article/the-vendor-prefix-predicament-alas-eric-meyer-interviews-tantek-celik), c'est à dire les préfixes utilisés par les moteurs de rendu des navigateurs pour tester des propriétés alors qu'elles ne sont pas encore implémentées. La règle est ici d'ajouter tous les vendors prefixes **avant** la règle CSS finale. De cette façon, une fois l'implémentation terminée, c'est la dernière règle non-préfixée qui va être utilisée par le navigateur (cascade).
+
+```css
+.columns-small
+{
+  -webkit-column-width: 20em; /* pour safari */
+     -moz-column-width: 20em; /* pour mozilla */
+      -ms-column-width: 20em; /* pour microsoft IE */
+       -o-column-width: 20em; /* pour opera */
+          column-width: 20em;
+}
+```
+
 ### Images
 
 Voyons maintenant deux façons simples de positionner le simages dans votre document.
