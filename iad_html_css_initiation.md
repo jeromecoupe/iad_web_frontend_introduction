@@ -1029,6 +1029,28 @@ Nous nous concentrerons ici sur l'utilisation de Google Fonts, un service gratui
 
 *Exercice: utiliser des fontes non-standard avec Google Fonts*
 
+### Texte en colonnes avec CSS
+
+Vous pouvez utiliser CSS pour disposer vos textes en colonnes de manière dynamique en utilisant les [colonnes en CSS3](https://developer.mozilla.org/fr/docs/Web/CSS/Colonnes_CSS3). Pour ce faire, vous devrez utiliser les propriétés suivantes: `column-count`, `column-gap`, `coluln-rule` et `column-width`. Les navigateurs ne comprenant pas ces propriétés vont simplement les ignorer.
+
+```css
+.columns2
+{
+  column-count: 2;
+  column-gap: 40px;
+  column-rule: 1px solid red;
+}
+```
+
+ou
+
+```css
+.columns-small
+{
+  column-width: 20em;
+}
+```
+
 ### Images
 
 Voyons maintenant deux façons simples de positionner le simages dans votre document.
