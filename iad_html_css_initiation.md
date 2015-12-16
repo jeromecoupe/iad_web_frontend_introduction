@@ -931,7 +931,7 @@ Il existe [différentes façons de spécifier les couleurs en CSS](https://devel
 
 .myclass
 {
-  color:rgba(255,0,0,.5);
+  color:rgba(255,0,0,0.5);
 }
 ```
 
