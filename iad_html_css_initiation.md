@@ -482,7 +482,7 @@ Les navigateurs possèdent une CSS par défaut. Lorsque vous visualisez un docum
 Il existe plusieurs façons de lires des styles CSS à vos documents HTML. Nous allons ici nous concentrer sur la plus utilisées d'entre-elles: l'élément `<link>` et l'attribut `media`.
 
 ```html
-<link rel="stylesheet" href="css/screen.css" media="screen" />
+<link rel="stylesheet" href="css/screen.css" media="screen">
 ```
 
 Cette simple ligne de code va lier un fichier CSS (screen.css) à votre document HTML. L'attribut `media` spécifie pour quels media les styles devront êtres appliqués. Il existe de nombreuses valeurs possibles pour cet attribut mais les deux plus utilisés sont `screen` et `print`.
@@ -669,7 +669,7 @@ Les sélecteurs d'enfants permettent de rendre vos sélecteurs encore plus spéc
 }
 ```
 
-Les sélecteurs se lisent de droite à gauche. Celui-ci peut donc se traduire en français par: sélectionner tous les`li` qui sont des enfants directs de `.mainnav`.
+Les sélecteurs se lisent de droite à gauche. Celui-ci peut donc se traduire en français par: sélectionner tous les `li` qui sont des enfants directs de `.mainnav`.
 
 #### Liens et pseudo-classes
 
