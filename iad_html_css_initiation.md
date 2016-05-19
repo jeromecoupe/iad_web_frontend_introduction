@@ -635,6 +635,18 @@ Les sélecteurs descendants permettent de rendre vos sélecteurs plus spécifiqu
 
 Les sélecteurs se lisent de droite à gauche. Celui-ci peut donc se traduire en français par: sélectionner tous les liens qui sont des descendants de `.mainnav`, à n'importe quel niveau dans l'arbre du document.
 
+#### Sélecteur chainés
+
+Les sélecturs peuvent également être chainés pour ne cibler que les élements auxquels plusieurs classes sont appliquées.
+Le sélecteur suivant ne ciblera que les élements auxquels à la fois les classes `one` et `two` sont appliquées.
+
+```css
+.one.two
+{
+  color: red;
+}
+```
+
 #### Sélecteurs d'enfants
 
 Les sélecteurs d'enfants permettent de rendre vos sélecteurs encore plus spécifiques. Ces sélecteurs s'écrivent en combinant plusieurs sélecteurs avec un `>`.
@@ -700,9 +712,9 @@ Vous pouvez vous faire une idée de la diversité des sélecteurs CSS en consult
 
 Nous aborderons et utiliserons un grand nombre de sélecteurs CSS en détail l'année prochaine et dans la suite de votre cursus.
 
-#### Combiner les sélecteurs
+#### Grouper les sélecteurs
 
-Il est important de noter que, dans le cadre de vos fichiers CSS, vous pouvez appliquer les mêmes propriétés et valeurs à des sélecteurs différents en séparant ces derniers par une virgule. C'est une manière de ne pas vous répéter dans vos fichiers CSS.
+Il est important de noter que, dans le cadre de vos fichiers CSS, vous pouvez appliquer les mêmes propriétés et valeurs à des sélecteurs différents en séparant ces derniers par une virgule. C'est une manière de ne pas vous répéter dans vos fichiers CSS en groupant vos sélecteurs.
 
 ```css
 .message, .infobox
@@ -711,6 +723,40 @@ Il est important de noter que, dans le cadre de vos fichiers CSS, vous pouvez ap
   background:#E6E6E6;
 }
 ```
+
+Cela veut simplement dire que les mêmes rêgles CSSs seront appliquées aux élements de lasses `message` qu'aux éléments de classe `infobox`.
+
+Les sélecteurs de classes peuvent également être chainés pour ne cibler que les élements auxquels plusieurs classes sont appliquées.
+Le sélecteur suivant ne ciblera que les élements auxquels à la fois les classes `one` et `two` sont appliquées.
+
+```css
+.one.two
+{
+  color: red;
+}
+```
+
+Les espaces sont donc importants dans les sélecteurs.
+
+```css
+.one .two
+{
+  /* règles CSS */
+}
+```
+
+Est un sélecteur déscendant qui cible les élements de classes `two` qui sont les descendants (à n'importe quel degré dans le DOM) des élements de classe `one`.
+
+Tandis que
+
+```css
+.one.two
+{
+  /* règles CSS */
+}
+```
+
+Est un sélecteur de clases chainées qui cible les élements auxquels sont appliquées à la fois les classes `.one` et `.two`
 
 ### Cascade et Spécificité
 
