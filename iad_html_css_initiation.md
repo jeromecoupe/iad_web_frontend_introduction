@@ -185,7 +185,7 @@ Encore une fois, HTML ne vous y oblige pas mais placer les valeurs de vos attrib
 
 La meilleure solution consiste à placer tout votre code CSS ou de JavaScript dans des fichiers externes et pas dans votre fichier HTML.
 
-##### Encodage des esperluettes "&" dans les URls
+##### Encodage des esperluettes "&" dans les URLs
 
 Le validateur HTML générera une erreur lorsque un caractère "&" n'est pas encodé dans une URL. Veillez donc à y remédier en encodant cette dernière.
 
@@ -602,7 +602,7 @@ Ces sélecteurs permettent de sélectionner des éléments en fonction de leurs 
 }
 ```
 
-##### Différence entre classes et id
+##### Différence entre classes et ids
 
 - une `id` ne peut être utilisée qu'une et une seule fois par document HTML. Les `id` ne sont donc pas idéales pour créer des systèmes de composants réutilisables.
 - nous verrons plus loin qu'une `id` possède une spécificité très élevée. Elles ne sont donc pas idéales pour créer un système d'éléments combinables.
@@ -635,7 +635,7 @@ Les sélecteurs descendants permettent de rendre vos sélecteurs plus spécifiqu
 
 Les sélecteurs se lisent de droite à gauche. Celui-ci peut donc se traduire en français par: sélectionner tous les liens qui sont des descendants de `.mainnav`, à n'importe quel niveau dans l'arbre du document.
 
-#### Sélecteur chainés
+#### Sélecteurs chainés
 
 Les sélecturs peuvent également être chainés pour ne cibler que les élements auxquels plusieurs classes sont appliquées.
 Le sélecteur suivant ne ciblera que les élements auxquels à la fois les classes `one` et `two` sont appliquées.
@@ -724,19 +724,9 @@ Il est important de noter que, dans le cadre de vos fichiers CSS, vous pouvez ap
 }
 ```
 
-Cela veut simplement dire que les mêmes rêgles CSSs seront appliquées aux élements de lasses `message` qu'aux éléments de classe `infobox`.
+Cela veut simplement dire que les mêmes rêgles CSSs seront appliquées aux élements auxquels la classe `message` est appliquée, et également aux éléments auxquels la classe `infobox` est appliquée.
 
-Les sélecteurs de classes peuvent également être chainés pour ne cibler que les élements auxquels plusieurs classes sont appliquées.
-Le sélecteur suivant ne ciblera que les élements auxquels à la fois les classes `one` et `two` sont appliquées.
-
-```css
-.one.two
-{
-  color: red;
-}
-```
-
-Les espaces sont donc importants dans les sélecteurs.
+Les espaces sont importants dans les sélecteurs.
 
 ```css
 .one .two
@@ -756,7 +746,7 @@ Tandis que
 }
 ```
 
-Est un sélecteur de clases chainées qui cible les élements auxquels sont appliquées à la fois les classes `.one` et `.two`
+Est un sélecteur de clases chaînées qui cible les élements auxquels sont appliquées à la fois les classes `.one` et `.two`
 
 ### Cascade et Spécificité
 
