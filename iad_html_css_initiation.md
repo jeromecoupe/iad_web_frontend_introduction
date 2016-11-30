@@ -12,7 +12,7 @@ A l'aide de ces trois langages et armés d'un simple éditeur de texte, vous pou
 
 Chacun de ces langages possède un rôle bien particulier:
 
-- **HTML** sert à structurer vos contenu de façon sémantique (afin qu'il ait un sens pour les machines comme pour les humains)
+- **HTML** sert à structurer vos contenus de façon sémantique (afin qu'il ait un sens pour les machines comme pour les humains)
 - **CSS** sert à créer des mises en pages (macro) et à appliquer des styles graphiques à vos éléments HTML (micro)
 - **Javascript** sert à ajouter de l'interactivité (des comportements) à vos pages web (depuis de simples animations et effets jusqu'à de la géo-localisation).
 
@@ -469,7 +469,7 @@ En utilisant différents formats et l'élément `<source>`:
 
 Essayons de créer ensemble un document plus élaboré et sémantiquement correct. Je vous propose ici de créer votre CV en HTML.
 
-*Exercice: créer un CV complet en HTML: commencer par écrire votre contenu et ajoutez ensuite les tags HTML. Pour le contenu, vous pouvez vous inspirer de sites comme Linkedin*
+*Exercice: créer un CV complet en HTML: commencer par écrire votre contenu et ajoutez ensuite les tags HTML.*
 
 ## CSS
 
@@ -980,6 +980,7 @@ Il est également possible d'utiliser des images comme fonds pour vos boites. Vo
 - `background-image:url(../img/monimage.png)` pour spécifier l'image à utiliser comme image de fond.
 - `background-position:50% 50%` pour spécifier la position de l'image dans la boite visée. Vous pouvez soit utiliser des unités (pourcentages, pixels, em, rem, etc.) soit des mots-clefs comme `top`, `bottom`, `left` et `right`.  
 - `background-repeat:no-repeat` pour spécifier si l'image va se répéter et comment. Les valeurs possibles sont `no-repeat`, `repeat`, `repeat-x` et `repeat-y`.
+- `background-size` spécifie comment le navigateur doit traiter l'image par rapport au bloc dans lequel elle se trouve. Les valeurs les plus simples à comprendre sont `cover` et `contain`. `cover` spécifie que l'entièreté du bloc conteneur doit être couverte par l'image. `contain` spécifie que l'ensemble de l'image doit toujours être affichée dans les limites du bloc conteneur. Dans les deux cas, l'image sera resizée par le navigateur pour se conformer aux directives reçues.
 
 *Exercice: expérimenter avec les couleurs et les images de fond dans votre fichier de travail*
 
