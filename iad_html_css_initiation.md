@@ -945,7 +945,7 @@ body
 }
 ```
 
-#### différentes façons de spécifier des couleurs
+#### Différentes façons de spécifier des couleurs
 
 Il existe [différentes façons de spécifier les couleurs en CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value): mots-clef, notation hexadécimale, notation rgb, notation rgba sont certaines d'entre elles. La notation rgba se distingue des autres dans la mesure où elle vous permet de spécifier l'opacité d'une couleur.
 
@@ -981,6 +981,68 @@ Il est également possible d'utiliser des images comme fonds pour vos boites. Vo
 - `background-position:50% 50%` pour spécifier la position de l'image dans la boite visée. Vous pouvez soit utiliser des unités (pourcentages, pixels, em, rem, etc.) soit des mots-clefs comme `top`, `bottom`, `left` et `right`.  
 - `background-repeat:no-repeat` pour spécifier si l'image va se répéter et comment. Les valeurs possibles sont `no-repeat`, `repeat`, `repeat-x` et `repeat-y`.
 - `background-size` spécifie comment le navigateur doit traiter l'image par rapport au bloc dans lequel elle se trouve. Les valeurs les plus simples à comprendre sont `cover` et `contain`. `cover` spécifie que l'entièreté du bloc conteneur doit être couverte par l'image. `contain` spécifie que l'ensemble de l'image doit toujours être affichée dans les limites du bloc conteneur. Dans les deux cas, l'image sera resizée par le navigateur pour se conformer aux directives reçues.
+
+Tout cela peut être géré via la propriété courte `background` dont vous trouverez une [explication complète sur MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/background).
+
+```css
+.banner
+{
+  background: #cccccc url(../image/framboises.jpg) 50% 50% / cover no-repeat;
+}
+```
+
+#### Dégradés en CSS
+
+En CSS, les [dégradés](https://css-tricks.com/css3-gradients/) se gèrent via la propriété `background-image`. Commençons par les [gradients linéaires](https://developer.mozilla.org/fr/docs/Web/CSS/linear-gradient).
+
+```css
+.linear-gradient
+{
+  background-image: linear-gradient(blue, white);
+}
+
+.linear-gradient
+{
+  background-image: linear-gradient(to right, blue, white);
+}
+
+.linear-gradient
+{
+  background-image: linear-gradient(to bottom, blue, white);
+}
+
+.linear-gradient
+{
+  background-image: linear-gradient(45deg, blue, white, yellow);
+}
+```
+
+Vous pouvez également spécifier à quel moment chaque couleur doit commencer dans le gradient. Dans l'exemple ci-dessous, le vert commence à 20%, tandis que le jaune commencera pour sa part à 70%.
+
+```css
+.linear-gradient
+{
+  background-image: linear-gradient(to right, blue, green 20%, yellow 70%);
+}
+```
+
+Vous pouvez également faires [gradients radiaux](https://developer.mozilla.org/fr/docs/Web/CSS/radial-gradient):
+
+```css
+.radial-gradient
+{
+  background-image: radial-gradient(circle, blue, green 70%);
+}
+
+.radial-gradient
+{
+  background-image: radial-gradient(ellipse, blue, green 70%);
+}
+```
+
+```css
+background-image: radial-gradient(ellipse farthest-corner at 45px 45px , #00FFFF 0%, rgba(0, 0, 255, 0) 50%, #0000FF 95%);
+```
 
 *Exercice: expérimenter avec les couleurs et les images de fond dans votre fichier de travail*
 
@@ -1101,13 +1163,13 @@ Ces propriétés utilsent encore des [vendor-prefixes](http://alistapart.com/art
 }
 ```
 
-### Images
+### Images et videos
 
 Voyons maintenant deux façons simples de positionner le simages dans votre document.
 
 #### Images et text-align
 
-Par défaut les images sont des élements de type `inline`. La propriété `text-align` va doncc avoir le même effet sur elles que sur du texte.
+Par défaut les images sont des élements de type `inline`. La propriété `text-align` va donc avoir le même effet sur elles que sur du texte.
 
 Pour aligner des images à gauche ou à droite ou pour les centrer dans un bloc conteneur, il suffit d'utiliser cette propriété sur ce dernier.
 
@@ -1139,8 +1201,52 @@ Les propriétés `float:left;` et `float:right;` permettent au texte de contourn
 ```css
 .imgleft
 {
-  float:left;
-  margin:0 0 .5em 1em;
+  float: left;
+  margin: 0 0 .5em 1em;
+}
+
+.imgright
+{
+  float: right;
+  margin:0 1em .5em 0;
+}
+```
+
+#### Images et Videos fluides
+
+Si vous avez des conteneurs spécifiés en pourcentage, il peut être utile de faire en sorte que vous images rétrécissent avec ces derniers. Pour cela, il suffit de spécifier que vos images ne peuvent jamais être plus larges que leur élément parent. Cette technique fonctionne pour les images comme pour les players videos et audio HTML5.
+
+```css
+.imgfluid
+{
+  max-width: 100%;
+}
+```
+
+Une technique différente doit être utilisée pour les `iframe` (Youtube / Vimeo / Soundcloud). Un `iframe` étant une sorte de fenêtre vers un autre site, elle ne se comporte pas comme un element `audio` ou `video`.
+
+```html
+<div class="videocontainer">
+  <iframe src="https://www.youtube.com/embed/IjHgzkQM2Sg"></iframe>
+</div>
+```
+
+```css
+.videocontainer
+{
+  padding-top: 56.25%; /* ratio fluide de 16/9 (100%/16*9=56.25%) */
+  background-color: #000;
+  position: relative; /* contexte de positionnement pour l'iframe */
+}
+
+.videocontainer > iframe
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
 }
 ```
 
