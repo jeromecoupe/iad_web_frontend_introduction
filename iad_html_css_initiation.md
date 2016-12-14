@@ -261,8 +261,10 @@ Les listes ordonnées ou numérotées avec `<ol>`
 
 ```html
 <blockquote>
-<p>If you don't know where you are going, any road will get you there.</p>
-— <cite>Lewis Caroll</cite>
+  <p>If you don't know where you are going, any road will get you there.</p>
+  <footer>
+    <cite>Lewis Caroll</cite>
+  </footer>
 </blockquote>
 ```
 
