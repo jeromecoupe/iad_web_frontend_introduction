@@ -415,8 +415,8 @@ Les tags `<figure>` et `<figcaption>` peuvent être utilisés pour ajouter une l
 
 ```html
 <figure>
-	<img src="img/apple_watch.jpg" alt="apple watch modèle sport" width="200" height="355">
-	<figcaption>
+  <img src="img/apple_watch.jpg" alt="apple watch modèle sport" width="200" height="355">
+  <figcaption>
     <p>L'Apple watch, annoncée le 9 Septembre 2014 par Apple</p>
   </figcaption>
 </figure>
