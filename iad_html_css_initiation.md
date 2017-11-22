@@ -37,14 +37,14 @@ Voici un document HTML minimal:
 ```html
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<title>Hello Internet</title>
-		<meta name="description" content="My first HTML document">
-	</head>
-	<body>
-		<p>Hello Internet</p>
-	</body>
+  <head>
+    <meta charset="utf-8">
+    <title>Hello Internet</title>
+    <meta name="description" content="My first HTML document">
+  </head>
+  <body>
+    <p>Hello Internet</p>
+  </body>
 </html>
 ```
 
@@ -240,10 +240,10 @@ Les listes non ordonnées ou listes à puces avec `<ul>`
 
 ```html
 <ul>
-	<li>farine</li>
-	<li>oeufs</li>
-	<li>sucre</li>
-	<li>lait</li>
+  <li>farine</li>
+  <li>oeufs</li>
+  <li>sucre</li>
+  <li>lait</li>
 </ul>
 ```
 
@@ -251,9 +251,9 @@ Les listes ordonnées ou numérotées avec `<ol>`
 
 ```html
 <ol>
-	<li>premier élément</li>
-	<li>deuxième élément</li>
-	<li>troisième élément</li>
+  <li>premier élément</li>
+  <li>deuxième élément</li>
+  <li>troisième élément</li>
 </ol>
 ```
 
@@ -444,8 +444,7 @@ Le problème est que les différents navigateurs ne supportent pas tous les mêm
 <video poster="posterimage.jpg" controls>
   <source src="videos/videofile.mp4" type="video/mp4">
   <source src="videos/videofile.webm" type="video/webm">
-  <source src="videos/videofile.ogv" type="video/ogg">
-  <p>Votre navigateur ne supporte pas les vidéos intégrées. Vous pouvez néanmoins télécharger la vidéo en format <a href="videos/videofile.mp4">MP4</a>, <a href="videos/videofile.webm">WebM</a> ou <a href="videos/videofile.ogv">OGG</a> et utiliser votre lecteur vidéo préféré.</p>
+  <p>Votre navigateur ne supporte pas les vidéos intégrées. Vous pouvez néanmoins télécharger la vidéo en format <a href="videos/videofile.mp4">MP4</a>, <a href="videos/videofile.webm">WebM</a>.</p>
 </video>
 ```
 
@@ -549,8 +548,8 @@ Les sélecteurs de classes sont le moyen le plus répandu d'appliquer des styles
 
 ```html
 <div class="message">
-	<p>Voici un message</p>
-	<p>Comportant plusieurs paragraphes</p>
+  <p>Voici un message</p>
+  <p>Comportant plusieurs paragraphes</p>
 </div>
 ```
 
@@ -569,8 +568,8 @@ Les sélecteurs de classes sont parmi les plus répandus dans la mesure où:
 
 ```html
 <div class="message message-warning">
-	<p>Voici un message</p>
-	<p>Comportant plusieurs paragraphes</p>
+  <p>Voici un message</p>
+  <p>Comportant plusieurs paragraphes</p>
 </div>
 ```
 
@@ -594,7 +593,7 @@ Ces sélecteurs permettent de sélectionner des éléments en fonction de leurs 
 
 ```html
 <div id="sitefooter">
-	<p>&copy; Jérôme Coupé - la casa productions</p>
+  <p>&copy; Jérôme Coupé - la casa productions</p>
 </div>
 ```
 
@@ -982,7 +981,7 @@ La plupart des programmes de design vous permettent de facilement trouver et con
 Il est également possible d'utiliser des images comme fonds pour vos boites. Vous devez pour cela utiliser les propriétés suivantes:
 
 - `background-image:url(../img/monimage.png)` pour spécifier l'image à utiliser comme image de fond.
-- `background-position:50% 50%` pour spécifier la position de l'image dans la boite visée. Vous pouvez soit utiliser des unités (pourcentages, pixels, em, rem, etc.) soit des mots-clefs comme `top`, `bottom`, `left` et `right`.  
+- `background-position:50% 50%` pour spécifier la position de l'image dans la boite visée. Vous pouvez soit utiliser des unités (pourcentages, pixels, em, rem, etc.) soit des mots-clefs comme `top`, `bottom`, `left` et `right`.
 - `background-repeat:no-repeat` pour spécifier si l'image va se répéter et comment. Les valeurs possibles sont `no-repeat`, `repeat`, `repeat-x` et `repeat-y`.
 - `background-size` spécifie comment le navigateur doit traiter l'image par rapport au bloc dans lequel elle se trouve. Les valeurs les plus simples à comprendre sont `cover` et `contain`. `cover` spécifie que l'entièreté du bloc conteneur doit être couverte par l'image. `contain` spécifie que l'ensemble de l'image doit toujours être affichée dans les limites du bloc conteneur. Dans les deux cas, l'image sera resizée par le navigateur pour se conformer aux directives reçues.
 
@@ -1096,7 +1095,7 @@ body
 ```css
 body
 {
-	font-style:italic;
+  font-style:italic;
 }
 ```
 
@@ -1114,7 +1113,7 @@ body
 ```css
 body
 {
-	text-transform:uppercase;
+  text-transform:uppercase;
 }
 ```
 
@@ -1185,9 +1184,9 @@ Pour aligner des images à gauche ou à droite ou pour les centrer dans un bloc 
 ```css
 .img-container
 {
-	text-align:center;
-	/*text-align:right;*/
-	/*text-align:left;*/
+  text-align:center;
+  /*text-align:right;*/
+  /*text-align:left;*/
 }
 ```
 
