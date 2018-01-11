@@ -468,6 +468,40 @@ En utilisant différents formats et l'élément `<source>`:
 </audio>
 ```
 
+### Formulaires
+
+Les formulaires forment une partie importante des applications web. La balise `<form>` indique le début d'un formulaire. Les deux attributs les plus couramment utilisés sont `action` (l'URI du programme qui traitera les informations entrées dans le formulaire) et `method` qui spécifie si ces données sont envoyées dans l'URL (valeur `get`) ou si elles sont inclues dans le corps du formulaire et envoyées au serveur (valeur `post`).
+
+Voici un [petit guide sur MDN sur l'utilisation des formulaires](https://developer.mozilla.org/fr/docs/Web/Guide/HTML/Formulaires). Il existe de nombreux types de champs et d'attributs qui y sont liés. Les plus courants sont les balises `<label>` ([labels](https://developer.mozilla.org/fr/docs/Web/HTML/Element/label) d'un champ de formulaire) et `<input>` ([champs](https://developer.mozilla.org/fr/docs/Web/HTML/Element/input)).
+
+Pour lier un label à un champ de formulaire, cle bale doit posséder un attribut `for` dont la valeur doit êgtre identique à celle de l'attribut `id` du champ.
+
+Voici un formulaire de base.
+
+```html
+<form action="register.php" method="post">
+  <legend for="userName">Name *</legend>
+  <input type="text" name="user-name" id="userName" required>
+
+  <legend for="userEmail">Email *</legend>
+  <input type="email" name="user-email" id="userEmail" required>
+
+  <input type="submit" value="Send">
+</form>
+```
+
+### Scripts
+
+Avec des sites de plus en plus applicatifs et interactifs, JavaScript est une part importante du web actuel.
+
+Les scripts javascripts sont habituellement des fichiers chargés par le document HTML comme le sont les images, les fichiers CSS et autres assets. Tout comme les CSS, les scripts peuvent être placés directement dans le code HTML. Tout comme avec vos styles CSS, la bonne pratique est de plutôt charger un fichier externe.
+
+Généralement, la balise `<script>` est placée juste avant le tag de fin de `</body>`dans un document HTML afin que les scripts soient chargés après le reste du document HTML (ce qui permet au script de manipuler des élements du DOM) et que le chargement des scripts ne bloquent pas le rendu de la page.
+
+```html
+<script src="js/main.min.js"></script>
+```
+
 ### Exercice: création d'un document de base
 
 Essayons de créer ensemble un document plus élaboré et sémantiquement correct. Je vous propose ici de créer votre CV en HTML.
@@ -561,10 +595,12 @@ Les sélecteurs de classes sont le moyen le plus répandu d'appliquer des styles
 }
 ```
 
-Les sélecteurs de classes sont parmi les plus répandus dans la mesure où:
+Les sélecteurs de classes sont parmi les plus répandus dans la mesure où les classes:
 
-- ils rendent vos styles CSS indépendants de la structure de votre HTML
-- ils peuvent être combinés de manière efficace.
+- rendent vos styles CSS indépendants de la structure de votre HTML
+- peuvent être réutilisées au sein d'un document
+- peuvent être combinées de manière efficace
+- ont une spécificité basse
 
 ```html
 <div class="message message-warning">
