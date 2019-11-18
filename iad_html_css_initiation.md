@@ -24,9 +24,7 @@ HTML (pour Hypertext Markup Language) est, comme son nom l'indique, un langage d
 
 Proposé en 1989 par [Tim Berners-Lee](https://en.wikipedia.org/wiki/Tim_Berners-Lee) et [Robert Calliau](https://en.wikipedia.org/wiki/Robert_Cailliau), le HTML était à la base destiné à permettre aux scientifiques et chercheurs du [CERN](http://home.cern/) de partager leurs documents et découvertes et faire des liens entre les documents qu'ils partageaient.
 
-Le World Wide Web à connu une croissance fulgurante et est aujourd'hui bien plus large que le seul monde de la recherche scientifique. De simples "documents" nous sommes passés à des oeuvres d'art interactives ou à des applications en ligne. Le HTML à évolué avec le web et reste la base de tous les sites que vous utilisez.
-
-Dans le cadre de ce cours, nous utiliserons la dernière version d'HTML (parfois appelée HTML5).
+Le World Wide Web à connu une croissance fulgurante et est aujourd'hui bien plus large que le seul monde de la recherche scientifique. De simples "documents" nous sommes passés à des oeuvres d'art interactives ou à des applications en ligne. Le HTML a évolué avec le web et reste la base de tous les sites que vous utilisez.
 
 ### Structure de document: Emboitement hiérarchisé
 
@@ -40,6 +38,7 @@ Voici un document HTML minimal:
   <head>
     <meta charset="utf-8">
     <title>Hello Internet</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="My first HTML document">
   </head>
   <body>
@@ -50,15 +49,19 @@ Voici un document HTML minimal:
 
 *Exercice: visualiser la structure du DOM (Document Object Model) avec les outils de développement dans Chrome (onglet elements)*
 
-### Doctype, character encoding, language
+### Doctype, character encoding, langage
 
 La première ligne du document est ce que l'on appelle le doctype. Comme le nom l'indique, cette ligne spécifie que le document est de type HTML. Cette ligne est nécessaire pour un rendu standardisé dans les différents navigateurs.
 
 L'attribut `lang`du tag `<html>` permet de spécifier la langue dans laquelle le document est écrit. Cet attribut est particulièrement important pour le référencement ainsi que pour la synthèse vocale par exemple.
 
-Vient ensuite le `charset` qui indique au navigateur quel est l'encodage de caractères utilisé par le document. De façon générale, le charset recommandé est "UTF-8" qui permet de gérer la plupart des charactères, y compris des charactères un peu plus exotiques pour nos yeux occidentaux (chinois, cyrillique, etc).
+Vient ensuite le `charset` qui indique au navigateur quel est l'encodage de caractères utilisé par le document. De façon générale, le charset recommandé est "UTF-8" qui permet de gérer la plupart des caractères, y compris des caractères un peu plus exotiques pour nos yeux occidentaux (chinois, cyrillique, etc).
 
-### Document sructure: `<head>` and `<body>`
+### <meta> viewport
+
+Ce tag demande au navigateur d'afficher le document en considérant que la largeur de celui-ci est égale à la largeur de l'appareil utilisé, avec un niveau de zoom de 1 (pas de zoom).
+
+### Document structure: `<head>` and `<body>`
 
 Tout document HTML est séparé en deux parties distinctes: `<head>` et `<body>`
 
@@ -185,7 +188,7 @@ Encore une fois, HTML ne vous y oblige pas mais placer les valeurs de vos attrib
 
 La meilleure solution consiste à placer tout votre code CSS ou de JavaScript dans des fichiers externes et pas dans votre fichier HTML.
 
-##### Encodage des esperluettes "&" dans les URLs
+##### Encodage des caractères "&" dans les URLs
 
 Le validateur HTML générera une erreur lorsque un caractère "&" n'est pas encodé dans une URL. Veillez donc à y remédier en encodant cette dernière.
 
@@ -370,10 +373,8 @@ Les liens peuvent également renvoyer vers une adresse email, il suffit que cett
 Il est également possible d'établir des liens vers d'autres parties d'un même document, par exemple pour renvoyer les utilisateurs en haut de page ou vers une section bien définie dans un document très long.
 
 ```html
-<h1 id="top"></h1>
-...
+<h1 id="top">Titre de la page</h1>
 ... beaucoup de contenu ...
-...
 <a href="#top">Retour en haut de page</a>
 ```
 
@@ -474,29 +475,33 @@ Les formulaires forment une partie importante des applications web. La balise `<
 
 Voici un [petit guide sur MDN sur l'utilisation des formulaires](https://developer.mozilla.org/fr/docs/Web/Guide/HTML/Formulaires). Il existe de nombreux types de champs et d'attributs qui y sont liés. Les plus courants sont les balises `<label>` ([labels](https://developer.mozilla.org/fr/docs/Web/HTML/Element/label) d'un champ de formulaire) et `<input>` ([champs](https://developer.mozilla.org/fr/docs/Web/HTML/Element/input)).
 
-Pour lier un label à un champ de formulaire, cle bale doit posséder un attribut `for` dont la valeur doit êgtre identique à celle de l'attribut `id` du champ.
+Pour lier un label à un champ de formulaire, le label doit posséder un attribut `for` dont la valeur doit être identique à celle de l'attribut `id` du champ.
 
 Voici un formulaire de base.
 
 ```html
 <form action="register.php" method="post">
-  <legend for="userName">Name *</legend>
-  <input type="text" name="user-name" id="userName" required>
-
-  <legend for="userEmail">Email *</legend>
-  <input type="email" name="user-email" id="userEmail" required>
-
-  <input type="submit" value="Send">
+	<div>
+	  <legend for="userName">Name *</legend>
+	  <input type="text" name="user-name" id="userName" required>
+	</div>
+	<div>
+	  <legend for="userEmail">Email *</legend>
+	  <input type="email" name="user-email" id="userEmail" required>
+	</div>
+	<div>
+	  <input type="submit" value="Send">
+  </div>
 </form>
 ```
 
 ### Scripts
 
-Avec des sites de plus en plus applicatifs et interactifs, JavaScript est une part importante du web actuel.
+Avec des sites de plus en plus orientés vers des applications et interactifs, JavaScript est une part importante du web actuel.
 
 Les scripts javascripts sont habituellement des fichiers chargés par le document HTML comme le sont les images, les fichiers CSS et autres assets. Tout comme les CSS, les scripts peuvent être placés directement dans le code HTML. Tout comme avec vos styles CSS, la bonne pratique est de plutôt charger un fichier externe.
 
-Généralement, la balise `<script>` est placée juste avant le tag de fin de `</body>`dans un document HTML afin que les scripts soient chargés après le reste du document HTML (ce qui permet au script de manipuler des élements du DOM) et que le chargement des scripts ne bloquent pas le rendu de la page.
+Généralement, la balise `<script>` est placée juste avant le tag de fin de `</body>`dans un document HTML afin que les scripts soient chargés après le reste du document HTML (ce qui permet au script de manipuler des éléments du DOM) et que le chargement des scripts ne bloquent pas le rendu de la page.
 
 ```html
 <script src="js/main.min.js"></script>
@@ -542,15 +547,13 @@ Les règles CSS sont composées de sélecteurs, de propriétés et de valeurs.
 *Exercice: changer la couleur de fond de votre page*
 
 ```css
-body
-{
+body {
   background-color:red;
 }
 ```
 
 ```css
-body
-{
+body {
   background-color:red;
   color:blue;
 }
@@ -563,15 +566,13 @@ Il existe différents types de sélecteurs CSS, nous en verrons quelques exemple
 Les sélecteurs les plus simples à comprendre sont les sélecteurs de type. Ces sélecteurs permettent de cibler tous les éléments d'un certain type présents dans le document HTML. Tout élément HTML peut donc être ciblé par un sélecteur de type.
 
 ```css
-body
-{
+body {
   background:red;
 }
 ```
 
 ```css
-p
-{
+p {
   color:blue;
 }
 ```
@@ -588,8 +589,7 @@ Les sélecteurs de classes sont le moyen le plus répandu d'appliquer des styles
 ```
 
 ```css
-.message
-{
+.message {
   border:1px solid #cacaca;
   background:#E4E4E4;
 }
@@ -610,14 +610,12 @@ Les sélecteurs de classes sont parmi les plus répandus dans la mesure où les 
 ```
 
 ```css
-.message
-{
+.message {
   border:1px solid #cacaca;
   background:#E4E4E4;
 }
 
-.message-warning
-{
+.message-warning {
   border-color:#D35400;
   background:#F1EAE6;
 }
@@ -634,8 +632,7 @@ Ces sélecteurs permettent de sélectionner des éléments en fonction de leurs 
 ```
 
 ```css
-#sitefooter
-{
+#sitefooter {
   background:#242424;
   color:#F9F9F9;
 }
@@ -666,8 +663,7 @@ Les sélecteurs descendants permettent de rendre vos sélecteurs plus spécifiqu
 ```
 
 ```css
-.mainnav a
-{
+.mainnav a {
   color:red;
 }
 ```
@@ -676,12 +672,11 @@ Les sélecteurs se lisent de droite à gauche. Celui-ci peut donc se traduire en
 
 #### Sélecteurs chainés
 
-Les sélecturs peuvent également être chainés pour ne cibler que les élements auxquels plusieurs classes sont appliquées.
-Le sélecteur suivant ne ciblera que les élements auxquels à la fois les classes `one` et `two` sont appliquées.
+Les sélecteurs peuvent également être chainés pour ne cibler que les éléments auxquels plusieurs classes sont appliquées.
+Le sélecteur suivant ne ciblera que les éléments auxquels à la fois les classes `one` et `two` sont appliquées.
 
 ```css
-.one.two
-{
+.one.two {
   color: red;
 }
 ```
@@ -702,8 +697,7 @@ Les sélecteurs d'enfants permettent de rendre vos sélecteurs encore plus spéc
 ```
 
 ```css
-.mainnav > li
-{
+.mainnav > li {
   color:red;
 }
 ```
@@ -715,28 +709,23 @@ Les sélecteurs se lisent de droite à gauche. Celui-ci peut donc se traduire en
 Certains [sélecteurs de la famille des pseudo-classes](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes) permettent de cibler les différents états de vos liens.
 
 ```css
-a:link
-{
+a:link {
   text-decoration:underline;
 }
 
-a:visited
-{
+a:visited {
   color: purple;
 }
 
-a:hover
-{
+a:hover {
   text-decoration:none;
 }
 
-a:focus
-{
+a:focus {
   color:green;
 }
 
-a:active
-{
+a:active {
   color:red;
 }
 ```
@@ -756,36 +745,33 @@ Nous aborderons et utiliserons un grand nombre de sélecteurs CSS en détail l'a
 Il est important de noter que, dans le cadre de vos fichiers CSS, vous pouvez appliquer les mêmes propriétés et valeurs à des sélecteurs différents en séparant ces derniers par une virgule. C'est une manière de ne pas vous répéter dans vos fichiers CSS en groupant vos sélecteurs.
 
 ```css
-.message, .infobox
-{
+.message, .infobox {
   border:1px solide #CCC;
   background:#E6E6E6;
 }
 ```
 
-Cela veut simplement dire que les mêmes rêgles CSSs seront appliquées aux élements auxquels la classe `message` est appliquée, et également aux éléments auxquels la classe `infobox` est appliquée.
+Cela veut simplement dire que les mêmes règles CSSs seront appliquées aux éléments auxquels la classe `message` est appliquée, et également aux éléments auxquels la classe `infobox` est appliquée.
 
 Les espaces sont importants dans les sélecteurs.
 
 ```css
-.one .two
-{
+.one .two {
   /* règles CSS */
 }
 ```
 
-Est un sélecteur déscendant qui cible les élements de classes `two` qui sont les descendants (à n'importe quel degré dans le DOM) des élements de classe `one`.
+Est un sélecteur descendant qui cible les éléments de classes `two` qui sont les descendants (à n'importe quel degré dans le DOM) des éléments de classe `one`.
 
 Tandis que
 
 ```css
-.one.two
-{
+.one.two {
   /* règles CSS */
 }
 ```
 
-Est un sélecteur de clases chaînées qui cible les élements auxquels sont appliquées à la fois les classes `.one` et `.two`
+Est un sélecteur de classes chaînées qui cible les éléments auxquels sont appliquées à la fois les classes `.one` et `.two`
 
 ### Cascade et Spécificité
 
@@ -796,21 +782,18 @@ Cascade et spécificité sont les deux mécanismes par lesquels un navigateur d�
 Les règles CSS s'appliquent en cascade, en commençant pas les règles spécifiées en début de fichier et en terminant par les dernières. En cas de conflit, le navigateur applique la dernière règle spécifiée dans le document.
 
 ```css
-body
-{
+body {
   color:red;
   color:green;
 }
 ```
 
 ```css
-p
-{
+p {
   background:red;
 }
 
-p
-{
+p {
   background:green;
 }
 ```
@@ -820,13 +803,11 @@ p
 Le calcul de la spécificité prend le pas sur la cascade. Vos sélecteurs les plus spécifiques prendront le pas sur les sélecteurs les moins spécifiques, quel que soit l'ordre de la cascade.
 
 ```css
-body p
-{
+body p {
   background:green;
 }
 
-p
-{
+p {
   background:red;
 }
 ```
@@ -855,13 +836,11 @@ La spécificité de ce sélecteur est de 0-1-2.
 Une directive `!important` permet de passer outre la spécificité. A utiliser le moins possible en production.
 
 ```css
-body p
-{
+body p {
   background:green;
 }
 
-p
-{
+p {
   background:red !important;
 }
 ```
@@ -875,25 +854,23 @@ Sans entrer dans le détail, les dimensions de ces boites peuvent être spécifi
 - La largeur totale d’une boîte se calcule de la façon suivante : largeur du contenu (width) + padding + borders + margin.
 - La hauteur totale d’une boîte se calcule de la façon suivante : hauteur du contenu (height) + padding + borders + margin.
 
-Les dimensions de ces boites peuvent être spécifiées avec des unités relatives (pourcentages et em) ou absolues (pixel). Etant donné la grande diversité des tailles et résolution d'écrans, les dimensions absolues sont de moins en moins utilisées.
+Les dimensions de ces boites peuvent être spécifiées avec des unités relatives (pourcentages et `em`) ou absolues (pixels). Etant donné la grande diversité des tailles et résolution d'écrans, les dimensions absolues sont de moins en moins utilisées.
 
-- `em` est généralement utilisé pour tout ce qui a trait à la typographie (1em étant la taille d'une boite de caractère de la police en cours.)
+- `em` est généralement utilisé pour tout ce qui a trait à la typographie (`1em` étant la taille d'une boite de caractère de la police en cours.)
 - `%` est généralement utilisé pour ce qui concerne la largeur des boites
 
 Ces dimensions, lorsqu'elles sont spécifiées en valeurs relatives, sont toujours relatives au block conteneur de la boite visée. Par exemple, un `<div>` ayant une largeur de 50% placé dans un `<div>` ayant lui même une largeur de 50% ne fera que 25% de la largeur totale de la page.
 
 En ce qui concerne la hauteur des boites, la bonne pratique en CSS consiste à ne pas spécifier la hauteur des éléments et à laisser leur contenu dicter leur hauteur. C'est important pour l'accessibilité et permet d'avantage de flexibilité.
 
-Les propriétés `width`et `height` ne prennent qu'une seule valeur spécifiées en pourcentages, en pixels ou en em.
+Les propriétés `width`et `height` ne prennent qu'une seule valeur spécifiées en pourcentages, en pixels ou en `em`.
 
 ```css
-.content-primary
-{
+.content-primary {
   width:66%;
 }
 
-.content-primary
-{
+.content-primary {
   width:750px;
 }
 ```
@@ -903,15 +880,13 @@ La propriété `border`peut soit être spécifiée en une seule propriété cour
 Il est également possible de spécifier les caractéristiques de chaque border individuellement en utilisant les propriétés: `border-top`, `border-bottom`, `border-left`, `border-right`,
 
 ```css
-body
-{
+body {
   margin:0;
   padding:0;
   border:1em solid red;
 }
 
-body
-{
+body {
   border-top:3px double aqua;
 }
 ```
@@ -921,36 +896,30 @@ Les propriétés `margin` et `padding` sont spécifiées à l'aide 4 valeurs dis
 Si des valeurs sont manquantes, le navigateur les complètes automatiquement en doublant les valeurs deux par deux (top et bottom, left et right). Ces propriétés courtes peuvent également être spécifiées séparément à l'aide de `margin-top`, `margin-bottom`, `margin-left` et `margin-right`.
 
 ```css
-body
-{
+body {
   margin:0;
 }
 
-.myclass
-{
+.myclass {
   padding:2em 0;
   /* same as padding: 2em 0 2em 0 */
 }
 
-.myclass
-{
+.myclass {
  padding-top:5%;
 }
 
-.myclass
-{
+.myclass {
   margin:2em 0 1em;
   /* same as margin: 2em 0 1em 0 */
 }
 
-.myclass
-{
+.myclass {
   margin-left:1em;
   margin-bottom:1em;
 }
 
-.myclass
-{
+.myclass {
   padding-right:20px;
   padding-left:1em;
   padding-bottom:2em;
@@ -960,8 +929,7 @@ body
 Des marges latérales automatiques combinées à une largeur (`width`) spécifiée sont également utilisées comme moyen simple de centrer un bloc dans une page.
 
 ```css
-.mypage
-{
+.mypage {
   width:80%;
   margin:0 auto;
 }
@@ -974,8 +942,7 @@ Des marges latérales automatiques combinées à une largeur (`width`) spécifi�
 Les propriétés `color` et `background` vous permettent de changer les couleurs de vos textes ou les fonds appliqués à vos boites.
 
 ```css
-body
-{
+body {
   magin:0;
   padding:2em;
   background:#F0F0F0;
@@ -989,23 +956,19 @@ body
 Il existe [différentes façons de spécifier les couleurs en CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value): mots-clef, notation hexadécimale, notation rgb, notation rgba sont certaines d'entre elles. La notation rgba se distingue des autres dans la mesure où elle vous permet de spécifier l'opacité d'une couleur.
 
 ```css
-.myclass
-{
+.myclass {
   color:red;
 }
 
-.myclass
-{
+.myclass {
   color:#ff0000;
 }
 
-.myclass
-{
+.myclass {
   color:rgb(255,0,0);
 }
 
-.myclass
-{
+.myclass {
   color:rgba(255,0,0,0.5);
 }
 ```
@@ -1024,8 +987,7 @@ Il est également possible d'utiliser des images comme fonds pour vos boites. Vo
 Tout cela peut être géré via la propriété courte `background` dont vous trouverez une [explication complète sur MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/background).
 
 ```css
-.banner
-{
+.banner {
   background: #cccccc url(../image/framboises.jpg) 50% 50% / cover no-repeat;
 }
 ```
@@ -1035,23 +997,19 @@ Tout cela peut être géré via la propriété courte `background` dont vous tro
 En CSS, les [dégradés](https://css-tricks.com/css3-gradients/) se gèrent via la propriété `background-image`. Commençons par les [gradients linéaires](https://developer.mozilla.org/fr/docs/Web/CSS/linear-gradient).
 
 ```css
-.linear-gradient
-{
+.linear-gradient {
   background-image: linear-gradient(blue, white);
 }
 
-.linear-gradient
-{
+.linear-gradient {
   background-image: linear-gradient(to right, blue, white);
 }
 
-.linear-gradient
-{
+.linear-gradient {
   background-image: linear-gradient(to bottom, blue, white);
 }
 
-.linear-gradient
-{
+.linear-gradient {
   background-image: linear-gradient(45deg, blue, white, yellow);
 }
 ```
@@ -1059,22 +1017,19 @@ En CSS, les [dégradés](https://css-tricks.com/css3-gradients/) se gèrent via 
 Vous pouvez également spécifier à quel moment chaque couleur doit commencer dans le gradient. Dans l'exemple ci-dessous, le vert commence à 20%, tandis que le jaune commencera pour sa part à 70%.
 
 ```css
-.linear-gradient
-{
+.linear-gradient {
   background-image: linear-gradient(to right, blue, green 20%, yellow 70%);
 }
 ```
 
-Vous pouvez également faires [gradients radiaux](https://developer.mozilla.org/fr/docs/Web/CSS/radial-gradient):
+Vous pouvez également utiliser des [gradients radiaux](https://developer.mozilla.org/fr/docs/Web/CSS/radial-gradient):
 
 ```css
-.radial-gradient
-{
+.radial-gradient {
   background-image: radial-gradient(circle, blue, green 70%);
 }
 
-.radial-gradient
-{
+.radial-gradient {
   background-image: radial-gradient(ellipse, blue, green 70%);
 }
 ```
@@ -1092,8 +1047,7 @@ CSS vous offre également de nombreux outils pour contrôler les aspects typogra
 `font-family`: permet de gérer la police utilisée. S'utilise en général avec plusieurs fontes ([font-stack](http://www.smashingmagazine.com/2009/09/22/complete-guide-to-css-font-stacks/)) de façon à avoir des polices de rechange au cas où l'une ou plsieurs d'entre-elles ne sont pas disponibles sur l'ordinateur client.
 
 ```css
-h1, h2, h3, h4, h5, h6
-{
+h1, h2, h3, h4, h5, h6 {
   font-family: Helvetica, Arial, sans-serif;
 }
 ```
@@ -1101,18 +1055,16 @@ h1, h2, h3, h4, h5, h6
 `font-size`: permet de gérer la taille de police. Peut être spécifiée en unités absolues (px) ou relatives (pourcentages, em, etc)
 
 ```css
-h1
-{
+h1 {
   font-size:200%;
 }
 ```
 
-`font-weight`: permet de spécifier la gaisse de la police. Peut être spécifiée à l'aide de mots-clefs (normal, bold) ou de valeures numériques (400, 600, 800).
+`font-weight`: permet de spécifier la graisse de la police. Peut être spécifiée à l'aide de mots-clefs (normal, bold) ou de valeurs numériques (400, 600, 800).
 
 
 ```css
-h1
-{
+h1 {
   font-weight:600;
 }
 ```
@@ -1120,8 +1072,7 @@ h1
 `line-height`: permet de spécifier une hauteur de ligne pour vos textes. C'est une des rares propriété qui ne prend pas d'unité en CSS. La hauteur de ligne est relative à la taille de police.
 
 ```css
-body
-{
+body {
   line-height:1.5;
 }
 ```
@@ -1129,26 +1080,23 @@ body
 `font-style`: permet de gérer l'aspect d'une police. Les valeur les plus utilisées sont `italic` et `normal`
 
 ```css
-body
-{
+body {
   font-style:italic;
 }
 ```
 
-Toutes ces propriétés peuvent être utilisées dans le cadre d'une seule propriét courte: `font`.
+Toutes ces propriétés peuvent être utilisées dans le cadre d'une seule propriété courte: `font`.
 
 ```css
-body
-{
+body {
   font:normal italic 100%/1.5 Helvetica, Arial, sans-serif;
 }
 ```
 
-`text-transform`: permet de gérer les transformations à appliquer sur une police. Les valeurs les plus utiisées sont: `capitalize`, `uppercase`, `lowercase` et `none`.
+`text-transform`: permet de gérer les transformations à appliquer sur une police. Les valeurs les plus utilisées sont: `capitalize`, `uppercase`, `lowercase` et `none`.
 
 ```css
-body
-{
+body {
   text-transform:uppercase;
 }
 ```
@@ -1172,8 +1120,7 @@ Nous nous concentrerons ici sur l'utilisation de Google Fonts, un service gratui
 Vous pouvez utiliser CSS pour disposer vos textes en colonnes de manière dynamique en utilisant les [colonnes en CSS3](https://developer.mozilla.org/fr/docs/Web/CSS/Colonnes_CSS3). Pour ce faire, vous devrez utiliser les propriétés suivantes: `column-count`, `column-gap`, `coluln-rule` et `column-width`. Les navigateurs ne comprenant pas ces propriétés vont simplement les ignorer.
 
 ```css
-.columns2
-{
+.columns2 {
   column-count: 2;
   column-gap: 40px;
   column-rule: 1px solid red;
@@ -1183,17 +1130,15 @@ Vous pouvez utiliser CSS pour disposer vos textes en colonnes de manière dynami
 ou
 
 ```css
-.columns-small
-{
+.columns-small {
   column-width: 20em;
 }
 ```
 
-Ces propriétés utilsent encore des [vendor-prefixes](http://alistapart.com/article/the-vendor-prefix-predicament-alas-eric-meyer-interviews-tantek-celik), c'est à dire les préfixes utilisés par les moteurs de rendu des navigateurs pour tester des propriétés alors qu'elles ne sont pas encore implémentées. La règle est ici d'ajouter tous les vendors prefixes **avant** la règle CSS finale. De cette façon, une fois l'implémentation terminée, c'est la dernière règle non-préfixée qui va être utilisée par le navigateur (cascade).
+Ces propriétés utilisent encore des [vendor-prefixes](http://alistapart.com/article/the-vendor-prefix-predicament-alas-eric-meyer-interviews-tantek-celik), c'est à dire les préfixes utilisés par les moteurs de rendu des navigateurs pour tester des propriétés alors qu'elles ne sont pas encore implémentées. La règle est ici d'ajouter tous les vendors prefixes **avant** la règle CSS finale. De cette façon, une fois l'implémentation terminée, c'est la dernière règle non-préfixée qui va être utilisée par le navigateur (cascade).
 
 ```css
-.columns-small
-{
+.columns-small {
   -webkit-column-width: 20em; /* pour safari */
      -moz-column-width: 20em; /* pour mozilla */
       -ms-column-width: 20em; /* pour microsoft IE */
@@ -1204,11 +1149,11 @@ Ces propriétés utilsent encore des [vendor-prefixes](http://alistapart.com/art
 
 ### Images et videos
 
-Voyons maintenant deux façons simples de positionner le simages dans votre document.
+Voyons maintenant deux façons simples de positionner les images dans votre document.
 
 #### Images et text-align
 
-Par défaut les images sont des élements de type `inline`. La propriété `text-align` va donc avoir le même effet sur elles que sur du texte.
+Par défaut les images sont des éléments de type `inline`. La propriété `text-align` va donc avoir le même effet sur elles que sur du texte.
 
 Pour aligner des images à gauche ou à droite ou pour les centrer dans un bloc conteneur, il suffit d'utiliser cette propriété sur ce dernier.
 
@@ -1218,8 +1163,7 @@ Pour aligner des images à gauche ou à droite ou pour les centrer dans un bloc 
 
 
 ```css
-.img-container
-{
+.img-container {
   text-align:center;
   /*text-align:right;*/
   /*text-align:left;*/
@@ -1238,14 +1182,12 @@ Les propriétés `float:left;` et `float:right;` permettent au texte de contourn
 ```
 
 ```css
-.imgleft
-{
+.imgleft {
   float: left;
   margin: 0 0 .5em 1em;
 }
 
-.imgright
-{
+.imgright {
   float: right;
   margin:0 1em .5em 0;
 }
@@ -1256,13 +1198,12 @@ Les propriétés `float:left;` et `float:right;` permettent au texte de contourn
 Si vous avez des conteneurs spécifiés en pourcentage, il peut être utile de faire en sorte que vous images rétrécissent avec ces derniers. Pour cela, il suffit de spécifier que vos images ne peuvent jamais être plus larges que leur élément parent. Cette technique fonctionne pour les images comme pour les players videos et audio HTML5.
 
 ```css
-.imgfluid
-{
+.imgfluid {
   max-width: 100%;
 }
 ```
 
-Une technique différente doit être utilisée pour les `iframe` (Youtube / Vimeo / Soundcloud). Un `iframe` étant une sorte de fenêtre vers un autre site, elle ne se comporte pas comme un element `audio` ou `video`.
+Une technique différente doit être utilisée pour les `iframe` (Youtube / Vimeo / Soundcloud). Un `iframe` étant une sorte de fenêtre vers un autre site, elle ne se comporte pas comme un élément `audio` ou `video`.
 
 ```html
 <div class="videocontainer">
@@ -1271,15 +1212,13 @@ Une technique différente doit être utilisée pour les `iframe` (Youtube / Vime
 ```
 
 ```css
-.videocontainer
-{
+.videocontainer {
   padding-top: 56.25%; /* ratio fluide de 16/9 (100%/16*9=56.25%) */
   background-color: #000;
   position: relative; /* contexte de positionnement pour l'iframe */
 }
 
-.videocontainer > iframe
-{
+.videocontainer > iframe {
   position: absolute;
   top: 0;
   left: 0;
