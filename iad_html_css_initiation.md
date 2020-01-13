@@ -388,11 +388,47 @@ Avant l'avènement de HTML5 et des nouveaux tags sémantiques que nous allons vo
 
 Le tag `<span>` peut être vu comme l'équivalent "inline" du `<div>`, permettant de créer des groupes plus petits auxquels des styles peuvent être appliqués. `<span>`est également neutre, avec une valeur sémantique proche de zéro.
 
-### Un peu plus de sémantique avec des nouveaux éléments HTML
+### Un peu plus de sémantique
 
-La dernière version de HTML (HTML5) introduit une série de nouveaux éléments sémantiques visant à permettre une meilleure définition des contenus des pages Internet: `<header>`, `<section>`, `<article>`, `<aside>`, `<footer>`, `<nav>` et `<main>`.
+HTML comprend également quelques éléments sémantiques visant à permettre une meilleure définition des contenus des pages Internet.
 
-Ces nouveaux éléments sont directement liés au concept de document outline. Nous les aborderons en détail l'année prochaine. Si le sujet vous intéresse, je vous recommande [les articles de HTML5 Doctor sur le sujet](http://html5doctor.com/element-index/) ou votre fidèle [Mozilla Developer Network](https://developer.mozilla.org/en/docs/Web/Guide/HTML/HTML5/HTML5_element_list).
+#### `<nav>`
+
+Cet élément est utilisé pour marquer les interfaces de navigation du site ou de la page. Il s’agit d’une section de la page contenant les liens utilisés pour la navigation. Tous les groupes de liens ne sont pas forcément des interfaces de navigation, seuls ces derniers peuvent être marqués à l’aide de l’élément `<nav>`.
+
+#### `<article>`
+
+Est utilisé pour marquer une partie d'un document, d'une page, d'un site qui fait sens prise indépendamment: un post sur un forum, un article de magazine ou de journal, un billet sur un blog, un commentaire soumis par un utilisateur ou n'importe quel autre élément de contenu indépendant. Une bonne question à se poser pour l’utilisation d’article est: pourriez vous inclure ce contenu dans un flux RSS (ou un mur Facebook). Ce contenu ferait-il sens pris isolément? Si oui, il s’agit probablement d’un bon candidat.
+
+##### `<section>`
+
+Section générique d'un document ou d'une application. Section sert à marquer un groupement thématique de contenus, typiquement il comporte un `<header>` et parfois un `<footer>`. Exemples: les chapitres d'un livre, les sections d'une thèse, les différentes sections d'une page d'accueil: introduction, news, portfolio, information de contact, etc. Attention à ne pas utiliser section en lieu et place de `<div>` ou `<article>`, par exemple pour séparer le contenu principal d'une page de son contenu secondaire. A part de rares exceptions, n'utilisez pas `<section>` si cet élément ne possède pas naturellement un titre. [Un article détaillé sur le sujet est disponible sur HTML5 Doctor](http://html5doctor.com/the-section-element/).
+
+##### `<aside>`
+
+Est utilisé pour marquer du contenu qui est lié de façon indirecte au parent de l'élément `<aside>`. Une bonne question à se poser pour l’utilisation de ce élément: pourriez-vous le supprimer du document sans que celui-ci perde un aspect important de son contenu.
+
+##### `<main>`
+
+L’élément `<main>` représente le contenu principal d’un document. Il ne peut être utilisé qu’une seule fois au sein d’un document HTML et ne peut jamais être le descendant de `<article>`, `<aside>`, `<footer>`, `<header>` ou `<nav>`.
+
+##### `<header>`
+
+Typiquement utilisé pour contenir les métas informations (titre, logo, date de publication, etc) d’un document ou d’une partie d’un document. L'élément `<header>` peut être utilisé plusieurs fois dans le cadre d'un même document. Suivant le contexte dans lequel il est placé (`<body>`, `<article>`, `<section>`, etc.) il aura un statut différent.
+
+##### `<footer>`
+
+Typiquement utilisé pour contenir les métas informations (auteur, lien vers des documents liés) d’un document ou d’une partie de document. L'élément `<footer>` peut être utilisé plusieurs fois dans le cadre d'un même document. Suivant le contexte dans lequel il est placé (`<body>`, `<article>`, `<section>`, etc.) il aura un statut différent. Notons que les coordonnées de contact mentionnées dans un `<footer>` devraient êtres marqués à l'aide de l'élément `<address>`
+
+##### `<time>`
+
+Est utilisé pour marquer des données temporelles (dates, heures etc.) de façon à ce qu'elles soient lisibles et exploitables par des machines ou programmes. Un attribut `datetime` peut également être ajouté afin de préciser les choses si le texte marqué n'est pas une date grégorienne valide.
+
+```html
+<time datetime="2007-10-05">5 Octobre</time>
+<p>I usually have a snack at <time datetime="2019-05-15T16:00">16:00</time>.</p>
+<p>posted on <time datetime="2009-04-12">12 April 2009</time> by Jérôme Coupé</p>
+```
 
 ### Media
 
