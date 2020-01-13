@@ -1080,7 +1080,7 @@ background-image: radial-gradient(ellipse farthest-corner at 45px 45px , #00FFFF
 
 CSS vous offre également de nombreux outils pour contrôler les aspects typographiques de votre design. Nous verrons ici les propriétés les plus utilisées: `font-family`, `font-size`, `font-weight` et `line-height`. Nous aborderons également les propriétés `font-variant` et `font-style`.
 
-`font-family`: permet de gérer la police utilisée. S'utilise en général avec plusieurs fontes ([font-stack](http://www.smashingmagazine.com/2009/09/22/complete-guide-to-css-font-stacks/)) de façon à avoir des polices de rechange au cas où l'une ou plsieurs d'entre-elles ne sont pas disponibles sur l'ordinateur client.
+`font-family`: permet de gérer la police utilisée. S'utilise en général avec plusieurs fontes ([font-stack](http://www.smashingmagazine.com/2009/09/22/complete-guide-to-css-font-stacks/)) de façon à avoir des polices de rechange au cas où l'une ou plusieurs d'entre-elles ne sont pas disponibles sur l'ordinateur client.
 
 ```css
 h1, h2, h3, h4, h5, h6 {
@@ -1153,7 +1153,7 @@ Nous nous concentrerons ici sur l'utilisation de Google Fonts, un service gratui
 
 ### Texte en colonnes avec CSS
 
-Vous pouvez utiliser CSS pour disposer vos textes en colonnes de manière dynamique en utilisant les [colonnes en CSS3](https://developer.mozilla.org/fr/docs/Web/CSS/Colonnes_CSS3). Pour ce faire, vous devrez utiliser les propriétés suivantes: `column-count`, `column-gap`, `coluln-rule` et `column-width`. Les navigateurs ne comprenant pas ces propriétés vont simplement les ignorer.
+Vous pouvez utiliser CSS pour disposer vos textes en colonnes de manière dynamique en utilisant les [colonnes en CSS3](https://developer.mozilla.org/fr/docs/Web/CSS/Colonnes_CSS3). Pour ce faire, vous devrez utiliser les propriétés suivantes: `column-count`, `column-gap`, `column-rule` et `column-width`. Les navigateurs ne comprenant pas ces propriétés vont simplement les ignorer.
 
 ```css
 .columns2 {
