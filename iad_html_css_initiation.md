@@ -627,7 +627,7 @@ Les sélecteurs de classes sont le moyen le plus répandu d'appliquer des styles
 ```css
 .message {
   border:1px solid #cacaca;
-  background:#E4E4E4;
+  background-color:#E4E4E4;
 }
 ```
 
@@ -648,12 +648,12 @@ Les sélecteurs de classes sont parmi les plus répandus dans la mesure où les 
 ```css
 .message {
   border:1px solid #cacaca;
-  background:#E4E4E4;
+  background-color:#E4E4E4;
 }
 
 .message-warning {
   border-color:#D35400;
-  background:#F1EAE6;
+  background-color:#F1EAE6;
 }
 ```
 
