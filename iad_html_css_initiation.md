@@ -4,11 +4,11 @@ Nous allons aborder ici les 3 langages principaux utilisés pour créer les page
 
 Lorsque vous naviguez sur Internet, votre navigateur interprète du code HTML / CSS / Javascript pour générer et afficher les pages avec lesquelles vous interagissez.
 
-*Exemple: view source sur gmail, view source sur le site de l'IAD*
+_Exemple: view source sur gmail, view source sur le site de l'IAD_
 
 A l'aide de ces trois langages et armés d'un simple éditeur de texte, vous pouvez créer des sites Internet au contenu sémantique, des mises en pages et layout complexes et une interactivité poussée. Rien de plus n'est nécessaire, vous pouvez publier pour le monde entier.
 
-*Exemple: site webstoemp*
+_Exemple: site webstoemp_
 
 Chacun de ces langages possède un rôle bien particulier:
 
@@ -36,10 +36,10 @@ Voici un document HTML minimal:
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Hello Internet</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="My first HTML document">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="My first HTML document" />
   </head>
   <body>
     <p>Hello Internet</p>
@@ -47,7 +47,7 @@ Voici un document HTML minimal:
 </html>
 ```
 
-*Exercice: visualiser la structure du DOM (Document Object Model) avec les outils de développement dans Chrome (onglet elements)*
+_Exercice: visualiser la structure du DOM (Document Object Model) avec les outils de développement dans Chrome (onglet elements)_
 
 ### Doctype, character encoding, langage
 
@@ -68,7 +68,7 @@ Tout document HTML est séparé en deux parties distinctes: `<head>` et `<body>`
 - `<head>`: les méta-données liées au document (title, description, langue principale, charset, feuille de styles et scripts liés, etc)
 - `<body>`: les éléments de contenu du document (textes, références vers les fichiers images vidéos, son et document, canvas, tags, etc.)
 
-*Exercice: créer un document de base "hello world" en HTML et le visualiser dans un navigateur*
+_Exercice: créer un document de base "hello world" en HTML et le visualiser dans un navigateur_
 
 ### Attributs et tags
 
@@ -79,7 +79,11 @@ Outre le contenu texte lui même, un fichier html est composé de tags et d'attr
 Les tags définissent le rôle des éléments qui composent la page. Par exemple, certains mots d'un texte peuvent devenir un lien hypertextes ou encore former un titre.
 
 ```html
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit voluptates et deserunt, recusandae obcaecati culpa in aperiam. Non libero, fuga eligendi labore voluptate voluptatum totam itaque accusantium mollitia quasi! Sit.</p>
+<p>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit voluptates
+  et deserunt, recusandae obcaecati culpa in aperiam. Non libero, fuga eligendi
+  labore voluptate voluptatum totam itaque accusantium mollitia quasi! Sit.
+</p>
 ```
 
 ```html
@@ -93,26 +97,29 @@ Nous verrons quelques-uns des tags principaux lors de cette introduction. [Pour 
 La plupart des tags HTML fonctionnent par paires et entourent leur contenu.
 
 ```html
-<p>Un paragraphe avec un peu de texte sur lequel nous voulons <strong>attirer l'attention</strong></p>
+<p>
+  Un paragraphe avec un peu de texte sur lequel nous voulons
+  <strong>attirer l'attention</strong>
+</p>
 <a href="http://www.webstoemp.com">Delicious websites from Brussels</a>
 ```
 
 Cependant, il existe des tags qui fonctionnent seuls. Bien souvent il s'agit de tags n'ayant pas de contenu textuel.
 
 ```html
-<meta charset="utf-8">
+<meta charset="utf-8" />
 ```
 
 ```html
-<img src="images/monimage.png">
+<img src="images/monimage.png" />
 ```
 
 ```html
-<input type="text">
+<input type="text" />
 ```
 
 ```html
-<link rel="stylesheet" href="css/screen.css" media="screen">
+<link rel="stylesheet" href="css/screen.css" media="screen" />
 ```
 
 #### Attributs
@@ -123,7 +130,11 @@ Les attributs sont liés aux tags et précisent certains aspects de ceux-ci. Voi
 - Son attribut `title` fourni une description complémentaire au texte de ce lien.
 
 ```html
-<a href="http://www.monsite.com/mon-dernier-blogpost.html" title="Tout ce qu'il faut savoir sur être professeur à l'IAD">En savoir plus</a>
+<a
+  href="http://www.monsite.com/mon-dernier-blogpost.html"
+  title="Tout ce qu'il faut savoir sur être professeur à l'IAD"
+  >En savoir plus</a
+>
 ```
 
 #### Bonnes pratiques
@@ -139,7 +150,10 @@ Vos tags doivent être bien imbriqués. Les ouvertures et les fermetures de tags
 **Incorrect**
 
 ```html
-<p>Lorem ipsum dolor sit amet, consectetur <a href="fake.html">adipisicing elit</a>.
+<p>
+  Lorem ipsum dolor sit amet, consectetur
+  <a href="fake.html">adipisicing elit</a>.
+</p>
 ```
 
 ```html
@@ -149,7 +163,10 @@ Vos tags doivent être bien imbriqués. Les ouvertures et les fermetures de tags
 **Correct**
 
 ```html
-<p>Lorem ipsum dolor sit amet, consectetur <a href="fake.html">adipisicing elit</a>.</p>
+<p>
+  Lorem ipsum dolor sit amet, consectetur
+  <a href="fake.html">adipisicing elit</a>.
+</p>
 ```
 
 ##### Utiliser des minuscules partout
@@ -159,13 +176,19 @@ Bien que des majuscules soient valides en HTML, votre code sera plus lisible si 
 **Pas terrible**
 
 ```html
-<P>Mon paragraphe contenant <A HREF="https://www.iad-arts.be">un lien hypertexte</A></P>
+<p>
+  Mon paragraphe contenant
+  <a href="https://www.iad-arts.be">un lien hypertexte</a>
+</p>
 ```
 
 **Mieux**
 
 ```html
-<p>Mon paragraphe contenant <a href="https://www.iad-arts.be">un lien hypertexte</a></p>
+<p>
+  Mon paragraphe contenant
+  <a href="https://www.iad-arts.be">un lien hypertexte</a>
+</p>
 ```
 
 ##### Toujours placer vos attributs entre guillemets
@@ -181,7 +204,10 @@ Encore une fois, HTML ne vous y oblige pas mais placer les valeurs de vos attrib
 **Mieux**
 
 ```html
-<p>Un paragraphe contenant <a href="https://www.iad-arts.be">un lien hypertexte</a></p>
+<p>
+  Un paragraphe contenant
+  <a href="https://www.iad-arts.be">un lien hypertexte</a>
+</p>
 ```
 
 ##### Gestion des caractères spéciaux dans les déclarations CSS et JavaScript
@@ -204,7 +230,7 @@ Valide:
 <a href="index.php?a=1&amp;b=2">Latest News</a>
 ```
 
-*Exercice: créer une version texte d'un CV minimaliste: nom, prénom, adresse, quelques paragraphes*
+_Exercice: créer une version texte d'un CV minimaliste: nom, prénom, adresse, quelques paragraphes_
 
 ### Différents types de tags
 
@@ -225,7 +251,12 @@ Exemples:
 `<p>`: utilisé pour marquer un paragraphe
 
 ```html
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto assumenda quam illum ducimus. Odio reiciendis eligendi, repellendus beatae, tempora laboriosam suscipit quam velit! Culpa sunt commodi animi, ullam temporibus. Inventore.</p>
+<p>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto assumenda quam
+  illum ducimus. Odio reiciendis eligendi, repellendus beatae, tempora
+  laboriosam suscipit quam velit! Culpa sunt commodi animi, ullam temporibus.
+  Inventore.
+</p>
 ```
 
 `<h1>` > `<h6>`: utilisé pour marquer les niveau de titres (il n'y à que six niveaux de titres en HTML)
@@ -271,7 +302,7 @@ Les listes ordonnées ou numérotées avec `<ol>`
 </blockquote>
 ```
 
-*Exercice: ajouter quelques paragraphes, listes et titres à votre document de travail*
+_Exercice: ajouter quelques paragraphes, listes et titres à votre document de travail_
 
 #### Tags de type "inline"
 
@@ -309,7 +340,7 @@ Les éléments de type "inline":
 
 Nous ne les aborderons pas cette année, mais pas mal d'éléments servant à construire des formulaires en HTML sont également de type "inline". C'est le cas des éléments `<button>`, `<input>`, `<label>`, `<select>` et `<textarea>` par exemple.
 
-*Exercice: ajouter quelques tags `<strong>` et `<em>` à votre document de travail avant de le visualiser dans un navigateur.*
+_Exercice: ajouter quelques tags `<strong>` et `<em>` à votre document de travail avant de le visualiser dans un navigateur._
 
 ### Element de type table
 
@@ -347,7 +378,10 @@ L'un des éléments les plus important du langage HTML, le lien, est lui aussi u
 Pour transformer du texte ou une image en un lien, il suffit d'utiliser le tag `<a>`:
 
 ```html
-<p><a href="http://en.wikipedia.org/wiki/Brussels">Bruxelles</a> est la capitale de la Belgique et de l'Europe.</p>
+<p>
+  <a href="http://en.wikipedia.org/wiki/Brussels">Bruxelles</a> est la capitale
+  de la Belgique et de l'Europe.
+</p>
 ```
 
 #### Liens relatifs et absolus
@@ -355,7 +389,7 @@ Pour transformer du texte ou une image en un lien, il suffit d'utiliser le tag `
 Ce lien est "absolu" dans la mesure où son attribut `href` référence une URL complète, qui peut être résolue indépendamment de son contexte.
 
 ```html
-<a href="index.html"><img src="img/logo.png" alt="webstoemp"></a>
+<a href="index.html"><img src="img/logo.png" alt="webstoemp" /></a>
 ```
 
 Ce lien est "relatif" dans la mesure où son attribut `href` référence une URL relative au contexte du document établissant le lien. Par exemple, si le domaine est *www.webstoemp.com*, le navigateur interprètera ce lien comme *http://www.webstoemp.com/index.html*.
@@ -378,7 +412,7 @@ Il est également possible d'établir des liens vers d'autres parties d'un même
 <a href="#top">Retour en haut de page</a>
 ```
 
-*Exercice: expérimenter avec les liens et les ancres dans votre document de travail*
+_Exercice: expérimenter avec les liens et les ancres dans votre document de travail_
 
 ### Divisions avec `<div>` et `<span>`
 
@@ -427,7 +461,9 @@ Est utilisé pour marquer des données temporelles (dates, heures etc.) de faço
 ```html
 <time datetime="2007-10-05">5 Octobre</time>
 <p>I usually have a snack at <time datetime="2019-05-15T16:00">16:00</time>.</p>
-<p>posted on <time datetime="2009-04-12">12 April 2009</time> by Jérôme Coupé</p>
+<p>
+  posted on <time datetime="2009-04-12">12 April 2009</time> by Jérôme Coupé
+</p>
 ```
 
 ### Media
@@ -443,7 +479,12 @@ L'image a intégrer est renseignée via l'attribut `src` qui est obligatoire et 
 La taille de l'image peut être spécifiée à l'aide des attributs `width` et `height`. Si ceux-ci ne sont pas spécifiés, l'image sera affichée à sa taille effective. L'attribut `alt` est utilisé pour donner une représentation textuelle de l'image aux navigateurs qui ne les supportent pas.
 
 ```html
-<img src="img/apple_watch.jpg" alt="apple watch modèle sport" width="200" height="355">
+<img
+  src="img/apple_watch.jpg"
+  alt="apple watch modèle sport"
+  width="200"
+  height="355"
+/>
 ```
 
 Il existe encore bien d'autres attributs, dont certains sont très utiles dans le cadre du responsive web design mais vous connaissez maintenant les principaux d'entre eux.
@@ -452,7 +493,12 @@ Les tags `<figure>` et `<figcaption>` peuvent être utilisés pour ajouter une l
 
 ```html
 <figure>
-  <img src="img/apple_watch.jpg" alt="apple watch modèle sport" width="200" height="355">
+  <img
+    src="img/apple_watch.jpg"
+    alt="apple watch modèle sport"
+    width="200"
+    height="355"
+  />
   <figcaption>
     <p>L'Apple watch, annoncée le 9 Septembre 2014 par Apple</p>
   </figcaption>
@@ -469,7 +515,11 @@ Voici le tag `<video>` dans son utilisation la plus simple:
 
 ```html
 <video src="videos/videofile.ogv" poster="posterimage.jpg" controls>
-  <p>Votre navigateur ne supporte pas les vidéos intégrées. Vous pouvez néanmoins <a href="videos/videofile.ogv">télécharger la vidéo</a> et utiliser votre lecteur préféré.</p>
+  <p>
+    Votre navigateur ne supporte pas les vidéos intégrées. Vous pouvez néanmoins
+    <a href="videos/videofile.ogv">télécharger la vidéo</a> et utiliser votre
+    lecteur préféré.
+  </p>
 </video>
 ```
 
@@ -479,9 +529,13 @@ Le problème est que les différents navigateurs ne supportent pas tous les mêm
 
 ```html
 <video poster="posterimage.jpg" controls>
-  <source src="videos/videofile.mp4" type="video/mp4">
-  <source src="videos/videofile.webm" type="video/webm">
-  <p>Votre navigateur ne supporte pas les vidéos intégrées. Vous pouvez néanmoins télécharger la vidéo en format <a href="videos/videofile.mp4">MP4</a>, <a href="videos/videofile.webm">WebM</a>.</p>
+  <source src="videos/videofile.mp4" type="video/mp4" />
+  <source src="videos/videofile.webm" type="video/webm" />
+  <p>
+    Votre navigateur ne supporte pas les vidéos intégrées. Vous pouvez néanmoins
+    télécharger la vidéo en format <a href="videos/videofile.mp4">MP4</a>,
+    <a href="videos/videofile.webm">WebM</a>.
+  </p>
 </video>
 ```
 
@@ -491,7 +545,11 @@ Voici le tag `<audio>` dans son utilisation la plus simple:
 
 ```html
 <audio src="audios/audiofile.mp3" controls>
-  <p>Votre navigateur ne supporte pas les fichiers audio intégrées. Vous pouvez néanmoins <a href="audios/audiofile.mp3">télécharger le fichier audio</a> et utiliser votre lecteur préféré.</p>
+  <p>
+    Votre navigateur ne supporte pas les fichiers audio intégrées. Vous pouvez
+    néanmoins <a href="audios/audiofile.mp3">télécharger le fichier audio</a> et
+    utiliser votre lecteur préféré.
+  </p>
 </audio>
 ```
 
@@ -499,9 +557,14 @@ En utilisant différents formats et l'élément `<source>`:
 
 ```html
 <audio controls>
-  <source src="audios/audiofile.mp3" type="audio/mpeg">
-  <source src="audios/audiofile.ogg" type="audio/ogg">
-  <p>Votre navigateur ne supporte pas les fichiers audio intégrés. Vous pouvez néanmoins télécharger le fichier audio en format <a href="audios/audiofile.mp3">MP3</a> ou <a href="audios/audiofile.ogg">OGG</a> et utiliser votre lecteur préféré.</p>
+  <source src="audios/audiofile.mp3" type="audio/mpeg" />
+  <source src="audios/audiofile.ogg" type="audio/ogg" />
+  <p>
+    Votre navigateur ne supporte pas les fichiers audio intégrés. Vous pouvez
+    néanmoins télécharger le fichier audio en format
+    <a href="audios/audiofile.mp3">MP3</a> ou
+    <a href="audios/audiofile.ogg">OGG</a> et utiliser votre lecteur préféré.
+  </p>
 </audio>
 ```
 
@@ -517,16 +580,16 @@ Voici un formulaire de base.
 
 ```html
 <form action="register.php" method="post">
-	<div>
-	  <legend for="userName">Name *</legend>
-	  <input type="text" name="user-name" id="userName" required>
-	</div>
-	<div>
-	  <legend for="userEmail">Email *</legend>
-	  <input type="email" name="user-email" id="userEmail" required>
-	</div>
-	<div>
-	  <input type="submit" value="Send">
+  <div>
+    <legend for="userName">Name *</legend>
+    <input type="text" name="user-name" id="userName" required />
+  </div>
+  <div>
+    <legend for="userEmail">Email *</legend>
+    <input type="email" name="user-email" id="userEmail" required />
+  </div>
+  <div>
+    <input type="submit" value="Send" />
   </div>
 </form>
 ```
@@ -547,7 +610,7 @@ Généralement, la balise `<script>` est placée juste avant le tag de fin de `<
 
 Essayons de créer ensemble un document plus élaboré et sémantiquement correct. Je vous propose ici de créer votre CV en HTML.
 
-*Exercice: créer un CV complet en HTML: commencer par écrire votre contenu et ajoutez ensuite les tags HTML.*
+_Exercice: créer un CV complet en HTML: commencer par écrire votre contenu et ajoutez ensuite les tags HTML._
 
 ## CSS
 
@@ -560,7 +623,7 @@ Les navigateurs possèdent une CSS par défaut. Lorsque vous visualisez un docum
 Il existe plusieurs façons de lires des styles CSS à vos documents HTML. Nous allons ici nous concentrer sur la plus utilisées d'entre-elles: l'élément `<link>` et l'attribut `media`.
 
 ```html
-<link rel="stylesheet" href="css/screen.css" media="screen">
+<link rel="stylesheet" href="css/screen.css" media="screen" />
 ```
 
 Cette simple ligne de code va lier un fichier CSS (screen.css) à votre document HTML. L'attribut `media` spécifie pour quels media les styles devront êtres appliqués. Il existe de nombreuses valeurs possibles pour cet attribut mais les deux plus utilisés sont `screen` et `print`.
@@ -568,9 +631,9 @@ Cette simple ligne de code va lier un fichier CSS (screen.css) à votre document
 - `screen`: les styles seront uniquement appliqués si le document HTML est visualisé sur un écran.
 - `print`: les styles ne seront appliqués que si vous imprimez le document HTML.
 
-*Exercice: créer une feuille de style externe (css/screen.css) et la lier à votre document HTML de travail*
+_Exercice: créer une feuille de style externe (css/screen.css) et la lier à votre document HTML de travail_
 
-*Exercice: expérimenter avec l'attribut media et les valeurs screen et print*
+_Exercice: expérimenter avec l'attribut media et les valeurs screen et print_
 
 ### Sélecteurs, propriétés, valeurs
 
@@ -580,18 +643,18 @@ Les règles CSS sont composées de sélecteurs, de propriétés et de valeurs.
 - **propriété**: permet de spécifier les propriétés dont il faut modifier les valeurs pour les éléments visés par le sélecteur
 - **valeurs**: permet de spécifier les valeurs à appliquer aux propriétés des éléments visés par le sélecteur
 
-*Exercice: changer la couleur de fond de votre page*
+_Exercice: changer la couleur de fond de votre page_
 
 ```css
 body {
-  background-color:red;
+  background-color: red;
 }
 ```
 
 ```css
 body {
-  background-color:red;
-  color:blue;
+  background-color: red;
+  color: blue;
 }
 ```
 
@@ -603,19 +666,19 @@ Les sélecteurs les plus simples à comprendre sont les sélecteurs de type. Ces
 
 ```css
 body {
-  background:red;
+  background: red;
 }
 ```
 
 ```css
 p {
-  color:blue;
+  color: blue;
 }
 ```
 
 #### Sélecteurs de classes
 
-Les sélecteurs de classes sont le moyen le plus répandu d'appliquer des styles à un ou plusieurs éléments HTML.  Il suffit d'ajouter un attribut `class` à n'importe quel éléments dans votre code HTML et d'ensuite cibler les éléments possédant cet attribut à l'aide d'un sélecteur de classe. Ces sélecteurs s'écrivent avec un "." devant le nom de la classe visée: `.maclasse`.
+Les sélecteurs de classes sont le moyen le plus répandu d'appliquer des styles à un ou plusieurs éléments HTML. Il suffit d'ajouter un attribut `class` à n'importe quel éléments dans votre code HTML et d'ensuite cibler les éléments possédant cet attribut à l'aide d'un sélecteur de classe. Ces sélecteurs s'écrivent avec un "." devant le nom de la classe visée: `.maclasse`.
 
 ```html
 <div class="message">
@@ -626,8 +689,8 @@ Les sélecteurs de classes sont le moyen le plus répandu d'appliquer des styles
 
 ```css
 .message {
-  border:1px solid #cacaca;
-  background-color:#E4E4E4;
+  border: 1px solid #cacaca;
+  background-color: #e4e4e4;
 }
 ```
 
@@ -647,13 +710,13 @@ Les sélecteurs de classes sont parmi les plus répandus dans la mesure où les 
 
 ```css
 .message {
-  border:1px solid #cacaca;
-  background-color:#E4E4E4;
+  border: 1px solid #cacaca;
+  background-color: #e4e4e4;
 }
 
 .message-warning {
-  border-color:#D35400;
-  background-color:#F1EAE6;
+  border-color: #d35400;
+  background-color: #f1eae6;
 }
 ```
 
@@ -669,8 +732,8 @@ Ces sélecteurs permettent de sélectionner des éléments en fonction de leurs 
 
 ```css
 #sitefooter {
-  background:#242424;
-  color:#F9F9F9;
+  background: #242424;
+  color: #f9f9f9;
 }
 ```
 
@@ -700,7 +763,7 @@ Les sélecteurs descendants permettent de rendre vos sélecteurs plus spécifiqu
 
 ```css
 .mainnav a {
-  color:red;
+  color: red;
 }
 ```
 
@@ -734,7 +797,7 @@ Les sélecteurs d'enfants permettent de rendre vos sélecteurs encore plus spéc
 
 ```css
 .mainnav > li {
-  color:red;
+  color: red;
 }
 ```
 
@@ -746,7 +809,7 @@ Certains [sélecteurs de la famille des pseudo-classes](https://developer.mozill
 
 ```css
 a:link {
-  text-decoration:underline;
+  text-decoration: underline;
 }
 
 a:visited {
@@ -754,19 +817,19 @@ a:visited {
 }
 
 a:hover {
-  text-decoration:none;
+  text-decoration: none;
 }
 
 a:focus {
-  color:green;
+  color: green;
 }
 
 a:active {
-  color:red;
+  color: red;
 }
 ```
 
-*Exercice: expérimenter avec les pseudo-classes liées aux liens dans votre document de travail*
+_Exercice: expérimenter avec les pseudo-classes liées aux liens dans votre document de travail_
 
 #### Autres sélecteurs
 
@@ -781,9 +844,10 @@ Nous aborderons et utiliserons un grand nombre de sélecteurs CSS en détail l'a
 Il est important de noter que, dans le cadre de vos fichiers CSS, vous pouvez appliquer les mêmes propriétés et valeurs à des sélecteurs différents en séparant ces derniers par une virgule. C'est une manière de ne pas vous répéter dans vos fichiers CSS en groupant vos sélecteurs.
 
 ```css
-.message, .infobox {
-  border:1px solide #CCC;
-  background:#E6E6E6;
+.message,
+.infobox {
+  border: 1px solide #ccc;
+  background: #e6e6e6;
 }
 ```
 
@@ -819,18 +883,18 @@ Les règles CSS s'appliquent en cascade, en commençant pas les règles spécifi
 
 ```css
 body {
-  color:red;
-  color:green;
+  color: red;
+  color: green;
 }
 ```
 
 ```css
 p {
-  background:red;
+  background: red;
 }
 
 p {
-  background:green;
+  background: green;
 }
 ```
 
@@ -840,11 +904,11 @@ Le calcul de la spécificité prend le pas sur la cascade. Vos sélecteurs les p
 
 ```css
 body p {
-  background:green;
+  background: green;
 }
 
 p {
-  background:red;
+  background: red;
 }
 ```
 
@@ -865,7 +929,7 @@ body > a:hover
 
 La spécificité de ce sélecteur est de 0-1-2.
 
-*Exercice: déterminer la spécificité de divers sélecteurs*
+_Exercice: déterminer la spécificité de divers sélecteurs_
 
 #### Poids
 
@@ -873,11 +937,11 @@ Une directive `!important` permet de passer outre la spécificité. A utiliser l
 
 ```css
 body p {
-  background:green;
+  background: green;
 }
 
 p {
-  background:red !important;
+  background: red !important;
 }
 ```
 
@@ -903,11 +967,11 @@ Les propriétés `width`et `height` ne prennent qu'une seule valeur spécifiées
 
 ```css
 .content-primary {
-  width:66%;
+  width: 66%;
 }
 
 .content-primary {
-  width:750px;
+  width: 750px;
 }
 ```
 
@@ -917,13 +981,13 @@ Il est également possible de spécifier les caractéristiques de chaque border 
 
 ```css
 body {
-  margin:0;
-  padding:0;
-  border:1em solid red;
+  margin: 0;
+  padding: 0;
+  border: 1em solid red;
 }
 
 body {
-  border-top:3px double aqua;
+  border-top: 3px double aqua;
 }
 ```
 
@@ -933,32 +997,32 @@ Si des valeurs sont manquantes, le navigateur les complètes automatiquement en 
 
 ```css
 body {
-  margin:0;
+  margin: 0;
 }
 
 .myclass {
-  padding:2em 0;
+  padding: 2em 0;
   /* same as padding: 2em 0 2em 0 */
 }
 
 .myclass {
- padding-top:5%;
+  padding-top: 5%;
 }
 
 .myclass {
-  margin:2em 0 1em;
+  margin: 2em 0 1em;
   /* same as margin: 2em 0 1em 0 */
 }
 
 .myclass {
-  margin-left:1em;
-  margin-bottom:1em;
+  margin-left: 1em;
+  margin-bottom: 1em;
 }
 
 .myclass {
-  padding-right:20px;
-  padding-left:1em;
-  padding-bottom:2em;
+  padding-right: 20px;
+  padding-left: 1em;
+  padding-bottom: 2em;
 }
 ```
 
@@ -966,8 +1030,8 @@ Des marges latérales automatiques combinées à une largeur (`width`) spécifi�
 
 ```css
 .mypage {
-  width:80%;
-  margin:0 auto;
+  width: 80%;
+  margin: 0 auto;
 }
 ```
 
@@ -979,11 +1043,11 @@ Les propriétés `color` et `background` vous permettent de changer les couleurs
 
 ```css
 body {
-  magin:0;
-  padding:2em;
-  background:#F0F0F0;
-  color:#171717;
-  border:1em solid #D35400;
+  magin: 0;
+  padding: 2em;
+  background: #f0f0f0;
+  color: #171717;
+  border: 1em solid #d35400;
 }
 ```
 
@@ -993,19 +1057,19 @@ Il existe [différentes façons de spécifier les couleurs en CSS](https://devel
 
 ```css
 .myclass {
-  color:red;
+  color: red;
 }
 
 .myclass {
-  color:#ff0000;
+  color: #ff0000;
 }
 
 .myclass {
-  color:rgb(255,0,0);
+  color: rgb(255, 0, 0);
 }
 
 .myclass {
-  color:rgba(255,0,0,0.5);
+  color: rgba(255, 0, 0, 0.5);
 }
 ```
 
@@ -1071,10 +1135,15 @@ Vous pouvez également utiliser des [gradients radiaux](https://developer.mozill
 ```
 
 ```css
-background-image: radial-gradient(ellipse farthest-corner at 45px 45px , #00FFFF 0%, rgba(0, 0, 255, 0) 50%, #0000FF 95%);
+background-image: radial-gradient(
+  ellipse farthest-corner at 45px 45px,
+  #00ffff 0%,
+  rgba(0, 0, 255, 0) 50%,
+  #0000ff 95%
+);
 ```
 
-*Exercice: expérimenter avec les couleurs et les images de fond dans votre fichier de travail*
+_Exercice: expérimenter avec les couleurs et les images de fond dans votre fichier de travail_
 
 ### Propriétés CSS liées au texte
 
@@ -1083,7 +1152,12 @@ CSS vous offre également de nombreux outils pour contrôler les aspects typogra
 `font-family`: permet de gérer la police utilisée. S'utilise en général avec plusieurs fontes ([font-stack](http://www.smashingmagazine.com/2009/09/22/complete-guide-to-css-font-stacks/)) de façon à avoir des polices de rechange au cas où l'une ou plusieurs d'entre-elles ne sont pas disponibles sur l'ordinateur client.
 
 ```css
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: Helvetica, Arial, sans-serif;
 }
 ```
@@ -1092,16 +1166,15 @@ h1, h2, h3, h4, h5, h6 {
 
 ```css
 h1 {
-  font-size:200%;
+  font-size: 200%;
 }
 ```
 
 `font-weight`: permet de spécifier la graisse de la police. Peut être spécifiée à l'aide de mots-clefs (normal, bold) ou de valeurs numériques (400, 600, 800).
 
-
 ```css
 h1 {
-  font-weight:600;
+  font-weight: 600;
 }
 ```
 
@@ -1109,7 +1182,7 @@ h1 {
 
 ```css
 body {
-  line-height:1.5;
+  line-height: 1.5;
 }
 ```
 
@@ -1117,7 +1190,7 @@ body {
 
 ```css
 body {
-  font-style:italic;
+  font-style: italic;
 }
 ```
 
@@ -1125,7 +1198,7 @@ Toutes ces propriétés peuvent être utilisées dans le cadre d'une seule propr
 
 ```css
 body {
-  font:normal italic 100%/1.5 Helvetica, Arial, sans-serif;
+  font: normal italic 100%/1.5 Helvetica, Arial, sans-serif;
 }
 ```
 
@@ -1133,7 +1206,7 @@ body {
 
 ```css
 body {
-  text-transform:uppercase;
+  text-transform: uppercase;
 }
 ```
 
@@ -1147,9 +1220,9 @@ Etant donné les complexités techniques de la typographie sur écran, de nombre
 
 Nous nous concentrerons ici sur l'utilisation de Google Fonts, un service gratuit offrant des fontes de qualité. Voici [quelques](http://femmebot.github.io/google-type/) [exemples](http://hellohappy.org/beautiful-web-type/) de ce qu'il est possible de réaliser en se concentrant uniquement sur la typographie.
 
-*Exercice: utiliser des fontes standard avec un font-stack*
+_Exercice: utiliser des fontes standard avec un font-stack_
 
-*Exercice: utiliser des fontes non-standard avec Google Fonts*
+_Exercice: utiliser des fontes non-standard avec Google Fonts_
 
 ### Texte en colonnes avec CSS
 
@@ -1171,18 +1244,6 @@ ou
 }
 ```
 
-Ces propriétés utilisent encore des [vendor-prefixes](http://alistapart.com/article/the-vendor-prefix-predicament-alas-eric-meyer-interviews-tantek-celik), c'est à dire les préfixes utilisés par les moteurs de rendu des navigateurs pour tester des propriétés alors qu'elles ne sont pas encore implémentées. La règle est ici d'ajouter tous les vendors prefixes **avant** la règle CSS finale. De cette façon, une fois l'implémentation terminée, c'est la dernière règle non-préfixée qui va être utilisée par le navigateur (cascade).
-
-```css
-.columns-small {
-  -webkit-column-width: 20em; /* pour safari */
-     -moz-column-width: 20em; /* pour mozilla */
-      -ms-column-width: 20em; /* pour microsoft IE */
-       -o-column-width: 20em; /* pour opera */
-          column-width: 20em;
-}
-```
-
 ### Images et videos
 
 Voyons maintenant deux façons simples de positionner les images dans votre document.
@@ -1194,13 +1255,12 @@ Par défaut les images sont des éléments de type `inline`. La propriété `tex
 Pour aligner des images à gauche ou à droite ou pour les centrer dans un bloc conteneur, il suffit d'utiliser cette propriété sur ce dernier.
 
 ```html
-<p class="img-container"><img src="../img/myimage.png" alt="alt text"></p>
+<p class="img-container"><img src="../img/myimage.png" alt="alt text" /></p>
 ```
-
 
 ```css
 .img-container {
-  text-align:center;
+  text-align: center;
   /*text-align:right;*/
   /*text-align:left;*/
 }
@@ -1213,19 +1273,33 @@ CSS peut également être utilisée pour positionner vos images relativement à 
 Les propriétés `float:left;` et `float:right;` permettent au texte de contourner une image.
 
 ```html
-<p><img src="img/monimage.png" class="imgleft" width="200" height="112" alt="représentation alternative">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit cum corporis fugiat labore explicabo mollitia est saepe in minima porro neque ipsam voluptates, natus voluptatum! Animi commodi corporis ducimus natus!</p>
-<p>Aspernatur excepturi aut tempora, a beatae rerum molestias fuga architecto enim officia libero, voluptates vitae? Iusto itaque possimus, repudiandae! Distinctio cum velit vel voluptatum dolor, magni, nam doloremque unde minus.</p>
+<p>
+  <img
+    src="img/monimage.png"
+    class="imgleft"
+    width="200"
+    height="112"
+    alt="représentation alternative"
+  />Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit cum corporis
+  fugiat labore explicabo mollitia est saepe in minima porro neque ipsam
+  voluptates, natus voluptatum! Animi commodi corporis ducimus natus!
+</p>
+<p>
+  Aspernatur excepturi aut tempora, a beatae rerum molestias fuga architecto
+  enim officia libero, voluptates vitae? Iusto itaque possimus, repudiandae!
+  Distinctio cum velit vel voluptatum dolor, magni, nam doloremque unde minus.
+</p>
 ```
 
 ```css
 .imgleft {
   float: left;
-  margin: 0 0 .5em 1em;
+  margin: 0 0 0.5em 1em;
 }
 
 .imgright {
   float: right;
-  margin:0 1em .5em 0;
+  margin: 0 1em 0.5em 0;
 }
 ```
 
@@ -1264,4 +1338,4 @@ Une technique différente doit être utilisée pour les `iframe` (Youtube / Vime
 }
 ```
 
-*Exercice: Mettre en page votre CV avec HTML et CSS*
+_Exercice: Mettre en page votre CV avec HTML et CSS_
