@@ -945,25 +945,26 @@ p {
 }
 ```
 
-### Boites avec width, height, border, padding et margin
+### Modèles de boites avec width, height, border, padding et margin
 
-Chaque élément en HTML génère une boite, boite de type block ou boite de type inline (ou autre) suivant le type d'élément utilisé.
+Chaque élément en HTML génère une boite. Ces boites ont différentes caractéristiques et sont de différents types suivant l'élément utilisé (`block`, `inline`, `inline-block`, etc.).
 
-Sans entrer dans le détail, les dimensions de ces boites peuvent être spécifiées à l'aide des propriétés `width`, `height`, `border`, `padding` et `margin`.
+Les dimensions de ces boites peuvent être spécifiées à l'aide des propriétés `width`, `height`, `border`, `padding` et `margin`.
 
-- La largeur totale d’une boîte se calcule de la façon suivante : largeur du contenu (width) + padding + borders + margin.
-- La hauteur totale d’une boîte se calcule de la façon suivante : hauteur du contenu (height) + padding + borders + margin.
+A l'aide des différentes valeurs spécifiées, les navigateurs calculent la taille de toutes ces boites à l'écran. [C'est ce que l'on appelle le Box Model en CSS](https://developer.mozilla.org/fr/docs/Apprendre/CSS/Building_blocks/Le_modele_de_boite#Le_Mod%C3%A8le_Standard_de_Bo%C3%AEte_CSS) qui est affiché dans les outils de dévelopement de votre navigateur.
 
-Les dimensions de ces boites peuvent être spécifiées avec des unités relatives (pourcentages et `em`) ou absolues (pixels). Etant donné la grande diversité des tailles et résolution d'écrans, les dimensions absolues sont de moins en moins utilisées.
+- Par défaut, la largeur totale d’une boîte se calcule de la façon suivante : largeur du contenu (width) + padding + borders + margin.
+- Par défaut, la hauteur totale d’une boîte se calcule de la façon suivante : hauteur du contenu (height) + padding + borders + margin.
 
-- `em` est généralement utilisé pour tout ce qui a trait à la typographie (`1em` étant la taille d'une boite de caractère de la police en cours.)
-- `%` est généralement utilisé pour ce qui concerne la largeur des boites
+Il est posible de modifier le box model à l'aide de la propriété `box-sizing`. Par exemple, `box-sizing: border-box;` modifie le Box Model afin que les dimensions spécifiées pour padding et border soient includes dans `width` et `height`.
 
-Ces dimensions, lorsqu'elles sont spécifiées en valeurs relatives, sont toujours relatives au block conteneur de la boite visée. Par exemple, un `<div>` ayant une largeur de 50% placé dans un `<div>` ayant lui même une largeur de 50% ne fera que 25% de la largeur totale de la page.
+Les dimensions de ces boites peuvent être spécifiées avec des unités absolues (`px` par exemple) ou relatives (`%`, `rem`, `em`, `vh`, `vw`, `ch` etc.).
 
-En ce qui concerne la hauteur des boites, la bonne pratique en CSS consiste à ne pas spécifier la hauteur des éléments et à laisser leur contenu dicter leur hauteur. C'est important pour l'accessibilité et permet d'avantage de flexibilité.
+`width` et `height` exprimées en pourcentages sont toujours relatives au block conteneur de la boite visée. Par exemple, un `<div>` ayant une largeur de 50% placé dans un `<div>` ayant lui même une largeur de 50% ne fera que 25% de la largeur totale de la page.
 
-Les propriétés `width`et `height` ne prennent qu'une seule valeur spécifiées en pourcentages, en pixels ou en `em`.
+`margin` et `padding` exprimés en pourcentages sont toujours calculées par rapport à la largeur (`width`) de leur élément parent.
+
+Les propriétés `width`et `height` ne prennent qu'une seule valeur.
 
 ```css
 .content-primary {
@@ -993,7 +994,7 @@ body {
 
 Les propriétés `margin` et `padding` sont spécifiées à l'aide 4 valeurs distinctes. Ces valeurs correspondent à chacun des côtés de la boite, en commençant par le haut et dans l'ordre des aiguilles d'une montre (top, right, bottom, left).
 
-Si des valeurs sont manquantes, le navigateur les complètes automatiquement en doublant les valeurs deux par deux (top et bottom, left et right). Ces propriétés courtes peuvent également être spécifiées séparément à l'aide de `margin-top`, `margin-bottom`, `margin-left` et `margin-right`.
+Si des valeurs sont manquantes, le navigateur les complètes automatiquement en doublant les valeurs deux par deux (top et bottom, left et right). Ces propriétés courtes peuvent également être spécifiées séparément à l'aide de `padding-top`, `padding-bottom`, `padding-left`, `padding-right`, `margin-top`, `margin-bottom`, `margin-left` et `margin-right`.
 
 ```css
 body {
@@ -1075,7 +1076,7 @@ Il existe [différentes façons de spécifier les couleurs en CSS](https://devel
 
 La plupart des programmes de design vous permettent de facilement trouver et convertir les valeurs correspondant aux couleurs que vous souhaitez utiliser.
 
-#### utilisation d'images de background
+#### Utilisation d'images de background
 
 Il est également possible d'utiliser des images comme fonds pour vos boites. Vous devez pour cela utiliser les propriétés suivantes:
 
