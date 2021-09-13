@@ -36,10 +36,10 @@ Voici un document HTML minimal:
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
     <title>Hello Internet</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="My first HTML document" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="My first HTML document">
   </head>
   <body>
     <p>Hello Internet</p>
@@ -107,19 +107,19 @@ La plupart des tags HTML fonctionnent par paires et entourent leur contenu.
 Cependant, il existe des tags qui fonctionnent seuls. Bien souvent il s'agit de tags n'ayant pas de contenu textuel.
 
 ```html
-<meta charset="utf-8" />
+<meta charset="utf-8">
 ```
 
 ```html
-<img src="images/monimage.png" />
+<img src="images/monimage.png">
 ```
 
 ```html
-<input type="text" />
+<input type="text">
 ```
 
 ```html
-<link rel="stylesheet" href="css/screen.css" media="screen" />
+<link rel="stylesheet" href="css/screen.css" media="screen">
 ```
 
 #### Attributs
@@ -130,11 +130,7 @@ Les attributs sont liés aux tags et précisent certains aspects de ceux-ci. Voi
 - Son attribut `title` fourni une description complémentaire au texte de ce lien.
 
 ```html
-<a
-  href="http://www.monsite.com/mon-dernier-blogpost.html"
-  title="Tout ce qu'il faut savoir sur être professeur à l'IAD"
-  >En savoir plus</a
->
+<a href="http://www.monsite.com/mon-dernier-blogpost.html" title="Tout ce qu'il faut savoir sur être professeur à l'IAD">En savoir plus</a>
 ```
 
 #### Bonnes pratiques
@@ -150,23 +146,13 @@ Vos tags doivent être bien imbriqués. Les ouvertures et les fermetures de tags
 **Incorrect**
 
 ```html
-<p>
-  Lorem ipsum dolor sit amet, consectetur
-  <a href="fake.html">adipisicing elit</a>.
-</p>
-```
-
-```html
 <p>Lorem ipsum dolor sit amet, consectetur <a href="fake.html">adipisicing elit</p></a>.
 ```
 
 **Correct**
 
 ```html
-<p>
-  Lorem ipsum dolor sit amet, consectetur
-  <a href="fake.html">adipisicing elit</a>.
-</p>
+<p>Lorem ipsum dolor sit amet, consectetur <a href="fake.html">adipisicing elit</a>.</p>
 ```
 
 ##### Utiliser des minuscules partout
@@ -176,19 +162,13 @@ Bien que des majuscules soient valides en HTML, votre code sera plus lisible si 
 **Pas terrible**
 
 ```html
-<p>
-  Mon paragraphe contenant
-  <a href="https://www.iad-arts.be">un lien hypertexte</a>
-</p>
+<p>Mon paragraphe contenant <a href="https://www.iad-arts.be">un lien hypertexte</a></p>
 ```
 
 **Mieux**
 
 ```html
-<p>
-  Mon paragraphe contenant
-  <a href="https://www.iad-arts.be">un lien hypertexte</a>
-</p>
+<p>Mon paragraphe contenant <a href="https://www.iad-arts.be">un lien hypertexte</a></p>
 ```
 
 ##### Toujours placer vos attributs entre guillemets
@@ -204,10 +184,7 @@ Encore une fois, HTML ne vous y oblige pas mais placer les valeurs de vos attrib
 **Mieux**
 
 ```html
-<p>
-  Un paragraphe contenant
-  <a href="https://www.iad-arts.be">un lien hypertexte</a>
-</p>
+<p>Un paragraphe contenant <a href="https://www.iad-arts.be">un lien hypertexte</a></p>
 ```
 
 ##### Gestion des caractères spéciaux dans les déclarations CSS et JavaScript
@@ -251,12 +228,7 @@ Exemples:
 `<p>`: utilisé pour marquer un paragraphe
 
 ```html
-<p>
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto assumenda quam
-  illum ducimus. Odio reiciendis eligendi, repellendus beatae, tempora
-  laboriosam suscipit quam velit! Culpa sunt commodi animi, ullam temporibus.
-  Inventore.
-</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto assumenda quam illum ducimus. Odio reiciendis eligendi, repellendus beatae, tempora laboriosam suscipit quam velit! Culpa sunt commodi animi, ullam temporibus. Inventore.</p>
 ```
 
 `<h1>` > `<h6>`: utilisé pour marquer les niveau de titres (il n'y à que six niveaux de titres en HTML)
@@ -378,10 +350,7 @@ L'un des éléments les plus important du langage HTML, le lien, est lui aussi u
 Pour transformer du texte ou une image en un lien, il suffit d'utiliser le tag `<a>`:
 
 ```html
-<p>
-  <a href="http://en.wikipedia.org/wiki/Brussels">Bruxelles</a> est la capitale
-  de la Belgique et de l'Europe.
-</p>
+<p><a href="http://en.wikipedia.org/wiki/Brussels">Bruxelles</a> est la capitale de la Belgique et de l'Europe.</p>
 ```
 
 #### Liens relatifs et absolus
@@ -389,7 +358,7 @@ Pour transformer du texte ou une image en un lien, il suffit d'utiliser le tag `
 Ce lien est "absolu" dans la mesure où son attribut `href` référence une URL complète, qui peut être résolue indépendamment de son contexte.
 
 ```html
-<a href="index.html"><img src="img/logo.png" alt="webstoemp" /></a>
+<a href="index.html"><img src="img/logo.png" alt="webstoemp"></a>
 ```
 
 Ce lien est "relatif" dans la mesure où son attribut `href` référence une URL relative au contexte du document établissant le lien. Par exemple, si le domaine est *www.webstoemp.com*, le navigateur interprètera ce lien comme *http://www.webstoemp.com/index.html*.
@@ -461,9 +430,7 @@ Est utilisé pour marquer des données temporelles (dates, heures etc.) de faço
 ```html
 <time datetime="2007-10-05">5 Octobre</time>
 <p>I usually have a snack at <time datetime="2019-05-15T16:00">16:00</time>.</p>
-<p>
-  posted on <time datetime="2009-04-12">12 April 2009</time> by Jérôme Coupé
-</p>
+<p>posted on <time datetime="2009-04-12">12 April 2009</time> by Jérôme Coupé</p>
 ```
 
 ### Media
@@ -479,12 +446,7 @@ L'image a intégrer est renseignée via l'attribut `src` qui est obligatoire et 
 La taille de l'image peut être spécifiée à l'aide des attributs `width` et `height`. Si ceux-ci ne sont pas spécifiés, l'image sera affichée à sa taille effective. L'attribut `alt` est utilisé pour donner une représentation textuelle de l'image aux navigateurs qui ne les supportent pas.
 
 ```html
-<img
-  src="img/apple_watch.jpg"
-  alt="apple watch modèle sport"
-  width="200"
-  height="355"
-/>
+<img src="img/apple_watch.jpg" alt="apple watch modèle sport" width="200" height="355">
 ```
 
 Il existe encore bien d'autres attributs, dont certains sont très utiles dans le cadre du responsive web design mais vous connaissez maintenant les principaux d'entre eux.
@@ -493,12 +455,7 @@ Les tags `<figure>` et `<figcaption>` peuvent être utilisés pour ajouter une l
 
 ```html
 <figure>
-  <img
-    src="img/apple_watch.jpg"
-    alt="apple watch modèle sport"
-    width="200"
-    height="355"
-  />
+  <img src="img/apple_watch.jpg" alt="apple watch modèle sport" width="200" height="355">
   <figcaption>
     <p>L'Apple watch, annoncée le 9 Septembre 2014 par Apple</p>
   </figcaption>
@@ -515,11 +472,7 @@ Voici le tag `<video>` dans son utilisation la plus simple:
 
 ```html
 <video src="videos/videofile.ogv" poster="posterimage.jpg" controls>
-  <p>
-    Votre navigateur ne supporte pas les vidéos intégrées. Vous pouvez néanmoins
-    <a href="videos/videofile.ogv">télécharger la vidéo</a> et utiliser votre
-    lecteur préféré.
-  </p>
+  <p>Votre navigateur ne supporte pas les vidéos intégrées. Vous pouvez néanmoins <a href="videos/videofile.ogv">télécharger la vidéo</a> et utiliser votre lecteur préféré.</p>
 </video>
 ```
 
@@ -529,13 +482,9 @@ Le problème est que les différents navigateurs ne supportent pas tous les mêm
 
 ```html
 <video poster="posterimage.jpg" controls>
-  <source src="videos/videofile.mp4" type="video/mp4" />
-  <source src="videos/videofile.webm" type="video/webm" />
-  <p>
-    Votre navigateur ne supporte pas les vidéos intégrées. Vous pouvez néanmoins
-    télécharger la vidéo en format <a href="videos/videofile.mp4">MP4</a>,
-    <a href="videos/videofile.webm">WebM</a>.
-  </p>
+  <source src="videos/videofile.mp4" type="video/mp4">
+  <source src="videos/videofile.webm" type="video/webm">
+  <p>Votre navigateur ne supporte pas les vidéos intégrées. Vous pouvez néanmoins télécharger la vidéo en format <a href="videos/videofile.mp4">MP4</a>, <a href="videos/videofile.webm">WebM</a>.</p>
 </video>
 ```
 
@@ -545,11 +494,7 @@ Voici le tag `<audio>` dans son utilisation la plus simple:
 
 ```html
 <audio src="audios/audiofile.mp3" controls>
-  <p>
-    Votre navigateur ne supporte pas les fichiers audio intégrées. Vous pouvez
-    néanmoins <a href="audios/audiofile.mp3">télécharger le fichier audio</a> et
-    utiliser votre lecteur préféré.
-  </p>
+  <p>Votre navigateur ne supporte pas les fichiers audio intégrées. Vous pouvez néanmoins <a href="audios/audiofile.mp3">télécharger le fichier audio</a> et utiliser votre lecteur préféré.</p>
 </audio>
 ```
 
@@ -557,14 +502,9 @@ En utilisant différents formats et l'élément `<source>`:
 
 ```html
 <audio controls>
-  <source src="audios/audiofile.mp3" type="audio/mpeg" />
-  <source src="audios/audiofile.ogg" type="audio/ogg" />
-  <p>
-    Votre navigateur ne supporte pas les fichiers audio intégrés. Vous pouvez
-    néanmoins télécharger le fichier audio en format
-    <a href="audios/audiofile.mp3">MP3</a> ou
-    <a href="audios/audiofile.ogg">OGG</a> et utiliser votre lecteur préféré.
-  </p>
+  <source src="audios/audiofile.mp3" type="audio/mpeg">
+  <source src="audios/audiofile.ogg" type="audio/ogg">
+  <p>Votre navigateur ne supporte pas les fichiers audio intégrés. Vous pouvez néanmoins télécharger le fichier audio en format <a href="audios/audiofile.mp3">MP3</a> ou <a href="audios/audiofile.ogg">OGG</a> et utiliser votre lecteur préféré.</p>
 </audio>
 ```
 
@@ -582,14 +522,14 @@ Voici un formulaire de base.
 <form action="register.php" method="post">
   <div>
     <legend for="userName">Name *</legend>
-    <input type="text" name="user-name" id="userName" required />
+    <input type="text" name="user-name" id="userName" required>
   </div>
   <div>
     <legend for="userEmail">Email *</legend>
-    <input type="email" name="user-email" id="userEmail" required />
+    <input type="email" name="user-email" id="userEmail" required>
   </div>
   <div>
-    <input type="submit" value="Send" />
+    <input type="submit" value="Send">
   </div>
 </form>
 ```
@@ -623,7 +563,7 @@ Les navigateurs possèdent une CSS par défaut. Lorsque vous visualisez un docum
 Il existe plusieurs façons de lires des styles CSS à vos documents HTML. Nous allons ici nous concentrer sur la plus utilisées d'entre-elles: l'élément `<link>` et l'attribut `media`.
 
 ```html
-<link rel="stylesheet" href="css/screen.css" media="screen" />
+<link rel="stylesheet" href="css/screen.css" media="screen">
 ```
 
 Cette simple ligne de code va lier un fichier CSS (screen.css) à votre document HTML. L'attribut `media` spécifie pour quels media les styles devront êtres appliqués. Il existe de nombreuses valeurs possibles pour cet attribut mais les deux plus utilisés sont `screen` et `print`.
@@ -1256,7 +1196,7 @@ Par défaut les images sont des éléments de type `inline`. La propriété `tex
 Pour aligner des images à gauche ou à droite ou pour les centrer dans un bloc conteneur, il suffit d'utiliser cette propriété sur ce dernier.
 
 ```html
-<p class="img-container"><img src="../img/myimage.png" alt="alt text" /></p>
+<p class="img-container"><img src="../img/myimage.png" alt="alt text"></p>
 ```
 
 ```css
@@ -1275,13 +1215,7 @@ Les propriétés `float:left;` et `float:right;` permettent au texte de contourn
 
 ```html
 <p>
-  <img
-    src="img/monimage.png"
-    class="imgleft"
-    width="200"
-    height="112"
-    alt="représentation alternative"
-  />Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit cum corporis
+  <img src="img/monimage.png" class="imgleft" width="200" height="112" alt="représentation alternative">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit cum corporis
   fugiat labore explicabo mollitia est saepe in minima porro neque ipsam
   voluptates, natus voluptatum! Animi commodi corporis ducimus natus!
 </p>

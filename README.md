@@ -1,6 +1,6 @@
-# Cours IAD: Initiation à HTML / CSS
+# Cours IAD: Introduction au développement front-end (HTML/CSS/JS)
 
-initiation aux langages du web: HTML/CSS/JS
+Introduction aux langages du web: HTML/CSS/JS
 
 Syllabus du cours donné à l'Institut des Arts de Diffusion par Jérôme Coupé.
 
