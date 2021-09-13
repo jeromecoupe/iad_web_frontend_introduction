@@ -1,4 +1,4 @@
-## Initiation aux langages du web (front-end)
+## Introduction au développement web front-end (HTML/CSS/JS)
 
 Nous allons aborder ici les 3 langages principaux utilisés pour créer les pages et sites Internet que vous utilisez chaque jour.
 

@@ -1,4 +1,4 @@
-# Cours IAD: Introduction au développement front-end (HTML/CSS/JS)
+# Cours IAD: Introduction au développement web front-end (HTML/CSS/JS)
 
 Introduction aux langages du web: HTML/CSS/JS
 
