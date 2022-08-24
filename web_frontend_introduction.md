@@ -471,20 +471,20 @@ HTML permet également d'intégrer facilement des fichiers audio ou vidéo à vo
 Voici le tag `<video>` dans son utilisation la plus simple:
 
 ```html
-<video src="videos/videofile.ogv" poster="posterimage.jpg" controls>
-  <p>Votre navigateur ne supporte pas les vidéos intégrées. Vous pouvez néanmoins <a href="videos/videofile.ogv">télécharger la vidéo</a> et utiliser votre lecteur préféré.</p>
+<video src="videos/videofile.mp4" poster="posterimage.jpg" controls>
+  <p>Votre navigateur ne supporte pas les vidéos intégrées. Vous pouvez néanmoins <a href="videos/videofile.mp4">télécharger la vidéo</a> et utiliser votre lecteur préféré.</p>
 </video>
 ```
 
 L'attribut `poster` sert à spécifier une image d'attente pour la vidéo. [Mozilla Developer Network](https://developer.mozilla.org/fr/docs/Web/HTML/Element/video) vous donnera des informations exhaustives sur l'élément `<video>` et son utilisation en HTML5.
 
-Le problème est que les différents navigateurs ne supportent pas tous les mêmes formats vidéo. Il vous faudra donc spécifier différents fichiers pour les différents navigateurs et utiliser l'élément `<source>`. Aujourd'hui encore, il vous faudra encoder votre vidéo dans 3 formats différents ([Miro Video Converter](http://www.mirovideoconverter.com/) est un outil gratuit qui vous y aidera).
+Le problème est que les différents navigateurs ne supportent pas tous les mêmes formats vidéo. Il vous faudra donc spécifier différents fichiers pour les différents navigateurs et utiliser l'élément `<source>`.
 
 ```html
 <video poster="posterimage.jpg" controls>
-  <source src="videos/videofile.mp4" type="video/mp4">
   <source src="videos/videofile.webm" type="video/webm">
-  <p>Votre navigateur ne supporte pas les vidéos intégrées. Vous pouvez néanmoins télécharger la vidéo en format <a href="videos/videofile.mp4">MP4</a>, <a href="videos/videofile.webm">WebM</a>.</p>
+  <source src="videos/videofile.mp4" type="video/mp4">
+  <p>Votre navigateur ne supporte pas les vidéos intégrées. Vous pouvez néanmoins télécharger la vidéo en format <a href="videos/videofile.webm">WebM</a> ou <a href="videos/videofile.mp4">MP4</a>.</p>
 </video>
 ```
 
