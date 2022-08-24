@@ -1,4 +1,4 @@
-## Introduction au développement web front-end (HTML/CSS/JS)
+# Introduction au développement web front-end (HTML/CSS/JS)
 
 Nous allons aborder ici les 3 langages principaux utilisés pour créer les pages et sites Internet que vous utilisez chaque jour.
 
@@ -1238,17 +1238,42 @@ Les propriétés `float:left;` et `float:right;` permettent au texte de contourn
 }
 ```
 
-#### Images et Videos fluides
+### Responsive web design
 
-Si vous avez des conteneurs spécifiés en pourcentage, il peut être utile de faire en sorte que vous images rétrécissent avec ces derniers. Pour cela, il suffit de spécifier que vos images ne peuvent jamais être plus larges que leur élément parent. Cette technique fonctionne pour les images comme pour les players videos et audio HTML5.
+Les sites et applications web doivent fonctionner sur une grande variété de terminaux et d'écrans de différentes tailles. On parle de "responsive web design" pour désigner le fait de designer et de coder sites et applications de manière à ce que la mise en page s'adapte à la taille de l'écran. 
+
+Généralement, les développeurs front-end font du "mobile-first web design": ils commencent par designer et coder pour les terminaux ayant les contraintes ou les limitations les plus importantes (les terminaux mobiles au niveau de la taille d'écran) pour ensuite designer et coder pour les terminaux ayant des contraintes moins importantes.
+
+Ces approches sont liées aux questions de performance (tous les utilisateurs ne disposent pas d'une bande passante importante), d'accessibilité (les utilisateurs sont tous différents et certains accèdent au web avec des technologies d'assistance ou sont porteur d'un handicap) et de "progressive enhancement" (tous les terminaux n'ont pas les mêmes capacité techniques, il est important que les fonctionnalités et contenus de base soient accessibles à tous).
+
+Techniquement parlant, le responsive web design repose sur trois grands piliers:
+
+- Layouts ou mises en page fluides
+- Media fluides (images, videos, etc.)
+- Media queries, preference queries, container queries, etc. (CSS)
+
+#### Layout et mise en page fluides
+
+Flexbox et Grid sont deux outils qui permettent de créer des mises en pages fluides et s'adaptant à plusieurs tailles d'écran. Nous les utiliserons en détail l'année prochaine et vous en aurez un aperçu cette année.
+
+#### Media fluides
+
+Si vous avez des mises en page fluides, il est utile de faire en sorte que vous images le soient également. Pour cela, il est possible de spécifier que vos images ne peuvent jamais être plus larges que leur élément parent. Cette technique fonctionne pour les images comme pour les players videos et audio HTML5.
 
 ```css
 .imgfluid {
   max-width: 100%;
+  height: auto;
 }
 ```
 
-Une technique différente doit être utilisée pour les `iframe` (Youtube / Vimeo / Soundcloud). Un `iframe` étant une sorte de fenêtre vers un autre site, elle ne se comporte pas comme un élément `audio` ou `video`.
+```html
+<img src="../img/myimage.jpg">
+```
+
+Nous verrons l'année prochaine que 
+
+Une technique différente doit être utilisée pour les `iframe` (Youtube / Vimeo / Soundcloud). Une `iframe` étant une sorte de fenêtre vers un autre site, elle ne se comporte pas comme un élément `audio` ou `video`.
 
 ```html
 <div class="videocontainer">
@@ -1258,19 +1283,45 @@ Une technique différente doit être utilisée pour les `iframe` (Youtube / Vime
 
 ```css
 .videocontainer {
-  padding-top: 56.25%; /* ratio fluide de 16/9 (100%/16*9=56.25%) */
-  background-color: #000;
-  position: relative; /* contexte de positionnement pour l'iframe */
+  aspect-ratio: 16 / 9;
+  background-color: black;
 }
 
 .videocontainer > iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   border: none;
 }
 ```
 
-_Exercice: Mettre en page votre CV avec HTML et CSS_
+#### Media queries
+
+Les media queries en CSS sont un outil qui permet d'appliquer des règles CSS de manière conditionnelle (taille du viewport du navigateur, orientation du terminal: paysage ou portrait, préférences de l'utilisateur, etc.). Dans le cadre du responsive web design, les plus utilisées sont les media queries relatives à la taille de la zone d'affichage du navigateur (viewport).
+
+Le code suivant specifie que la couleur de fond de la page est jaune par défaut mais devient rouge dès que le viewport atteint une taille minimum de 750 pixels et verte lorsqu'il à une taille minimum de 1024 pixels.
+
+```css
+body {
+  background-color: yellow;
+}
+
+@media all and (min-width: 750px) {
+  body {
+    background-color: red;
+  }
+}
+
+@media all and (min-width: 1024px) {
+  body {
+    background-color: green;
+  }
+}
+```
+
+_Exercice: coder ensemble un site d'une page sur votre série préférée_
+
+## Ressources:
+
+- ["Apprendre le dévelopement web" (MDN)](https://developer.mozilla.org/fr/docs/Learn)
+- [”Learn CSS" (Web.dev - Google)](https://web.dev/learn/css/)
+- [”Learn Responsive design" (Web.dev - Google)](https://web.dev/learn/design/)
