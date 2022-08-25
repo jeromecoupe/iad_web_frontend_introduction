@@ -525,7 +525,7 @@ Voici un formulaire de base.
     <input type="email" name="user-email" id="userEmail" required>
   </div>
   <div>
-    <legend for="userPwd">Email *</legend>
+    <legend for="userPwd">Password *</legend>
     <input type="password" name="user-password" id="userPwd" required>
   </div>
   <div>
