@@ -1261,17 +1261,26 @@ Flexbox et Grid sont deux outils qui permettent de créer des mises en pages flu
 Si vous avez des mises en page fluides, il est utile de faire en sorte que vous images le soient également. Pour cela, il est possible de spécifier que vos images ne peuvent jamais être plus larges que leur élément parent. Cette technique fonctionne pour les images comme pour les players videos et audio HTML5.
 
 ```css
-.imgfluid {
+.fluidimg,
+.fluidvideo {
   max-width: 100%;
   height: auto;
 }
 ```
 
 ```html
-<img src="../img/myimage.jpg">
+<img class="fluidimg" src="../img/myimage.jpg">
+
+<video class="fluidvideo" poster="posterimage.jpg" controls>
+  <source src="videos/videofile.webm" type="video/webm">
+  <source src="videos/videofile.mp4" type="video/mp4">
+  <p>Votre navigateur ne supporte pas les vidéos intégrées. Vous pouvez néanmoins télécharger la vidéo en format <a href="videos/videofile.webm">WebM</a> ou <a href="videos/videofile.mp4">MP4</a>.</p>
+</video>
 ```
 
-Nous verrons l'année prochaine que 
+Nous verrons l'année prochaine qu'au niveau du HTML, cela va de pair avec une attention pour la performance avec: `srcset`, `sizes`, `picture`, `loading` et `decoding`. 
+
+D'ici là, vous pouvez vous documenter sur [Web.dev](https://web.dev/responsive-images/) ou [MDN](https://developer.mozilla.org/fr/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images).
 
 Une technique différente doit être utilisée pour les `iframe` (Youtube / Vimeo / Soundcloud). Une `iframe` étant une sorte de fenêtre vers un autre site, elle ne se comporte pas comme un élément `audio` ou `video`.
 
