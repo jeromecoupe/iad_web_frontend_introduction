@@ -521,12 +521,12 @@ Voici un formulaire de base.
 ```html
 <form action="register.php" method="post">
   <div>
-    <legend for="userName">Name *</legend>
-    <input type="text" name="user-name" id="userName" required>
-  </div>
-  <div>
     <legend for="userEmail">Email *</legend>
     <input type="email" name="user-email" id="userEmail" required>
+  </div>
+  <div>
+    <legend for="userPwd">Email *</legend>
+    <input type="password" name="user-password" id="userPwd" required>
   </div>
   <div>
     <input type="submit" value="Send">
