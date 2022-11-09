@@ -162,7 +162,7 @@ Bien que des majuscules soient valides en HTML, votre code sera plus lisible si 
 **Pas terrible**
 
 ```html
-<p>Mon paragraphe contenant <a href="https://www.iad-arts.be">un lien hypertexte</a></p>
+<p>Mon paragraphe contenant <A HREF="https://www.iad-arts.be">un lien hypertexte</A></p>
 ```
 
 **Mieux**
@@ -231,7 +231,7 @@ Exemples:
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto assumenda quam illum ducimus. Odio reiciendis eligendi, repellendus beatae, tempora laboriosam suscipit quam velit! Culpa sunt commodi animi, ullam temporibus. Inventore.</p>
 ```
 
-`<h1>` > `<h6>`: utilisé pour marquer les niveau de titres (il n'y à que six niveaux de titres en HTML)
+`<h1>` jusqu'à `<h6>`: utilisé pour marquer les niveau de titres (il n'y à que six niveaux de titres en HTML)
 
 ```html
 <h1>Level one title</h1>
