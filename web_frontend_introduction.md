@@ -540,18 +540,6 @@ Voici un formulaire de base.
 </form>
 ```
 
-### Scripts
-
-Avec des sites de plus en plus orientés vers des applications et interactifs, JavaScript est une part importante du web actuel.
-
-Les scripts javascripts sont habituellement des fichiers chargés par le document HTML comme le sont les images, les fichiers CSS et autres assets. Tout comme les CSS, les scripts peuvent être placés directement dans le code HTML. Tout comme avec vos styles CSS, la bonne pratique est de plutôt charger un fichier externe.
-
-Généralement, la balise `<script>` est placée juste avant le tag de fin de `</body>`dans un document HTML afin que les scripts soient chargés après le reste du document HTML (ce qui permet au script de manipuler des éléments du DOM) et que le chargement des scripts ne bloquent pas le rendu de la page.
-
-```html
-<script src="js/main.min.js"></script>
-```
-
 ### Exercice: création d'un document de base
 
 Essayons de créer ensemble un document plus élaboré et sémantiquement correct. Je vous propose ici de créer votre CV en HTML.
@@ -891,7 +879,7 @@ p {
 }
 ```
 
-### Modèles de boites avec width, height, border, padding et margin
+### Modèle de boites avec width, height, border, padding et margin
 
 Chaque élément en HTML génère une boite. Ces boites ont différentes caractéristiques et sont de différents types suivant l'élément utilisé (`block`, `inline`, `inline-block`, etc.).
 
@@ -902,7 +890,7 @@ A l'aide des différentes valeurs spécifiées, les navigateurs calculent la tai
 - Par défaut, la largeur totale d’une boîte se calcule de la façon suivante : largeur du contenu (width) + padding + borders + margin.
 - Par défaut, la hauteur totale d’une boîte se calcule de la façon suivante : hauteur du contenu (height) + padding + borders + margin.
 
-Il est posible de modifier le box model à l'aide de la propriété `box-sizing`. Par exemple, `box-sizing: border-box;` modifie le Box Model afin que les dimensions spécifiées pour padding et border soient includes dans `width` et `height`.
+Remarque importante: Il est posible de modifier le box model pour une ou plusieurs boites (y compris pour toutes) à l'aide de la propriété `box-sizing`. Par exemple, `box-sizing: border-box;` modifie le Box Model afin que les dimensions spécifiées pour padding et border soient includes dans `width` et `height`.
 
 Les dimensions de ces boites peuvent être spécifiées avec des unités absolues (`px` par exemple) ou relatives (`%`, `rem`, `em`, `vh`, `vw`, `ch` etc.).
 
@@ -982,17 +970,78 @@ Des marges latérales automatiques combinées à une largeur (`width`) spécifi�
 }
 ```
 
+### CSS Custom properties (variables CSS)
+
+Les custom properties CSS ont soit une portée globale, soit une portée limitée au block CSS dans lequel elle sont déclarées. 
+
+Elles peuvent avoir des valeurs par defaut et être accédées et modifiées par JavaScript. Elles sont particulièrement utiles pour vous permettre de configurer et de paramètrer vos composants ou les aspects plus généraux de votre site (couleurs, polices à utiliser, espacements, etc.).
+
+#### Variables à portée globale avec `:root`
+
+Ces variables sont définies à la racine du document et sont utilisables partout dans votre CSS. Très utiles pour des valeurs globales (couleurs, polices, etc.) 
+
+
+```css
+/* variables à portée globale */
+:root {
+  --color-brand: #18a788;
+  --color-brand-dark: #0b6451;
+  --color-brand-bright: #cefea9;
+  --color-brand-light: #d6fbf3;
+
+  --color-background: #ffffff;
+  --color-text: #293634;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: #031310;
+    --color-text: #e6e7e7;
+  }
+}
+```
+
+#### Variables à portée locale
+
+Les variables définies au sein de la classe `.c-button` seront accesibles à tous les éléments HTML auxquels cette classe est attribuée et à leurs descendants (sauf si cette varaible est surdéterminée).
+
+```css
+/* variables à portée locale */
+.c-button {
+  --button-background: var(--color-brand);
+  --button-padding: 1em;
+  --button-color: #ffffff;
+
+  display: inline-block;
+  padding: var(--button-padding);
+  background--color: var(--button-background);
+  color: var(--button-color);
+  font: bold 1em/1 system-ui, "Helvetica", "Arial", sans-serif;
+  text-decoration: none;
+  border: 0;
+  cursor: pointer;
+
+  transition: backgroound-color 0.2s ease-out;
+}
+
+.c-button:hover,
+.c-button:focus {
+  --button-background: var(--color-brand-dark);
+  --button-color: #ffffff;
+}
+```
+
 ### Couleurs
 
-#### propriétés color et background
+#### propriétés color et background-color
 
-Les propriétés `color` et `background` vous permettent de changer les couleurs de vos textes ou les fonds appliqués à vos boites.
+Les propriétés `color` et `background-color` vous permettent de changer les couleurs de vos textes ou les fonds appliqués à vos boites.
 
 ```css
 body {
   magin: 0;
   padding: 2em;
-  background: #f0f0f0;
+  background-color: #f0f0f0;
   color: #171717;
   border: 1em solid #d35400;
 }
@@ -1334,6 +1383,26 @@ body {
 ```
 
 _Exercice: coder ensemble un site d'une page sur votre série préférée_
+
+## JavaScript
+
+Avec des sites de plus en plus orientés vers des applications et interactifs, JavaScript est une part importante du web.
+
+Les scripts javascripts sont habituellement des fichiers chargés par le document HTML comme le sont les images, les fichiers CSS et autres assets. Tout comme les CSS, les scripts peuvent être placés directement dans le code HTML. 
+
+Tout comme avec vos styles CSS, la bonne pratique est de plutôt charger un fichier externe.
+
+Généralement, la balise `<script>` est placée dans la partie `<head>` et accompagnée de l'attribut `defer`. Cette combinaison permet au navigateur de charger le script en tâche de fond sans bloquer le reste du chargement de la page. Les scripts avec un attribut `defer` sont exécuté uniquement quand le DOM (tous les éléments HTML de la page) sont chargés, ce qui permet au JavaScript d'interagir avec tous ces éléments.
+
+```html
+<head>
+  <!-- ... reste du contenu head ... -->
+  <script defer src="js/main.min.js"></script>
+  <!-- ... reste du contenu head ... -->
+</head>
+```
+
+Nous verrons l'année prochaine des script permettant d'ajouter / de supprimer des classes à des éléments HTML afin de réaliser des manipulation simlples: afficher ou pas un menu mobile, déclancher des animations, etc.
 
 ## Ressources:
 
