@@ -369,7 +369,13 @@ Ce lien est "relatif" dans la mesure où son attribut `href` référence une URL
 <a href="mailto:jercoupe@gmail.com">Contacter Jérôme Coupé</a>
 ```
 
-Les liens peuvent également renvoyer vers une adresse email, il suffit que cette dernière soit précédée de `mailto:`.
+#### Liens vers des numéros de téléphone
+
+```html
+<a href="tel:0032474123456">Réserver une table</a>
+```
+
+Nous allons pour cela utiliser le protocole `tel:`
 
 #### Ancres
 
