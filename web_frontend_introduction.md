@@ -1001,6 +1001,8 @@ Ces variables sont définies à la racine du document et sont utilisables partou
 }
 ```
 
+Ici, deux de ces variables sont modifiées via une media query lorsque l'utilisateur ou son système ont exprimer une préférence pour l'utilisation d'un thème "dark".
+
 #### Variables à portée locale
 
 Les variables définies au sein de la classe `.c-button` seront accesibles à tous les éléments HTML auxquels cette classe est attribuée et à leurs descendants (sauf si cette varaible est surdéterminée).
