@@ -1404,6 +1404,33 @@ Généralement, la balise `<script>` est placée dans la partie `<head>` et acco
 
 Nous verrons l'année prochaine des script permettant d'ajouter / de supprimer des classes à des éléments HTML afin de réaliser des manipulation simlples: afficher ou pas un menu mobile, déclancher des animations, etc.
 
+### Modules JavaScript
+
+Il est également possible de créer des applications JavaScript complexes en séparant les fonctionnalités en différents modules. Les modules JavaScript sont biens supportés par les différents navigateurs. Pour des raisons de performance, il est recommandé d'encore utiliser des outils pour les transformer en un seul fichier en production. Les scripts appellés avec un type de `module` sont exécutés comme des scripts ayant un attribut `defer` (après chargement du DOM), sont exécutés une seule fois et utilisent automatiquement le mode strict.
+
+```html
+<head>
+  <!-- ... reste du contenu head ... -->
+  <script type="module" src="js/main.js"></script>
+  <!-- ... reste du contenu head ... -->
+</head>
+```
+
+```js
+/* js/modules/hello.js */
+function hello(message) {
+  console.log(message);
+}
+
+export { hello };
+```
+
+```js
+/* js/main.js */
+import { hello } from "./modules/hello.js";
+hello("Hello from the console");
+```
+
 ## Ressources:
 
 - ["Apprendre le dévelopement web" (MDN)](https://developer.mozilla.org/fr/docs/Learn)
