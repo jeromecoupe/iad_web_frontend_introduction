@@ -970,6 +970,14 @@ Des marges latérales automatiques combinées à une largeur (`width`) spécifi�
 }
 ```
 
+#### Propriétés logiques (logical properties)
+
+CSS évolue vers l'utilisation de [propriétés logiques](https://web.dev/learn/css/logical-properties/) ([logical properties](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties)) liées à la direction du texte ou au mode d'écriture plutôt que d'utiliser des propriétés physiques. Cela permet, entre autres, de faciliter l'internationalisation en fonction du mode d'écriture (writing mode).
+
+A titre d'exemple, `margin-inline-end` créera une marge à droite de la boite pour un site avec un writing-mode par defaut (en anglais ou en français) mais créera automatiquement une marge sur la gauche avec un writing mode right-to-left (en langue arabe).
+
+Des propriétés telles que flexbox et grid les utilisent déjà. Il est possible d'utiliser des propriétés logiques pour ce qui est lié à l'alignement (`text-align`), au box-model (`width`, `height`, `margin`, `padding`, `border`, `overflow`), au positionnment et aux floats (afin de remplacer les valeurs `top`, `right`, `bottom`, `left`) et aux unités liées au viewport (`v`) C'est une habitude à prendre mais pas véritablement quelque chose de compliqué.
+
 ### CSS Custom properties (variables CSS)
 
 Les custom properties CSS ont soit une portée globale, soit une portée limitée au block CSS dans lequel elle sont déclarées. 
