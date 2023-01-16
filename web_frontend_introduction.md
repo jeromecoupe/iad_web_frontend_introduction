@@ -1321,26 +1321,115 @@ Techniquement parlant, le responsive web design repose sur trois grands piliers:
 
 Flexbox et Grid sont deux outils qui permettent de créer des mises en pages fluides et s'adaptant à plusieurs tailles d'écran. Nous les utiliserons en détail l'année prochaine et vous en aurez un aperçu cette année.
 
-#### Media fluides
+Ces deux modes de display n'ont un impact que sur leurs enfants directs dans le DOM.
 
-Si vous avez des mises en page fluides, il est utile de faire en sorte que vous images le soient également. Pour cela, il est possible de spécifier que vos images ne peuvent jamais être plus larges que leur élément parent. Cette technique fonctionne pour les images comme pour les players videos et audio HTML5.
+- **Flexbox**: gère l'alignement des flex-items dans une seule dimension (verticale **ou** horizontale), fonctionne à partir des caractéristiques des flex-items pour gérer leurs répartition dans un container.
+- **Grid**: gère deux dimensions (verticale **et** horizontale), fonctionne à partir des caractéristiques d'une grille dans laquelle les grid-items sont placés, implicitement ou explicitement (à l'aide de lignes ou de zones).
+
+Ces deux outils de layout font appel au [module de Box Alignment](https://www.w3.org/TR/css-align-3/). Vous retrouverez donc des propriétés d'alignement communes à Grid et à Flexbox.
+
+##### Flexbox
+
+Voici un exemple avec une interface de navigation qui passe de verticale à horizontale.
+
+```html
+<ul class="mainnav">
+  <li class="mainnav__item"><a class="mainnav__link" href="love.html">Love</a></li>
+  <li class="mainnav__item"><a class="mainnav__link" href="work.html">Work</a></li>
+  <li class="mainnav__item"><a class="mainnav__link" href="play.html">Play</a></li>
+</ul>
+```
 
 ```css
-.fluidimg,
-.fluidvideo {
+.mainnav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 6px;
+}
+
+@media all and (min-width: 750px) {
+  .mainnav {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px;
+  }
+}
+```
+
+##### Grid
+
+Voici un exemple de création d'une grille responsive qui passe d'une seule à trois colonnes de taille identique.
+
+```html
+<footer class="sitefooter">
+  <div>
+    <!-- one -->
+  </div>
+  <div>
+    <!-- two -->
+  </div>
+  <div>
+    <!-- three -->
+  </div>
+</footer>
+```
+
+```css
+.sitefooter {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+@media all and (min-width: 750px) {
+  .sitefooter {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+}
+```
+
+#### Media fluides
+
+Si vous avez des mises en page fluides, il est utile de faire en sorte que vous images le soient également. Pour cela, il est possible de spécifier que vos images ne peuvent jamais être plus larges que leur élément parent.
+
+Cette technique fonctionne pour les images.
+
+```html
+<img class="fluidimg" src="../img/myimage.jpg">
+```
+
+```css
+.fluidimg {
+  display: block;
   max-width: 100%;
   height: auto;
 }
 ```
 
-```html
-<img class="fluidimg" src="../img/myimage.jpg">
+Cette technique fonctionne également pour les vidéos intégrées.
 
+```html
 <video class="fluidvideo" poster="posterimage.jpg" controls>
   <source src="videos/videofile.webm" type="video/webm">
   <source src="videos/videofile.mp4" type="video/mp4">
   <p>Votre navigateur ne supporte pas les vidéos intégrées. Vous pouvez néanmoins télécharger la vidéo en format <a href="videos/videofile.webm">WebM</a> ou <a href="videos/videofile.mp4">MP4</a>.</p>
 </video>
+```
+
+```css
+.fluidvideo {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
 ```
 
 Nous verrons l'année prochaine qu'au niveau du HTML, cela va de pair avec une attention pour la performance avec: `srcset`, `sizes`, `picture`, `loading` et `decoding`. 
