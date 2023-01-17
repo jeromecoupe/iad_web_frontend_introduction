@@ -409,6 +409,14 @@ Cet élément est utilisé pour marquer les interfaces de navigation du site ou 
 
 Est utilisé pour marquer une partie d'un document, d'une page, d'un site qui fait sens prise indépendamment: un post sur un forum, un article de magazine ou de journal, un billet sur un blog, un commentaire soumis par un utilisateur ou n'importe quel autre élément de contenu indépendant. Une bonne question à se poser pour l’utilisation d’article est: pourriez vous inclure ce contenu dans un flux RSS (ou un mur Facebook). Ce contenu ferait-il sens pris isolément? Si oui, il s’agit probablement d’un bon candidat.
 
+```html
+<article class="blogpost">
+  <a href="blog/grumpycats/index.html"><img src="img/cat.jpg" alt="Grumpy cat"></a>
+  <h2><a href="blog/grumpycats/index.html">A blogpost about cats</a></h2>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis nulla, impedit nam numquam natus adipisci earum unde distinctio suscipit quo ex ab. Beatae quas harum ipsam aliquam dolor corporis eaque.</p>
+</article>
+```
+
 ##### `<section>`
 
 Section générique d'un document ou d'une application. Section sert à marquer un groupement thématique de contenus, typiquement il comporte un `<header>` et parfois un `<footer>`. Exemples: les chapitres d'un livre, les sections d'une thèse, les différentes sections d'une page d'accueil: introduction, news, portfolio, information de contact, etc. Attention à ne pas utiliser section en lieu et place de `<div>` ou `<article>`, par exemple pour séparer le contenu principal d'une page de son contenu secondaire. A part de rares exceptions, n'utilisez pas `<section>` si cet élément ne possède pas naturellement un titre. [Un article détaillé sur le sujet est disponible sur HTML5 Doctor](http://html5doctor.com/the-section-element/).
@@ -928,7 +936,7 @@ body {
 
 Les propriétés `margin` et `padding` sont spécifiées à l'aide 4 valeurs distinctes. Ces valeurs correspondent à chacun des côtés de la boite, en commençant par le haut et dans l'ordre des aiguilles d'une montre (top, right, bottom, left).
 
-Si des valeurs sont manquantes, le navigateur les complètes automatiquement en doublant les valeurs deux par deux (top et bottom, left et right). Ces propriétés courtes peuvent également être spécifiées séparément à l'aide de `padding-top`, `padding-bottom`, `padding-left`, `padding-right`, `margin-top`, `margin-bottom`, `margin-left` et `margin-right`.
+Si des valeurs sont manquantes, le navigateur les complètes automatiquement en doublant les valeurs deux par deux (top et bottom, left et right). Si une seule valeur est spécifiée, elle sera dupliquée pour tous les côtés de la boite. Ces propriétés courtes peuvent également être spécifiées séparément à l'aide de `padding-top`, `padding-bottom`, `padding-left`, `padding-right`, `margin-top`, `margin-bottom`, `margin-left` et `margin-right`.
 
 ```css
 body {
@@ -1313,9 +1321,33 @@ Ces approches sont liées aux questions de performance (tous les utilisateurs ne
 
 Techniquement parlant, le responsive web design repose sur trois grands piliers:
 
+- Media queries, preference queries, container queries, etc. (CSS)
 - Layouts ou mises en page fluides
 - Media fluides (images, videos, etc.)
-- Media queries, preference queries, container queries, etc. (CSS)
+
+#### Media queries
+
+Les media queries en CSS sont un outil qui permet d'appliquer des règles CSS de manière conditionnelle (taille du viewport du navigateur, orientation du terminal: paysage ou portrait, préférences de l'utilisateur, etc.). Dans le cadre du responsive web design, les plus utilisées sont les media queries relatives à la taille de la zone d'affichage du navigateur (viewport).
+
+Le code suivant specifie que la couleur de fond de la page est jaune par défaut mais devient rouge dès que le viewport atteint une taille minimum de 750 pixels et verte lorsqu'il à une taille minimum de 1024 pixels.
+
+```css
+body {
+  background-color: yellow;
+}
+
+@media all and (min-width: 750px) {
+  body {
+    background-color: red;
+  }
+}
+
+@media all and (min-width: 1024px) {
+  body {
+    background-color: green;
+  }
+}
+```
 
 #### Layout et mise en page fluides
 
@@ -1456,30 +1488,6 @@ Une technique différente doit être utilisée pour les `iframe` (Youtube / Vime
   width: 100%;
   height: 100%;
   border: none;
-}
-```
-
-#### Media queries
-
-Les media queries en CSS sont un outil qui permet d'appliquer des règles CSS de manière conditionnelle (taille du viewport du navigateur, orientation du terminal: paysage ou portrait, préférences de l'utilisateur, etc.). Dans le cadre du responsive web design, les plus utilisées sont les media queries relatives à la taille de la zone d'affichage du navigateur (viewport).
-
-Le code suivant specifie que la couleur de fond de la page est jaune par défaut mais devient rouge dès que le viewport atteint une taille minimum de 750 pixels et verte lorsqu'il à une taille minimum de 1024 pixels.
-
-```css
-body {
-  background-color: yellow;
-}
-
-@media all and (min-width: 750px) {
-  body {
-    background-color: red;
-  }
-}
-
-@media all and (min-width: 1024px) {
-  body {
-    background-color: green;
-  }
 }
 ```
 
