@@ -1319,12 +1319,12 @@ Techniquement parlant, le responsive web design repose sur trois grands piliers:
 
 #### Layout et mise en page fluides
 
-Flexbox et Grid sont deux outils qui permettent de créer des mises en pages fluides et s'adaptant à plusieurs tailles d'écran. Nous les utiliserons en détail l'année prochaine et vous en aurez un aperçu cette année.
+Flexbox et Grid sont deux outils qui permettent de créer des mises en pages fluides qui s'adaptant à plusieurs tailles d'écran et conditions d'utilisation. Nous les utiliserons en détail l'année prochaine et vous en aurez un aperçu cette année.
 
-Ces deux modes de display n'ont un impact que sur leurs enfants directs dans le DOM.
+Ces deux modes de display n'ont un impact que sur les enfants directs de l'élément auquel ils sont appliqués.
 
-- **Flexbox**: gère l'alignement des flex-items dans une seule dimension (verticale **ou** horizontale), fonctionne à partir des caractéristiques des flex-items pour gérer leurs répartition dans un container.
-- **Grid**: gère deux dimensions (verticale **et** horizontale), fonctionne à partir des caractéristiques d'une grille dans laquelle les grid-items sont placés, implicitement ou explicitement (à l'aide de lignes ou de zones).
+- **Flexbox**: le *flex-continer* gère l'alignement des *flex-items* dans une seule dimension (verticale **ou** horizontale). FLexbox part des caractéristiques des flex-items pour gérer leur répartition / alignement dans un container.
+- **Grid**: le *grid-container* gère le placement des *grid-items* dans deux dimensions (verticale **et** horizontale). Grid part des caractéristiques d'une grille dans laquelle les *grid-items* sont placés, implicitement ou explicitement, à l'aide de lignes ou de zones.
 
 Ces deux outils de layout font appel au [module de Box Alignment](https://www.w3.org/TR/css-align-3/). Vous retrouverez donc des propriétés d'alignement communes à Grid et à Flexbox.
 
@@ -1333,11 +1333,13 @@ Ces deux outils de layout font appel au [module de Box Alignment](https://www.w3
 Voici un exemple avec une interface de navigation qui passe de verticale à horizontale.
 
 ```html
-<ul class="mainnav">
-  <li class="mainnav__item"><a class="mainnav__link" href="love.html">Love</a></li>
-  <li class="mainnav__item"><a class="mainnav__link" href="work.html">Work</a></li>
-  <li class="mainnav__item"><a class="mainnav__link" href="play.html">Play</a></li>
-</ul>
+<nav>
+  <ul class="mainnav">
+    <li class="mainnav__item"><a class="mainnav__link" href="love.html">Love</a></li>
+    <li class="mainnav__item"><a class="mainnav__link" href="work.html">Work</a></li>
+    <li class="mainnav__item"><a class="mainnav__link" href="play.html">Play</a></li>
+  </ul>
+</nav>
 ```
 
 ```css
