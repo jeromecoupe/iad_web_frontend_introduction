@@ -1228,7 +1228,26 @@ body {
 
 #### Utilisation de polices non-standard
 
-Depuis que les principaux navigateurs supportent la propriété `@font-face`, il est possible d'utiliser des polices non-standard. Au lieu de se reposer sur les polices présentes sur l'ordinateur de vos visiteurs, vous pouvez spécifier des polices personnalisées que les visiteurs téléchargent en même temps que le contenu de votre site. Nous verrons cela en détail dès l'année prochaine.
+Depuis que les principaux navigateurs supportent la propriété `@font-face`, il est possible d'utiliser des polices non-standard. Au lieu de se reposer sur les polices présentes sur l'ordinateur de vos visiteurs, vous pouvez spécifier des polices personnalisées que les visiteurs téléchargent en même temps que le contenu de votre site.
+
+```css
+@font-face {
+  font-family: "Cormorant";
+  src: url("../assets/fonts/cormorant-variable.woff2") format("woff2")
+      tech("variations"),
+    url("../assets/fonts/cormorant-variable.woff2") format("woff2-variations");
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+h1 {
+  font-family: "Cormorant", "Georgia", serif;
+}
+```
+
+
+
 
 Etant donné les complexités techniques de la typographie sur écran, de nombreux services ont vu le jour pour vous proposer des polices optimisées et en permettre une utilisation simple dans vos designs: Typekit, Fontdeck, Google fonts.
 
