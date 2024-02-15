@@ -1233,9 +1233,8 @@ Depuis que les principaux navigateurs supportent la propriété `@font-face`, il
 ```css
 @font-face {
   font-family: "Cormorant";
-  src: url("../assets/fonts/cormorant-variable.woff2") format("woff2")
-      tech("variations"),
-    url("../assets/fonts/cormorant-variable.woff2") format("woff2-variations");
+  src: url("../fonts/cormorant-variable.woff2") format("woff2-variations");
+  src: url("../fonts/cormorant-variable.woff2") format("woff2") tech("variations");
   font-weight: 300 700;
   font-style: normal;
   font-display: swap;
@@ -1245,9 +1244,6 @@ h1 {
   font-family: "Cormorant", "Georgia", serif;
 }
 ```
-
-
-
 
 Etant donné les complexités techniques de la typographie sur écran, de nombreux services ont vu le jour pour vous proposer des polices optimisées et en permettre une utilisation simple dans vos designs: Typekit, Fontdeck, Google fonts.
 
