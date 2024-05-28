@@ -1349,16 +1349,12 @@ Le code suivant specifie que la couleur de fond de la page est jaune par défaut
 ```css
 body {
   background-color: yellow;
-}
-
-@media all and (min-width: 750px) {
-  body {
+  
+  @media  (width >= 750px) {
     background-color: red;
   }
-}
 
-@media all and (min-width: 1024px) {
-  body {
+  @media  (width >= 1024px) {
     background-color: green;
   }
 }
@@ -1400,10 +1396,9 @@ Voici un exemple avec une interface de navigation qui passe de verticale à hori
   justify-content: flex-start;
   align-items: stretch;
   gap: 6px;
-}
 
-@media all and (min-width: 750px) {
-  .mainnav {
+
+  @media (width >= 750px) {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
@@ -1435,10 +1430,8 @@ Voici un exemple de création d'une grille responsive qui passe d'une seule à t
   display: grid;
   grid-template-columns: 1fr;
   gap: 18px;
-}
 
-@media all and (min-width: 750px) {
-  .sitefooter {
+  @media (width >= 750px) {
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
   }
