@@ -14,7 +14,7 @@ Chacun de ces langages possède un rôle bien particulier:
 
 - **HTML** sert à structurer vos contenus de façon sémantique (afin qu'il ait un sens pour les machines comme pour les humains)
 - **CSS** sert à créer des mises en pages (macro) et à appliquer des styles graphiques à vos éléments HTML (micro)
-- **Javascript** sert à ajouter de l'interactivité (des comportements) à vos pages web (depuis de simples animations et effets jusqu'à de la géo-localisation).
+- **Javascript** sert à ajouter de l'interactivité (des comportements) à vos pages web (depuis des animations et effets jusqu'à de la géo-localisation).
 
 Le [World Wide Web Consortium](http://www.w3.org) W3C est la structure qui créé et maintient ces langages ou standards. Tous les fabricants de navigateurs participent aux discussions et groupes de travail, avec d'autres experts venus d'autres horizons.
 
@@ -1230,10 +1230,14 @@ body {
 
 Depuis que les principaux navigateurs supportent la propriété `@font-face`, il est possible d'utiliser des polices non-standard. Au lieu de se reposer sur les polices présentes sur l'ordinateur de vos visiteurs, vous pouvez spécifier des polices personnalisées que les visiteurs téléchargent en même temps que le contenu de votre site.
 
+Généralement, il est utile d'[utiliser des polices variables](https://developer.mozilla.org/fr/docs/Web/CSS/CSS_Fonts/Variable_Fonts_Guide). Celles-ci ont l'avantage de ne nécessiter qu'un seul fichier pour gérer [plusieurs variations de la même police](https://web.dev/articles/variable-fonts) (poids, pente, largeur, etc.). Les polices variables ont donc une meilleure performance en raison d'un poids plus léger, tout en offrant une grande flexibilité.
+
 ```css
 @font-face {
   font-family: "Cormorant";
+  /* ancienne syntaxe */
   src: url("../fonts/cormorant-variable.woff2") format("woff2-variations");
+  /* nouvelle syntaxe */
   src: url("../fonts/cormorant-variable.woff2") format("woff2") tech("variations");
   font-weight: 300 700;
   font-style: normal;
