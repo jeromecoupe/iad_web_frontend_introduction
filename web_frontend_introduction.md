@@ -1163,7 +1163,7 @@ _Exercice: expérimenter avec les couleurs et les images de fond dans votre fich
 
 CSS vous offre également de nombreux outils pour contrôler les aspects typographiques de votre design. Nous verrons ici les propriétés les plus utilisées: `font-family`, `font-size`, `font-weight` et `line-height`. Nous aborderons également les propriétés `font-variant` et `font-style`.
 
-`font-family`: permet de gérer la police utilisée. S'utilise en général avec plusieurs fontes ([font-stack](http://www.smashingmagazine.com/2009/09/22/complete-guide-to-css-font-stacks/)) de façon à avoir des polices de rechange au cas où l'une ou plusieurs d'entre-elles ne sont pas disponibles sur l'ordinateur client.
+`font-family`: permet de gérer la police utilisée. S'utilise en général avec plusieurs fontes ([font stack](http://www.smashingmagazine.com/2009/09/22/complete-guide-to-css-font-stacks/)) de façon à avoir des polices de rechange au cas où l'une ou plusieurs d'entre-elles ne sont pas disponibles sur l'ordinateur client. Le navigateur va parcourir la liste de gauche à droite et utiliser la première police disponible dans la liste. Les polices spécifiées peuvent être des polices précises ou des familles de polices plus larges: `serif`, `sans-serif`, `system-ui`, etc.
 
 ```css
 h1,
@@ -1253,7 +1253,7 @@ Etant donné les complexités techniques de la typographie sur écran, de nombre
 
 Nous nous concentrerons ici sur l'utilisation de Google Fonts, un service gratuit offrant des fontes de qualité. Voici [quelques](http://femmebot.github.io/google-type/) [exemples](http://hellohappy.org/beautiful-web-type/) de ce qu'il est possible de réaliser en se concentrant uniquement sur la typographie.
 
-_Exercice: utiliser des fontes standard avec un font-stack_
+_Exercice: utiliser des fontes standard avec un font stack_
 
 _Exercice: utiliser des fontes non-standard avec Google Fonts_
 
