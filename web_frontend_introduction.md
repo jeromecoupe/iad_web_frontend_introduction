@@ -263,15 +263,17 @@ Les listes ordonnées ou numérotées avec `<ol>`
 </ol>
 ```
 
-`<blockquote>`: utilisé pour marquer les citations (en conjonction avec `<cite>`)
+`<blockquote>`: utilisé pour marquer les citations avec `<figure>` et `<figcaption>`.
 
 ```html
-<blockquote>
-  <p>If you don't know where you are going, any road will get you there.</p>
-  <footer>
-    <cite>Lewis Caroll</cite>
-  </footer>
-</blockquote>
+<figure>
+  <blockquote>
+    <p>If you don't know where you are going, any road will get you there.</p>
+  </blockquote>
+  <figcaption>
+    <p>Lewis Caroll</p>
+  </figcaption>
+</figure>
 ```
 
 _Exercice: ajouter quelques paragraphes, listes et titres à votre document de travail_
