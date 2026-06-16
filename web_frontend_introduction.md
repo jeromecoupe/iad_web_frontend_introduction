@@ -900,7 +900,7 @@ A l'aide des différentes valeurs spécifiées, les navigateurs calculent la tai
 - Par défaut, la largeur totale d’une boîte se calcule de la façon suivante : largeur du contenu (width) + padding + borders + margin.
 - Par défaut, la hauteur totale d’une boîte se calcule de la façon suivante : hauteur du contenu (height) + padding + borders + margin.
 
-Remarque importante: Il est posible de modifier le box model pour une ou plusieurs boites (y compris pour toutes) à l'aide de la propriété `box-sizing`. Par exemple, `box-sizing: border-box;` modifie le Box Model afin que les dimensions spécifiées pour padding et border soient includes dans `width` et `height`.
+Remarque importante: Il est posible de modifier le box model pour une ou plusieurs boites (y compris pour toutes) à l'aide de la propriété `box-sizing`. Par exemple, `box-sizing: border-box;` modifie le Box Model afin que les dimensions spécifiées pour padding et border soient incluses dans `width` / `inline-size` et `height` / `inline-size`.
 
 Les dimensions de ces boites peuvent être spécifiées avec des unités absolues (`px` par exemple) ou relatives (`%`, `rem`, `em`, `vh`, `vw`, `ch` etc.).
 
@@ -1529,7 +1529,7 @@ Nous verrons l'année prochaine des script permettant d'ajouter / de supprimer d
 
 ### Modules JavaScript
 
-Il est également possible de créer des applications JavaScript complexes en séparant les fonctionnalités en différents modules. Les modules JavaScript sont biens supportés par les différents navigateurs. Pour des raisons de performance, il est recommandé d'encore utiliser des outils pour les transformer en un seul fichier en production. Les scripts appellés avec un type de `module` sont exécutés comme des scripts ayant un attribut `defer` (après chargement du DOM), sont exécutés une seule fois et utilisent automatiquement le mode strict.
+Il est également possible de créer des applications JavaScript complexes en séparant les fonctionnalités en différents modules. Les modules JavaScript sont biens supportés par les différents navigateurs et permettent d'utiliser `import` et `export` ce qui permet une approche modulaire. Pour des raisons de performance, il est recommandé d'encore utiliser des outils pour les transformer en un seul fichier en production. Les scripts appellés avec un type de `module` sont exécutés comme des scripts ayant un attribut `defer` (après chargement du DOM / de tous les éléments de la page), sont exécutés une seule fois et utilisent automatiquement le mode strict.
 
 ```html
 <head>
@@ -1557,5 +1557,6 @@ hello("Hello from the console");
 ## Ressources:
 
 - ["Apprendre le dévelopement web" (MDN)](https://developer.mozilla.org/fr/docs/Learn)
-- [”Learn CSS" (Web.dev - Google)](https://web.dev/learn/css/)
-- [”Learn Responsive design" (Web.dev - Google)](https://web.dev/learn/design/)
+- ["Learn CSS" (Web.dev - Google)](https://web.dev/learn/css/)
+- ["Learn Responsive design" (Web.dev - Google)](https://web.dev/learn/design/)
+- ["Understanding the fundamentals of CSS Layout" (Polypane)](https://polypane.app/blog/understanding-the-fundamentals-of-css-layout/)
